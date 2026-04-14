@@ -25,6 +25,9 @@ The `anthropic-skills/` directory is a git submodule of [anthropics/skills](http
 
 - **Layout:** individual skills live at `anthropic-skills/skills/<name>/` (one extra nesting level vs the top-level namespaces).
 - **Licensing:** most skills are Apache 2.0; `docx`, `pdf`, `pptx`, `xlsx` are source-available (not OSS). Attribution is preserved automatically via `.gitmodules` and upstream's own `LICENSE`/`README`.
-- **Symlinking:** same rule as above — only folders with `SKILL.md` qualify. Example:
-  `ln -s /Users/chinmay/code/agency/skills/anthropic-skills/skills/<name> /Users/chinmay/.claude/skills/<name>`
-- **Update from upstream:** `git submodule update --remote --merge anthropic-skills` then commit the new pointer.
+- **Symlinking policy:** unlike user-created skills (which require per-skill confirmation), **all upstream skills under `anthropic-skills/skills/` are symlinked in bulk** into `~/.claude/skills/<name>` and kept in sync. After a `git submodule update`, run the re-sync step below so any newly added upstream skills also get linked.
+- **Link form:** `ln -s /Users/chinmay/code/agency/skills/anthropic-skills/skills/<name> /Users/chinmay/.claude/skills/<name>`
+- **Update from upstream:**
+  1. `git submodule update --remote --merge anthropic-skills`
+  2. Commit the new submodule pointer.
+  3. Re-sync symlinks — for any folder in `anthropic-skills/skills/` that isn't already a symlink at `~/.claude/skills/<name>`, create one. Remove symlinks whose target no longer exists.
