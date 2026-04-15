@@ -1,0 +1,70 @@
+{
+  "expectations": [
+    {
+      "text": "Diagnoses the user's passive-consumption / watch-videos-feels-like-learning pattern explicitly",
+      "passed": true,
+      "evidence": "Diagnosis #1 states 'You're consuming way more than you're producing... these feel like learning, but they're passive.' and frames the whole response around the consume-vs-produce distinction."
+    },
+    {
+      "text": "Names the 'illusion of comprehension' / recognition-vs-recall distinction (following along is not knowing)",
+      "passed": true,
+      "evidence": "Explicitly calls it 'the illusion of comprehension' in the intro and spells out 'That's recognition, not recall. Recognition is about 10x easier than recall, and only recall generalizes...'"
+    },
+    {
+      "text": "Explains why Duolingo / YouTube videos produce felt progress without transferable skill",
+      "passed": true,
+      "evidence": "'Duolingo tells you you're doing great because you tapped the right tile from a set of four...' and 'watching a YouTuber play Chopin teaches you nothing about *your* hands doing it.'"
+    },
+    {
+      "text": "Diagnoses attempting an advanced target (Chopin piece) without prerequisite/foundational skill",
+      "passed": true,
+      "evidence": "'A Chopin piece is not a starting skill \u2014 it's an *encompassing* skill that assumes hand independence, fluency reading both clefs, basic scale patterns, dynamics, pedaling, and probably 50 more things.'"
+    },
+    {
+      "text": "Includes a concrete daily session structure with time allocations",
+      "passed": true,
+      "evidence": "Provides 'The daily session shape (30 min is enough)' with specific time blocks: 0-7 min spaced retrieval, 7-22 active production, 22-27 interleaved practice, 27-30 self-check, plus domain-specific breakdowns for Spanish and piano."
+    },
+    {
+      "text": "Prescribes high active-production to passive-intake ratio (e.g., 3:1 or stated numerically)",
+      "passed": true,
+      "evidence": "'you should be producing... at least 3x as much time as you spend consuming' and rule #3: 'active production, in a ratio of ~3:1 over consumption.'"
+    },
+    {
+      "text": "Includes spaced / distributed review of previously-learned material",
+      "passed": true,
+      "evidence": "Diagnosis #4 covers memory decay with expanding intervals (1 day, 3 days, 1 week, 2 weeks, a month); daily session includes a 'Spaced retrieval warm-up' block; Spanish plan uses Anki reviews."
+    },
+    {
+      "text": "Includes retrieval-based practice or self-testing without looking at notes",
+      "passed": true,
+      "evidence": "'Pull old stuff from memory, no notes. Check.' and the Spanish plan: 'Stop and summarize out loud what you just heard, without replaying. This is forced retrieval...'"
+    },
+    {
+      "text": "Names specific resources or tool types (e.g., Anki, tutor/language partner, a specific course)",
+      "passed": true,
+      "evidence": "Names Anki, iTalki tutor, Dreaming Spanish, Language Transfer, Alfred's Adult All-in-One, Faber Adult Piano Adventures, Hanon exercises, Bach 2-part invention #1 in C, Chopin prelude #7 in A."
+    },
+    {
+      "text": "Warns that the right approach will feel harder/slower than what they were doing before (desirable difficulty)",
+      "passed": true,
+      "evidence": "A whole section 'What to expect' warns 'The new method is going to feel worse than what you were doing before' and explicitly names 'desirable difficulty' as the concept."
+    },
+    {
+      "text": "Explicitly recommends focusing on ONE skill rather than multiple simultaneously",
+      "passed": true,
+      "evidence": "The 'Pick one' section says 'Don't restart both Spanish and piano at once. Pick ONE and do it for 3 months with this system before adding anything.'"
+    },
+    {
+      "text": "Provides a concrete starting template or plan (not just principles) they can act on",
+      "passed": true,
+      "evidence": "Provides full templates for Spanish (daily Anki + production + Dreaming Spanish schedule, weekly iTalki) and piano (daily warm-up, deliberate practice, interleaving, weekly recording, monthly lesson) with specific goals and timelines."
+    }
+  ],
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 12,
+    "failed": 0,
+    "total": 12
+  }
+}

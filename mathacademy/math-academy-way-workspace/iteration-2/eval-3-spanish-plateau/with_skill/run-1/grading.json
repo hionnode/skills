@@ -1,0 +1,70 @@
+{
+  "expectations": [
+    {
+      "text": "Diagnoses the situation as distinct from the three other possibilities (burnout, fundamentally wrong approach, actual regression) rather than assuming",
+      "passed": true,
+      "evidence": "Explicitly rules out burnout ('It's probably not burnout' with specific contrast criteria), explains the listening regression as a 'noticing effect, not regression,' and diagnoses the approach as structurally flawed rather than fundamentally wrong ('you haven't wasted 4 months')."
+    },
+    {
+      "text": "Distinguishes normal consolidation plateau (1-3 weeks) from a structural plateau (3+ weeks) requiring plan change",
+      "passed": false,
+      "evidence": "The response treats the 6-week stuck feeling as a structural plan problem and prescribes a plan change, but does not explicitly frame the 1-3 week vs 3+ week distinction between consolidation and structural plateaus."
+    },
+    {
+      "text": "Addresses the 'brain freezes in conversation even when I know the words' phenomenon specifically — the gap between recognition and production fluency",
+      "passed": true,
+      "evidence": "Extended section explaining recognition vs. production/retrieval: 'know the word (recognition) and produce the word in under 2 seconds while someone looks at you (retrieval + automaticity) are two skills, and you've only been training one of them.'"
+    },
+    {
+      "text": "Suggests specific diagnostic questions the learner can ask themselves to figure out which problem they have",
+      "passed": true,
+      "evidence": "Offers the rewatch-an-old-DS-video test to distinguish noticing effect from actual regression, and lists burnout markers ('dreading the sessions, skipping them, performance slipping on easy material...') so the learner can self-check."
+    },
+    {
+      "text": "Recommends a specific concrete adjustment (not just 'keep going' or 'rest') — e.g., rebalancing session time, adding or reducing specific practice types, a pivot option",
+      "passed": true,
+      "evidence": "Concrete adjustments: cut Anki to 100 cards/day, flip half to production direction, add 15-20 min/day solo speaking (monologue/shadowing/timed writing), active DS with pause-and-summarize, restructure tutor session."
+    },
+    {
+      "text": "Addresses the possibility of burnout and gives a specific recovery protocol (e.g., reduced load for a week, rest days)",
+      "passed": true,
+      "evidence": "Addresses burnout explicitly ('It's probably not burnout') with criteria, and prescribes a Sunday light/recovery day: 'You need a recovery day; not taking one is a slow-burn contributor to the feeling stuck sensation.'"
+    },
+    {
+      "text": "Addresses the possibility that the Anki load (200 cards/day) is too high and contributing to the problem",
+      "passed": true,
+      "evidence": "Directly calls out that '200 cards/day is a lot' with likely sub-80% retention, and prescribes cutting to 100/day, capping new cards at 10/day."
+    },
+    {
+      "text": "Names that subjective feelings of 'understanding less' during plateau can coexist with objective progress the tutor observes",
+      "passed": true,
+      "evidence": "Explains the noticing effect: 'Paradoxically this feels like understanding less, because you're now aware of all the specific pieces you're missing... This is a sign of progress being integrated, not lost,' and reaffirms tutor's observation that grammar is improving."
+    },
+    {
+      "text": "Emphasizes that the learner should not lower the bar / quit but should adjust the approach",
+      "passed": true,
+      "evidence": "'You're not starting over — you're finally connecting the warehouse to the street,' and 'you have not wasted 4 months — you've built the raw material... that the next phase needs' — clearly framing this as adjustment not retreat."
+    },
+    {
+      "text": "Gives a concrete week-by-week or phase-by-phase adjustment plan, not just principles",
+      "passed": true,
+      "evidence": "Provides revised daily session breakdown with time allocations, a Mon-Sat/Sun weekly structure, and a phased timeline: 'Week 1-2: monologue recordings painful... Around week 3: something will unlock... By week 6-8: tutor will tell you... reassess at week 4.'"
+    },
+    {
+      "text": "Warns against the common pivot mistakes (switching resources in response to desirable difficulty, trying to cram harder, etc.)",
+      "passed": true,
+      "evidence": "'This will feel worse before it feels better' warning against judging too early, and 'Give it 3 weeks before judging' — framing the discomfort as the training signal to not flee from. Also warns against passive consumption replacing active study."
+    },
+    {
+      "text": "Validates the learner's feeling without being sycophantic — acknowledges that 4 months of stagnation is a real signal worth taking seriously",
+      "passed": true,
+      "evidence": "'The demoralization is real and deserved given what it feels like from the inside. But the thing that's broken is specifiable and fixable' — validates without flattering, and takes the stuck feeling as a genuine structural signal."
+    }
+  ],
+  "summary": {
+    "pass_rate": 0.9166666666666666,
+    "passed": 11,
+    "failed": 1,
+    "total": 12
+  }
+}

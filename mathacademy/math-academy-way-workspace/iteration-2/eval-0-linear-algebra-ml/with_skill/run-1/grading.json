@@ -1,0 +1,80 @@
+{
+  "expectations": [
+    {
+      "text": "Includes a concrete daily session structure with time allocations (minutes per activity)",
+      "passed": true,
+      "evidence": "The 'Daily session template (45 min, weekdays)' section breaks the session into 0-8 min spaced-review warm-up, 8-32 min new learning, 32-42 min interleaved mixed practice, and 42-45 min retrieval quiz."
+    },
+    {
+      "text": "Includes a phased roadmap with named milestones and approximate timelines",
+      "passed": true,
+      "evidence": "The 'Phased roadmap' table lists 6 phases across weeks 1-12 with specific Strang chapters and concrete milestones for each (e.g., 'Implement Gaussian elimination from scratch in NumPy', 'Hand-diagonalize a 3x3 symmetric matrix')."
+    },
+    {
+      "text": "Explicitly prioritizes active problem-solving / production over passive consumption",
+      "passed": true,
+      "evidence": "States 'Target: roughly 3x as much time producing (solving) as consuming (reading)' and 'Ratios inside the session: ~15% passive intake, ~65% active production on new material, ~20% review'."
+    },
+    {
+      "text": "Includes spaced / distributed review of previously-learned material",
+      "passed": true,
+      "evidence": "The daily 0-8 min 'Spaced-review warm-up' and 'Spaced-review queue' with explicit intervals: '1 day, then 3, then 7, then 16, then 30'."
+    },
+    {
+      "text": "Includes interleaved or mixed-practice review drawing from multiple past topics",
+      "passed": true,
+      "evidence": "The 32-42 min 'Interleaved mixed practice' block: '3-5 problems sampled from earlier chapters, not today's. Deliberately mixed so your brain has to figure out which technique applies'. Also a weekly 'mixed-practice exam' of 12-15 problems across all chapters so far."
+    },
+    {
+      "text": "Includes retrieval-based practice or self-quizzing without looking at notes",
+      "passed": true,
+      "evidence": "The 42-45 min 'Quick retrieval quiz' says 'Write one conceptual question... and answer from memory on paper', plus the weekly 12-15 mixed problems 'no notes'."
+    },
+    {
+      "text": "Requires mastery of prerequisites before advancing (not moving on from 'kinda getting it')",
+      "passed": true,
+      "evidence": "'If you can't do the milestone without hints, the phase isn't done. Add a remedial week before advancing.' And 'If you drop below ~70%, the previous week's material was declared mastered too early — go back and re-drill.'"
+    },
+    {
+      "text": "Names specific resources (textbooks, videos, tools) rather than vague pointers",
+      "passed": true,
+      "evidence": "Names Strang's 'Introduction to Linear Algebra, 6th edition', MIT OpenCourseWare 18.06, 3Blue1Brown's 'Essence of Linear Algebra', NumPy/Jupyter, Axler's 'Linear Algebra Done Right', and Hefferon's 'Linear Algebra' as alternatives."
+    },
+    {
+      "text": "Warns that the plan will feel slower/harder than intuitive study methods (desirable difficulty)",
+      "passed": true,
+      "evidence": "The 'On the feel' section: 'The plan will feel harder and slower than read a textbook or watch a course... Interleaved practice will make you feel dumber than blocked practice does... All of that is the plan working correctly, not evidence of a problem.'"
+    },
+    {
+      "text": "Names specific anti-patterns or failure modes tailored to this learner",
+      "passed": true,
+      "evidence": "The 'Anti-patterns I'd watch for specifically (you, software engineer, ML-curious)' section lists tailored failures: 3Blue1Brown binge-mode, 'Implementing it as a substitute for solving problems by hand' (engineer-specific), Stack Overflow/Claude copying, blocked-practice preference, etc."
+    },
+    {
+      "text": "Recommends a problem-heavy primary resource (ideally a textbook like Strang) and flags video-first as insufficient",
+      "passed": true,
+      "evidence": "Designates Strang's textbook as 'Primary' with odd-problem solutions for feedback, while 3Blue1Brown is support-only with rules 'only after you've done the day's problems, not before' and the 3Blue1Brown binge is flagged as an anti-pattern."
+    },
+    {
+      "text": "References eigenvalues/SVD as target-level topics the plan should reach",
+      "passed": true,
+      "evidence": "Goal: 'work the problem sets in Gilbert Strang's Introduction to Linear Algebra through Chapter 7 (eigenvalues + SVD)'. Phase 5 covers eigenvalues/eigenvectors/diagonalization, Phase 6 is dedicated to SVD."
+    },
+    {
+      "text": "Names at least one explicit accountability mechanism (tutor, study partner, public commitment, forcing function, streak, etc.)",
+      "passed": true,
+      "evidence": "Dedicated 'Accountability' section lists three ranked options: weekly human check-in (tutor/study partner), pre-committed forcing function (public talk or blog post), and a public streak."
+    },
+    {
+      "text": "Specifies pivot signals — explicit conditions that, if they occur, would mean the plan needs adjustment",
+      "passed": true,
+      "evidence": "The 'Pivot signals — when to change the plan, not grind on it' section lists explicit triggers: 'miss two milestones in a row', '<3 sessions/week for 2 weeks', 'retrieval exam score dropping', 'clearing milestones but not translating to paper-reading', 'dread sessions' — each with a prescribed fix."
+    }
+  ],
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 14,
+    "failed": 0,
+    "total": 14
+  }
+}

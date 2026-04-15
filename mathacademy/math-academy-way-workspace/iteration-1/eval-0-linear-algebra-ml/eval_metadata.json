@@ -1,0 +1,19 @@
+{
+  "eval_id": 0,
+  "eval_name": "linear-algebra-ml",
+  "prompt": "I'm a software engineer, mid-30s. I've been coding professionally for 10+ years, mostly Python and distributed systems stuff. I took calculus in college but honestly barely remember anything beyond basic derivatives. I've never formally studied linear algebra and it's biting me now — I'm trying to get more into ML/AI work, and every time I read a paper the math section stops me cold. Matrix operations, SVD, eigenvectors, that whole world. I want to get to the point where I can read an ML paper and actually follow the math, and where I know what I'm doing when I write numpy code instead of just copying from stackoverflow. I can commit about 45 minutes on weekdays, maybe a bit more on weekends. No hard deadline but I'd like to feel real progress within a month or two. Where do I start and what should my plan look like?",
+  "assertions": [
+    {"text": "Includes a concrete daily session structure with time allocations (minutes per activity)"},
+    {"text": "Includes a phased roadmap with named milestones and approximate timelines"},
+    {"text": "Explicitly prioritizes active problem-solving / production over passive consumption (reading, watching videos)"},
+    {"text": "Includes spaced / distributed review of previously-learned material"},
+    {"text": "Includes interleaved or mixed-practice review drawing from multiple past topics (not just today's)"},
+    {"text": "Includes retrieval-based practice or self-quizzing without looking at notes"},
+    {"text": "Requires mastery of prerequisites before advancing (not moving on from 'kinda getting it')"},
+    {"text": "Names specific resources (textbooks, videos, tools) rather than vague pointers"},
+    {"text": "Warns that the plan will feel slower/harder than intuitive study methods (desirable difficulty)"},
+    {"text": "Names specific anti-patterns or failure modes tailored to this learner"},
+    {"text": "Recommends a problem-heavy primary resource (ideally a textbook like Strang) and flags video-first approaches as insufficient"},
+    {"text": "References eigenvalues/SVD as target-level topics the plan should reach"}
+  ]
+}

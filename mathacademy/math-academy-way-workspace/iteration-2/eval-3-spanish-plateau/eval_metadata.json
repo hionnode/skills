@@ -1,0 +1,19 @@
+{
+  "eval_id": 3,
+  "eval_name": "spanish-plateau",
+  "prompt": "ive been studying spanish seriously for like 4 months now, doing anki every day (around 200 cards) and a 1hr italki lesson every week, plus trying to listen to dreaming spanish for 30 min most days. honestly i was making really good progress in the first 2 months but the last 6 weeks i feel totally stuck. my itali tutor says my grammar is actually improving but when i try to actually speak in the lesson my brain freezes and i forget words i KNOW i know. when im listening to dreaming spanish i feel like i understand less than i did a month ago, which is insane. im not sure if im burnt out, if my approach is wrong, if this is just what plateaus feel like, or if im doing something specifically broken. what should i do. im kind of demoralized ngl",
+  "assertions": [
+    {"text": "Diagnoses the situation as distinct from the three other possibilities (burnout, fundamentally wrong approach, actual regression) rather than assuming"},
+    {"text": "Distinguishes normal consolidation plateau (1-3 weeks) from a structural plateau (3+ weeks) requiring plan change"},
+    {"text": "Addresses the 'brain freezes in conversation even when I know the words' phenomenon specifically — the gap between recognition and production fluency"},
+    {"text": "Suggests specific diagnostic questions the learner can ask themselves to figure out which problem they have"},
+    {"text": "Recommends a specific concrete adjustment (not just 'keep going' or 'rest') — e.g., rebalancing session time, adding or reducing specific practice types, a pivot option"},
+    {"text": "Addresses the possibility of burnout and gives a specific recovery protocol (e.g., reduced load for a week, rest days)"},
+    {"text": "Addresses the possibility that the Anki load (200 cards/day) is too high and contributing to the problem"},
+    {"text": "Names that subjective feelings of 'understanding less' during plateau can coexist with objective progress the tutor observes"},
+    {"text": "Emphasizes that the learner should not lower the bar / quit but should adjust the approach"},
+    {"text": "Gives a concrete week-by-week or phase-by-phase adjustment plan, not just principles"},
+    {"text": "Warns against the common pivot mistakes (switching resources in response to desirable difficulty, trying to cram harder, etc.)"},
+    {"text": "Validates the learner's feeling without being sycophantic — acknowledges that 4 months of stagnation is a real signal worth taking seriously"}
+  ]
+}

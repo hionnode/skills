@@ -1,0 +1,19 @@
+{
+  "eval_id": 2,
+  "eval_name": "chess-1500",
+  "prompt": "help me plan out how to get good at chess. im around 800 elo on lichess rapid right now. goal is to hit 1500 by end of the year — its april so thats 8-9 months. i can realistically do 30-45 min a day most days. i know basic rules and very basic tactics (pins, forks, that kinda thing). i have no idea what to actually spend my time on — should i be doing puzzles, playing games, studying openings, watching streamers, reading a book, something else? whats the actual plan",
+  "assertions": [
+    {"text": "Includes a concrete daily session structure with time allocations (minutes per activity)"},
+    {"text": "Includes a phased roadmap with named milestones tied to rating or skill markers"},
+    {"text": "Prioritizes tactics/puzzles heavily, appropriate for the 800-1500 band"},
+    {"text": "Deprioritizes openings / warns against opening-theory rabbit holes at 800 ELO"},
+    {"text": "Recommends slower time controls (rapid / classical) over blitz/bullet for learning"},
+    {"text": "Includes post-game analysis / reviewing losses as a core practice"},
+    {"text": "Includes spaced / distributed review of previously-seen positions or missed puzzles"},
+    {"text": "Emphasizes active production (solving puzzles, calculating) over passive consumption (streamers, videos)"},
+    {"text": "Names specific resources (books, courses, or tools) rather than vague pointers"},
+    {"text": "Warns about common failure modes tailored to this rating (e.g., blitz tilt, opening obsession, streamer-watching)"},
+    {"text": "Warns that the plan will feel slower/harder than intuitive approaches (desirable difficulty)"},
+    {"text": "Includes a feedback mechanism for identifying specific weaknesses to drill"}
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "eval_id": 1,
+  "eval_name": "full-reading-rich-chart",
+  "prompt": "hey, can you do a full vedic astrology reading for me? i finally got my chart from a jyotishi and i want a real proper writeup, not the sun-sign nonsense. here's what they gave me:\n\nName: Priya Iyengar\nBorn: 12 March 1992, 04:18 AM IST, Bangalore (12.97N, 77.59E)\n\nLagna: Capricorn, 7\u00b023'\n\nPlanets in rasi:\n- Sun: Pisces 28\u00b012' (3rd house), Revati nakshatra\n- Moon: Cancer 14\u00b006' (7th house), Pushya nakshatra\n- Mars: Aries 22\u00b045' (4th house), Bharani nakshatra (own sign)\n- Mercury: Pisces 11\u00b033' (3rd house), Uttara Bhadrapada (debilitated)\n- Jupiter: Virgo 02\u00b008' (9th house), Uttara Phalguni (R) - retrograde\n- Venus: Aquarius 19\u00b050' (2nd house), Shatabhisha\n- Saturn: Capricorn 18\u00b021' (1st house), Shravana (own sign)\n- Rahu: Sagittarius 04\u00b015' (12th house)\n- Ketu: Gemini 04\u00b015' (6th house)\n\nNavamsa (D-9) lagna: Aries; D-9 has Jupiter in 7th, Venus in 1st, Saturn in 10th.\nDasamsa (D-10) lagna: Libra; D-10 has Mars in 10th, Sun in 7th, Saturn in 4th.\n\nCurrent vimshottari: Rahu Mahadasha (Apr 2018 - Apr 2036), Saturn Antardasha (started Aug 2024, ends Jun 2027).\n\ngive me the full thing \u2014 overview, life areas, house by house, dasha forecast, remedies. as long as it needs to be. i want a beautiful pdf i can keep and refer back to.",
+  "assertions": [
+    {
+      "name": "pdf_exists",
+      "text": "An output PDF file is present at reading.pdf and is at least 50 KB.",
+      "programmatic": true
+    },
+    {
+      "name": "min_citation_count",
+      "text": "The output contains at least 30 inline citations in [Textbook ...], [Lessons-I ...], or [Lessons-II ...] format.",
+      "programmatic": true
+    },
+    {
+      "name": "citations_reference_valid_chapters",
+      "text": "All [Textbook Ch N, ...] citations reference chapters 1-37 (the textbook's actual range). No citation references a chapter or page that doesn't exist.",
+      "programmatic": true
+    },
+    {
+      "name": "covers_all_twelve_houses",
+      "text": "The reading contains dedicated sections for all 12 houses (House 1 through House 12).",
+      "programmatic": true
+    },
+    {
+      "name": "remedies_section_complete",
+      "text": "The remedies section includes at least one gemstone, one mantra, one deity, and one good-deed recommendation, each with a citation.",
+      "programmatic": false
+    },
+    {
+      "name": "uses_parashari_terminology",
+      "text": "Uses terms such as lagna, bhava, kendra, trikona, Vimshottari, Navamsa, yogakaraka, and dasha appropriately \u2014 not generic Western astrology terms.",
+      "programmatic": false
+    },
+    {
+      "name": "d9_navamsa_analysis",
+      "text": "The reading explicitly uses the D-9 Navamsa data (Aries lagna; Jupiter 7th, Venus 1st, Saturn 10th) in the marriage / relationship analysis.",
+      "programmatic": false
+    },
+    {
+      "name": "d10_dasamsa_analysis",
+      "text": "The reading explicitly uses the D-10 Dasamsa data (Libra lagna; Mars 10th, Sun 7th, Saturn 4th) in the career analysis.",
+      "programmatic": false
+    },
+    {
+      "name": "current_dasha_discussed",
+      "text": "The dasha forecast explicitly discusses the current Rahu Mahadasha (2018-2036) and Saturn Antardasha (Aug 2024 - Jun 2027), interpreting them in the context of this chart.",
+      "programmatic": false
+    },
+    {
+      "name": "saturn_lagna_own_sign_recognized",
+      "text": "Saturn's placement in Capricorn lagna (its own sign) is specifically recognized as a significant structural feature.",
+      "programmatic": false
+    },
+    {
+      "name": "debilitated_mercury_flagged",
+      "text": "Debilitated Mercury in the 3rd house is called out with appropriate remedies.",
+      "programmatic": false
+    },
+    {
+      "name": "non_fatalistic_tone",
+      "text": "The reading does NOT predict death timing, divorce with certainty, or specific disease. All sensitive topics are hedged per Rao's approach.",
+      "programmatic": false
+    },
+    {
+      "name": "sources_appendix_present",
+      "text": "The PDF contains a Sources appendix citing all three Rao books with full bibliographic info.",
+      "programmatic": false
+    }
+  ]
+}

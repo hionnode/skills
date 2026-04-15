@@ -1,0 +1,539 @@
+{
+  "metadata": {
+    "skill_name": "math-academy-way",
+    "skill_path": "/Users/chinmay/code/agency/skills/mathacademy/math-academy-way",
+    "executor_model": "<model-name>",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-04-14T10:58:54Z",
+    "evals_run": [
+      0,
+      1,
+      2
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 12,
+        "failed": 0,
+        "total": 12,
+        "time_seconds": 145.3,
+        "tokens": 37708,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Includes a concrete daily session structure with time allocations (minutes per activity)",
+          "passed": true,
+          "evidence": "The 'daily session template (45 min weekday)' breaks the session into 0-7 min warm-up retrieval, 7-15 min reading, 15-35 min produce, 35-43 min interleaved mixed practice, 43-45 min retrieval quiz, plus a detailed weekend 90-min breakdown."
+        },
+        {
+          "text": "Includes a phased roadmap with named milestones and approximate timelines",
+          "passed": true,
+          "evidence": "Five named phases with week ranges: Phase 1 (Weeks 1-2) Vectors and the column picture, Phase 2 (Weeks 3-5) Matrices/Ax=b, Phase 3 (Weeks 6-7) Orthogonality and projection, Phase 4 (Weeks 8-9) Determinants and eigenvalues, Phase 5 (Weeks 10-11) SVD and the synthesis, each with an end-of-phase milestone check."
+        },
+        {
+          "text": "Explicitly prioritizes active problem-solving / production over passive consumption (reading, watching videos)",
+          "passed": true,
+          "evidence": "Ratios specified as '~15-20% reading, ~55-60% producing new problems, ~20-25% review + interleaving + retrieval', plus 'If you're past 10 minutes and still reading, stop - you're consuming when you should be producing.'"
+        },
+        {
+          "text": "Includes spaced / distributed review of previously-learned material",
+          "passed": true,
+          "evidence": "The 0-7 min 'Warm-up retrieval (spaced review)' block explicitly samples 'one from yesterday, one from ~4 days ago, one from ~2 weeks ago', and the anti-patterns section calls spaced review 'the one thing to not drop'."
+        },
+        {
+          "text": "Includes interleaved or mixed-practice review drawing from multiple past topics (not just today's)",
+          "passed": true,
+          "evidence": "The 35-43 min 'Interleaved mixed practice' block has '3-5 problems sampled from any previous chapter you've done. Not today's topic,' and the weekend session starts with 8-12 problems 'sampled from across the whole course so far.'"
+        },
+        {
+          "text": "Includes retrieval-based practice or self-quizzing without looking at notes",
+          "passed": true,
+          "evidence": "The 43-45 min 'Retrieval quiz' asks learner to 'Write down, from memory, the answer to one conceptual question... No notes, one sentence, on paper.' Also 'No peeking at old solutions until you've tried' in the warm-up block."
+        },
+        {
+          "text": "Requires mastery of prerequisites before advancing (not moving on from 'kinda getting it')",
+          "passed": true,
+          "evidence": "'If you're not there, you extend the phase - you do not \"kind of move on.\"' and 'On the bar: when (not if) a topic feels stuck, the fix is never to lower the standard and move on... \"Kind of got it\" is the single most common reason self-study plans crack.'"
+        },
+        {
+          "text": "Names specific resources (textbooks, videos, tools) rather than vague pointers",
+          "passed": true,
+          "evidence": "Names 'Gilbert Strang, Introduction to Linear Algebra, 6th edition', 'MIT OCW... 18.06', '3Blue1Brown's Essence of Linear Algebra', numpy, and specific projects like PCA via SVD and the Transformer paper."
+        },
+        {
+          "text": "Warns that the plan will feel slower/harder than intuitive study methods (desirable difficulty)",
+          "passed": true,
+          "evidence": "Entire 'On how this is going to feel' section: 'For the first 2-3 weeks, this plan will feel slower and harder... Cognitive science has a specific name for this - \"desirable difficulties\"... the study methods that feel most productive in the moment... produce the worst long-term retention.'"
+        },
+        {
+          "text": "Names specific anti-patterns or failure modes tailored to this learner",
+          "passed": true,
+          "evidence": "Anti-patterns section is specifically tailored ('You've been coding for a decade and you have adult-engineer learning habits'), covering reading-first tendency, 3Blue1Brown rescue, Jupyter with numpy at hand, skipping interleaving, ChatGPT shortcuts, and marathon weekends."
+        },
+        {
+          "text": "Recommends a problem-heavy primary resource (ideally a textbook like Strang) and flags video-first approaches as insufficient",
+          "passed": true,
+          "evidence": "Strang's textbook is declared 'the primary resource' and 3Blue1Brown is 'strictly capped' as 'a dessert, not a meal'; the anti-patterns section explicitly warns 'Reaching for 3Blue1Brown when a topic feels hard... That feeling is familiarity, not recall.'"
+        },
+        {
+          "text": "References eigenvalues/SVD as target-level topics the plan should reach",
+          "passed": true,
+          "evidence": "Phase 4 covers 'Determinants and eigenvalues' (Strang ch. 5-6) and Phase 5 covers 'SVD and the synthesis' (Strang ch. 7); goals list explicitly includes 'Work through problems in Strang's Introduction to Linear Algebra through eigenvalues and SVD (chapters 1-7).'"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 12,
+        "failed": 0,
+        "total": 12,
+        "time_seconds": 117.3,
+        "tokens": 36658,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Diagnoses the user's passive-consumption / watch-videos-feels-like-learning pattern explicitly",
+          "passed": true,
+          "evidence": "Diagnosis #1 states 'You're consuming way more than you're producing... these feel like learning, but they're passive.' and frames the whole response around the consume-vs-produce distinction."
+        },
+        {
+          "text": "Names the 'illusion of comprehension' / recognition-vs-recall distinction (following along is not knowing)",
+          "passed": true,
+          "evidence": "Explicitly calls it 'the illusion of comprehension' in the intro and spells out 'That's recognition, not recall. Recognition is about 10x easier than recall, and only recall generalizes...'"
+        },
+        {
+          "text": "Explains why Duolingo / YouTube videos produce felt progress without transferable skill",
+          "passed": true,
+          "evidence": "'Duolingo tells you you're doing great because you tapped the right tile from a set of four...' and 'watching a YouTuber play Chopin teaches you nothing about *your* hands doing it.'"
+        },
+        {
+          "text": "Diagnoses attempting an advanced target (Chopin piece) without prerequisite/foundational skill",
+          "passed": true,
+          "evidence": "'A Chopin piece is not a starting skill \u2014 it's an *encompassing* skill that assumes hand independence, fluency reading both clefs, basic scale patterns, dynamics, pedaling, and probably 50 more things.'"
+        },
+        {
+          "text": "Includes a concrete daily session structure with time allocations",
+          "passed": true,
+          "evidence": "Provides 'The daily session shape (30 min is enough)' with specific time blocks: 0-7 min spaced retrieval, 7-22 active production, 22-27 interleaved practice, 27-30 self-check, plus domain-specific breakdowns for Spanish and piano."
+        },
+        {
+          "text": "Prescribes high active-production to passive-intake ratio (e.g., 3:1 or stated numerically)",
+          "passed": true,
+          "evidence": "'you should be producing... at least 3x as much time as you spend consuming' and rule #3: 'active production, in a ratio of ~3:1 over consumption.'"
+        },
+        {
+          "text": "Includes spaced / distributed review of previously-learned material",
+          "passed": true,
+          "evidence": "Diagnosis #4 covers memory decay with expanding intervals (1 day, 3 days, 1 week, 2 weeks, a month); daily session includes a 'Spaced retrieval warm-up' block; Spanish plan uses Anki reviews."
+        },
+        {
+          "text": "Includes retrieval-based practice or self-testing without looking at notes",
+          "passed": true,
+          "evidence": "'Pull old stuff from memory, no notes. Check.' and the Spanish plan: 'Stop and summarize out loud what you just heard, without replaying. This is forced retrieval...'"
+        },
+        {
+          "text": "Names specific resources or tool types (e.g., Anki, tutor/language partner, a specific course)",
+          "passed": true,
+          "evidence": "Names Anki, iTalki tutor, Dreaming Spanish, Language Transfer, Alfred's Adult All-in-One, Faber Adult Piano Adventures, Hanon exercises, Bach 2-part invention #1 in C, Chopin prelude #7 in A."
+        },
+        {
+          "text": "Warns that the right approach will feel harder/slower than what they were doing before (desirable difficulty)",
+          "passed": true,
+          "evidence": "A whole section 'What to expect' warns 'The new method is going to feel worse than what you were doing before' and explicitly names 'desirable difficulty' as the concept."
+        },
+        {
+          "text": "Explicitly recommends focusing on ONE skill rather than multiple simultaneously",
+          "passed": true,
+          "evidence": "The 'Pick one' section says 'Don't restart both Spanish and piano at once. Pick ONE and do it for 3 months with this system before adding anything.'"
+        },
+        {
+          "text": "Provides a concrete starting template or plan (not just principles) they can act on",
+          "passed": true,
+          "evidence": "Provides full templates for Spanish (daily Anki + production + Dreaming Spanish schedule, weekly iTalki) and piano (daily warm-up, deliberate practice, interleaving, weekly recording, monthly lesson) with specific goals and timelines."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 12,
+        "failed": 0,
+        "total": 12,
+        "time_seconds": 154.0,
+        "tokens": 40637,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Includes a concrete daily session structure with time allocations (minutes per activity)",
+          "passed": true,
+          "evidence": "The 45-minute day is broken down into explicit segments: 0\u20135 min warm-up retrieval, 5\u201320 min new tactics, 20\u201340 min rapid game, 40\u201345 min review; a 30-minute alternative is also given."
+        },
+        {
+          "text": "Includes a phased roadmap with named milestones tied to rating or skill markers",
+          "passed": true,
+          "evidence": "Five named phases, each with explicit milestones: Phase 1 blunder rate <2/game and puzzle rating +150; Phase 2 puzzle rating 1600\u20131800; Phase 3 ~1200 rapid; Phase 4 ~1350 rapid; Phase 5 stable 1500."
+        },
+        {
+          "text": "Prioritizes tactics/puzzles heavily, appropriate for the 800-1500 band",
+          "passed": true,
+          "evidence": "Tactics puzzles are allocated ~40% of time, called 'single highest-ROI activity at your level,' and the whole plan is built around the claim that games at 800\u20131500 are decided by tactics."
+        },
+        {
+          "text": "Deprioritizes openings / warns against opening-theory rabbit holes at 800 ELO",
+          "passed": true,
+          "evidence": "Openings are capped at ~5% of time, only 5 moves deep, and 'Opening rabbit holes' is called out as an anti-pattern with 'Five minutes of opening per day, cap.'"
+        },
+        {
+          "text": "Recommends slower time controls (rapid / classical) over blitz/bullet for learning",
+          "passed": true,
+          "evidence": "Phase 3 states 'Play only 15+10 rapid. No blitz, no bullet,' and the anti-patterns section explicitly flags 'Just one more blitz game' as empty calories at this level."
+        },
+        {
+          "text": "Includes post-game analysis / reviewing losses as a core practice",
+          "passed": true,
+          "evidence": "Review every loss with Lichess engine analysis is allocated ~20% of time, is non-negotiable, and there is a dedicated 'deep review day' once per week to examine 2\u20133 losses."
+        },
+        {
+          "text": "Includes spaced / distributed review of previously-seen positions or missed puzzles",
+          "passed": true,
+          "evidence": "Missed puzzles go into a list re-attempted 'the next day, then 3 days later, then a week later,' and the daily warm-up retrieval redoes 3\u20135 puzzles from prior days."
+        },
+        {
+          "text": "Emphasizes active production (solving puzzles, calculating) over passive consumption (streamers, videos)",
+          "passed": true,
+          "evidence": "The plan explicitly skips streamers and videos ('Watching chess instead of playing chess' is an anti-pattern), caps YouTube at 30 min/week, and centers on puzzles, games, and calculation."
+        },
+        {
+          "text": "Names specific resources (books, courses, or tools) rather than vague pointers",
+          "passed": true,
+          "evidence": "Names concrete resources: Lichess puzzles, Bain/van Wijgerden's '1001 Chess Exercises,' Weteschnik's 'Chess Tactics from Scratch,' Silman's 'Complete Endgame Course,' Aagaard's 'Positional Play,' Naroditsky's speedrun series, ChessBook, chesstempo.com."
+        },
+        {
+          "text": "Warns about common failure modes tailored to this rating (e.g., blitz tilt, opening obsession, streamer-watching)",
+          "passed": true,
+          "evidence": "Entire 'Anti-patterns to watch for \u2014 by name' section lists blitz, opening rabbit holes, streamer-watching, puzzle rush, tilt, and memorizing solutions \u2014 explicitly tailored to 800-level traps."
+        },
+        {
+          "text": "Warns that the plan will feel slower/harder than intuitive approaches (desirable difficulty)",
+          "passed": true,
+          "evidence": "The 'On the feel' section says 'For the first 2\u20134 weeks this plan will feel slow and annoying. You will play fewer games than before... The puzzles will feel harder than blitz because you're forced to calculate rather than pattern-match on vibes. All of that is the point.'"
+        },
+        {
+          "text": "Includes a feedback mechanism for identifying specific weaknesses to drill",
+          "passed": true,
+          "evidence": "The 'feedback loop' section requires logging each loss as position/played/should-have-played/tactic-missed in a running notes file, reviewed weekly for patterns that 'dictate next week's emphasis.'"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 0,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8333333333333334,
+        "passed": 10,
+        "failed": 2,
+        "total": 12,
+        "time_seconds": 101.2,
+        "tokens": 23235,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Includes a concrete daily session structure with time allocations (minutes per activity)",
+          "passed": true,
+          "evidence": "The weekly rhythm section splits weekdays into '3 weekdays (45 min each): Read the textbook section / watch the lecture. Work the examples BY HAND' and '2 weekdays (45 min each): Exercises from the book... about 5-8 per section', plus 'Weekend (2 hrs): One longer session' with a numpy experiment."
+        },
+        {
+          "text": "Includes a phased roadmap with named milestones and approximate timelines",
+          "passed": true,
+          "evidence": "Explicit phased roadmap: 'Weeks 1-2: Geometric foundations', 'Weeks 3-4: Linear systems, rank, null space, projections, least squares', 'Weeks 5-6: Eigendecomposition and SVD', 'Weeks 7-8: Multivariable calculus for ML', 'Weeks 9+: Apply', plus a week-by-week breakdown."
+        },
+        {
+          "text": "Explicitly prioritizes active problem-solving / production over passive consumption (reading, watching videos)",
+          "passed": true,
+          "evidence": "'An hour of active engagement beats four hours of passive video-watching every time.' Also emphasizes 'Work the examples BY HAND', weekly numpy implementations from scratch, and 'Do fewer exercises, but do them completely.'"
+        },
+        {
+          "text": "Includes spaced / distributed review of previously-learned material",
+          "passed": true,
+          "evidence": "'Keep a \"questions\" file. Every time you read something and don't fully get it, jot it down with the date. Review it every two weeks.' Also week 8 includes 'Re-read MML Chapters 2-5 as a consolidation pass'. The review is somewhat limited but present."
+        },
+        {
+          "text": "Includes interleaved or mixed-practice review drawing from multiple past topics (not just today's)",
+          "passed": false,
+          "evidence": "The plan is largely sequential (one chapter per week) with consolidation passes but does not explicitly prescribe mixed-practice review drawing from multiple past topics during sessions. The backprop project in week 8 integrates topics but this is a synthesis project, not routine interleaved practice."
+        },
+        {
+          "text": "Includes retrieval-based practice or self-quizzing without looking at notes",
+          "passed": true,
+          "evidence": "'When you're stuck for more than 15 minutes, look it up, then redo the problem from scratch the next day without looking.' Also 'By Friday you should be able to explain, in plain English, why a dot product relates to angle and projection' suggests retrieval-style checks."
+        },
+        {
+          "text": "Requires mastery of prerequisites before advancing (not moving on from 'kinda getting it')",
+          "passed": false,
+          "evidence": "The plan sets weekly targets but doesn't explicitly require mastery gating before advancing. It says 'Adjust as you go - this is a plan, not a contract' and follows a calendar-driven schedule rather than enforcing 'don't move on until you've mastered X'."
+        },
+        {
+          "text": "Names specific resources (textbooks, videos, tools) rather than vague pointers",
+          "passed": true,
+          "evidence": "Names specific resources: 3Blue1Brown's Essence of Linear Algebra, Gilbert Strang's Introduction to Linear Algebra (6th ed), MIT 18.06 OCW, Sheldon Axler's Linear Algebra Done Right, Jim Hefferon's Linear Algebra, MML book by Deisenroth/Faisal/Ong, Matrix Cookbook by Petersen, Khan Academy Multivariable Calculus."
+        },
+        {
+          "text": "Warns that the plan will feel slower/harder than intuitive study methods (desirable difficulty)",
+          "passed": true,
+          "evidence": "'The first two weeks are the hardest. You're going to feel slow and stupid, especially after 10+ years of feeling competent in your day job. This is normal and it passes.' Also 'You will feel dumb for about 4 days and then something clicks.'"
+        },
+        {
+          "text": "Names specific anti-patterns or failure modes tailored to this learner",
+          "passed": true,
+          "evidence": "Multiple tailored anti-patterns: 'bouncing between six resources', 'Resist the urge to jump to \"cooler\" material... skip ahead to tensors or transformers', jumping straight to Goodfellow Ch. 2 as a teacher, and 'writing numpy code from a stackoverflow answer'. Also 'I know, you're an engineer, you want to type' - tailored to a coder."
+        },
+        {
+          "text": "Recommends a problem-heavy primary resource (ideally a textbook like Strang) and flags video-first approaches as insufficient",
+          "passed": true,
+          "evidence": "Primary resource is explicitly 'Gilbert Strang's Introduction to Linear Algebra (6th edition)' with Strang's problems called 'well-chosen'. Videos alone are flagged: 'An hour of active engagement beats four hours of passive video-watching every time.' However, the plan does give 3B1B equal billing as 'primary' which slightly weakens the textbook-first framing."
+        },
+        {
+          "text": "References eigenvalues/SVD as target-level topics the plan should reach",
+          "passed": true,
+          "evidence": "Eigenvalues/SVD are explicit named milestones: 'Weeks 5-6: Eigendecomposition and SVD. This is the big unlock.' Week 5 targets eigenvalues; Week 6 targets SVD ('Strang Ch. 7. The most important decomposition in applied linear algebra')."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 12,
+        "failed": 0,
+        "total": 12,
+        "time_seconds": 69.1,
+        "tokens": 20873,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Diagnoses the user's passive-consumption / watch-videos-feels-like-learning pattern explicitly",
+          "passed": true,
+          "evidence": "Opens with 'The diagnosis: you're consuming, not practicing' and states 'you mistook the feeling of learning for actual learning. Watching a YouTube video... activates the same satisfaction circuits as real progress... But you haven't built any skill.'"
+        },
+        {
+          "text": "Names the 'illusion of comprehension' / recognition-vs-recall distinction (following along is not knowing)",
+          "passed": true,
+          "evidence": "Explicitly names 'a specific trap here psychologists call the fluency illusion' and explains 'ease of input has almost no relationship to your ability to retrieve and use that information later.' Also contrasts 'produce under pressure' vs 'recognize when someone else does it.'"
+        },
+        {
+          "text": "Explains why Duolingo / YouTube videos produce felt progress without transferable skill",
+          "passed": true,
+          "evidence": "Explains that videos 'activate the same satisfaction circuits as real progress' and uses the ser vs estar example: 'A Spanish video where the teacher explains \"ser vs estar\" feels clarifying. Three weeks later in Mexico City, you can't conjugate in real time because you never practiced conjugating in real time.'"
+        },
+        {
+          "text": "Diagnoses attempting an advanced target (Chopin piece) without prerequisite/foundational skill",
+          "passed": true,
+          "evidence": "Explicitly: 'This is why the Chopin piece killed your piano habit. Picking something massively above your level means every session is failure with no progress markers.' Also calls out needing a 'graded progression' and 'method book' rather than 'ambitious classical pieces.'"
+        },
+        {
+          "text": "Includes a concrete daily session structure with time allocations",
+          "passed": true,
+          "evidence": "Provides 'A rough template for a 45-minute session: 5 min warmup / recall of last session, 30 min trying to produce at the edge of your ability, 10 min targeted study on whatever specifically tripped you up.' Also gives 20/15 min daily allocation in the Spanish plan."
+        },
+        {
+          "text": "Prescribes high active-production to passive-intake ratio (e.g., 3:1 or stated numerically)",
+          "passed": true,
+          "evidence": "Rule 2 is titled 'Spend 80% of your time producing, 20% consuming' and explicitly says 'Flip the ratio you had.'"
+        },
+        {
+          "text": "Includes spaced / distributed review of previously-learned material",
+          "passed": true,
+          "evidence": "Mentions 'Spaced-repetition apps with production, not recognition. Anki where you produce the Spanish sentence from an English prompt' and includes '5 min warmup / recall of last session' in the session template."
+        },
+        {
+          "text": "Includes retrieval-based practice or self-testing without looking at notes",
+          "passed": true,
+          "evidence": "The production-focused Anki cards ('produce the Spanish sentence from an English prompt') are retrieval practice, and the session template includes 'recall of last session.' The overall thrust is about retrieval/production rather than recognition."
+        },
+        {
+          "text": "Names specific resources or tool types (e.g., Anki, tutor/language partner, a specific course)",
+          "passed": true,
+          "evidence": "Names italki tutors ($15/hour), Anki, Language Transfer, Pimsleur, Dreaming Spanish, Alfred's and Faber method books, and language exchange partners / Discord communities."
+        },
+        {
+          "text": "Warns that the right approach will feel harder/slower than what they were doing before (desirable difficulty)",
+          "passed": true,
+          "evidence": "States 'Production is where learning actually happens \u2014 and where it feels bad, which is why people avoid it' and 'Learning is actually a very boring process of showing up daily, producing slightly above your current ability, getting corrected, and repeating for longer than feels reasonable.' Also 'recording yourself and listening back is brutal but effective.'"
+        },
+        {
+          "text": "Explicitly recommends focusing on ONE skill rather than multiple simultaneously",
+          "passed": true,
+          "evidence": "Closes with 'don't try to fix Spanish and piano at once. Pick one, run this playbook on it for 60 days, prove to yourself it works, then add the second.'"
+        },
+        {
+          "text": "Provides a concrete starting template or plan (not just principles) they can act on",
+          "passed": true,
+          "evidence": "The 'What this looks like concretely' section gives a specific Spanish plan: 90-day goal of 10-min tutor conversation, daily 20 min Language Transfer/Pimsleur + 15 min Anki + 2x/week italki sessions, weekly tracking of minutes spoken and verbs used, and 'book the tutor sessions now' as the forcing function."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8333333333333334,
+        "passed": 10,
+        "failed": 2,
+        "total": 12,
+        "time_seconds": 109.3,
+        "tokens": 23167,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Includes a concrete daily session structure with time allocations (minutes per activity)",
+          "passed": true,
+          "evidence": "The 'daily/weekly split' section gives explicit minute budgets: '10\u201315 min of tactics puzzles', 'One 15-minute rapid game', '5\u201310 min' for post-game analysis, and '20\u201325 min structured study' twice a week."
+        },
+        {
+          "text": "Includes a phased roadmap with named milestones tied to rating or skill markers",
+          "passed": true,
+          "evidence": "The 'month-by-month trajectory' section lays out rating milestones: 'Month 1\u20132: 800 \u2192 ~1000. You stop hanging pieces...', 'Month 3\u20134: 1000 \u2192 ~1200. Tactics start clicking...' through Month 9, each tied to both rating and skill markers."
+        },
+        {
+          "text": "Prioritizes tactics/puzzles heavily, appropriate for the 800-1500 band",
+          "passed": true,
+          "evidence": "Tactics is explicitly labeled 'your #1 tool' and 'the single highest-ROI activity you can do'; daily puzzles are 'non-negotiable' at 10\u201320 per day."
+        },
+        {
+          "text": "Deprioritizes openings / warns against opening-theory rabbit holes at 800 ELO",
+          "passed": true,
+          "evidence": "'Do NOT buy a Chessable course yet. Do NOT study opening theory deeply.' and 'Spend maybe 2\u20133 hours total on openings across the whole 8 months.' Plus explicit warning about 'Opening rabbit holes' as a stall-out risk."
+        },
+        {
+          "text": "Recommends slower time controls (rapid / classical) over blitz/bullet for learning",
+          "passed": true,
+          "evidence": "'Time control: 10+0 or 15+10 rapid. Not bullet. Not blitz. Bullet and blitz will actively make you worse at 800 because you don't have time to think.'"
+        },
+        {
+          "text": "Includes post-game analysis / reviewing losses as a core practice",
+          "passed": true,
+          "evidence": "Section 3 'Analyzing your games (underrated, huge)' instructs running Lichess computer analysis and 'Learn from your mistakes' after each game, with classification of blunders as tactical vs strategic."
+        },
+        {
+          "text": "Includes spaced / distributed review of previously-seen positions or missed puzzles",
+          "passed": false,
+          "evidence": "The plan mentions a 'blunder log' and revisiting patterns over time, but there is no real spaced-repetition or scheduled re-review of previously-missed puzzles/positions. The blunder log is descriptive pattern-spotting, not distributed review."
+        },
+        {
+          "text": "Emphasizes active production (solving puzzles, calculating) over passive consumption (streamers, videos)",
+          "passed": true,
+          "evidence": "Section 7 explicitly labels streamers as 'entertainment, not study', saying 'almost zero rating gain per hour', while the whole plan centers on active calculation ('spend up to 60\u201390 seconds actually calculating', 'Say the idea out loud before you move')."
+        },
+        {
+          "text": "Names specific resources (books, courses, or tools) rather than vague pointers",
+          "passed": true,
+          "evidence": "Names Lichess Puzzles, John Bartholomew's 'Climbing the Rating Ladder' and 'Chess Fundamentals', Chernev's 'Logical Chess: Move by Move', Aman Hambleton's 'Building Habits', ChessDojo, Silman's Endgame Course, Chessable 'Short & Sweet', Levy Rozman's 'How to Win at Chess'."
+        },
+        {
+          "text": "Warns about common failure modes tailored to this rating (e.g., blitz tilt, opening obsession, streamer-watching)",
+          "passed": true,
+          "evidence": "'Things that will stall you' section lists blitz/bullet substitution, not analyzing losses, 'Opening rabbit holes', 'Tilt' (stop after 2 losses), 'Rating obsession', and Chess.com/Lichess confusion."
+        },
+        {
+          "text": "Warns that the plan will feel slower/harder than intuitive approaches (desirable difficulty)",
+          "passed": false,
+          "evidence": "The plan emphasizes slowing down on puzzles ('Getting them wrong fast without thinking is how people spend years at 800') and playing slower time controls, but it does not explicitly warn the user that this disciplined approach will feel harder, slower, or less satisfying than the intuitive alternatives \u2014 the framing is more 'this is achievable and higher-ROI' than 'this will feel worse in the short term'."
+        },
+        {
+          "text": "Includes a feedback mechanism for identifying specific weaknesses to drill",
+          "passed": true,
+          "evidence": "The blunder log ('one line per game... After a month, patterns emerge. You'll see you keep missing the same type of tactic \u2014 now you know what to drill') plus classifying blunders as tactical vs strategic and using Lichess Puzzle Themes (Fork/Pin/Mate in 2) to drill specific patterns."
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 138.8667,
+        "stddev": 19.1772,
+        "min": 117.3,
+        "max": 154.0
+      },
+      "tokens": {
+        "mean": 38334.3333,
+        "stddev": 2062.1179,
+        "min": 36658,
+        "max": 40637
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.8889,
+        "stddev": 0.0962,
+        "min": 0.8333,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 93.2,
+        "stddev": 21.2605,
+        "min": 69.1,
+        "max": 109.3
+      },
+      "tokens": {
+        "mean": 22425.0,
+        "stddev": 1344.5014,
+        "min": 20873,
+        "max": 23235
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.11",
+      "time_seconds": "+45.7",
+      "tokens": "+15909"
+    }
+  },
+  "notes": [
+    "Skill lifts pass rate from 89% \u2192 100% (+11pp) across 3 evals \u00d7 1 run each. Clear but modest \u2014 baseline Claude already captures many Math Academy principles.",
+    "Biggest discriminators (missed by baseline, caught by skill): interleaved/mixed practice, mastery gating before advancing, spaced retrieval of specific missed items (puzzles/flashcards), explicit desirable-difficulty warnings.",
+    "On the 'I keep fizzling out' eval both configs scored 12/12. The diagnosis (passive consumption, illusion of comprehension) is well-known enough that Claude reaches it unaided \u2014 skill's value-add is marginal here.",
+    "Cost: skill adds ~47s (+49%) and ~16k tokens (+71%) per run vs baseline, driven by reading SKILL.md + references. Worth it for the quality lift on domain-specific plans.",
+    "All 12 assertions passed with skill on all 3 evals \u2014 possible ceiling effect. Consider adding harder, more discriminating assertions or more edge-case prompts in iteration 2 if running another round."
+  ]
+}

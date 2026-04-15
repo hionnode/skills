@@ -1,0 +1,19 @@
+{
+  "eval_id": 1,
+  "eval_name": "cant-stick-with-learning",
+  "prompt": "ok so i have a real problem. last year i decided i was going to learn spanish and i did duolingo for like 3 months and i watched a bunch of youtube videos and i felt like i was making progress but then i went on a trip to mexico and realized i literally couldnt understand or say anything useful. earlier this year i tried to pick up piano, bought a keyboard, watched some videos, tried to learn this one chopin piece because it sounded cool, and now the keyboard is sitting in the corner. like every time i start something i get really excited and watch a ton of videos and it feels like im learning but then a few weeks in i realize i cant actually do anything and i get discouraged and quit. whats wrong with how im approaching this and how do i actually learn a new skill without this happening again? im open to specific advice.",
+  "assertions": [
+    {"text": "Diagnoses the user's passive-consumption / watch-videos-feels-like-learning pattern explicitly"},
+    {"text": "Names the 'illusion of comprehension' / recognition-vs-recall distinction (following along is not knowing)"},
+    {"text": "Explains why Duolingo / YouTube videos produce felt progress without transferable skill"},
+    {"text": "Diagnoses attempting an advanced target (Chopin piece) without prerequisite/foundational skill"},
+    {"text": "Includes a concrete daily session structure with time allocations"},
+    {"text": "Prescribes high active-production to passive-intake ratio (e.g., 3:1 or stated numerically)"},
+    {"text": "Includes spaced / distributed review of previously-learned material"},
+    {"text": "Includes retrieval-based practice or self-testing without looking at notes"},
+    {"text": "Names specific resources or tool types (e.g., Anki, tutor/language partner, a specific course)"},
+    {"text": "Warns that the right approach will feel harder/slower than what they were doing before (desirable difficulty)"},
+    {"text": "Explicitly recommends focusing on ONE skill rather than multiple simultaneously"},
+    {"text": "Provides a concrete starting template or plan (not just principles) they can act on"}
+  ]
+}

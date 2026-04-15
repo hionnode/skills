@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vedic Reading — {{ native.name }}</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+{# ============ COVER ============ #}
+<section class="cover">
+  <div class="cover-ornament-top">॥ श्री गणेशाय नमः ॥</div>
+  <h1 class="cover-title">A Vedic Astrology Reading</h1>
+  <div class="cover-rule"></div>
+  <div class="cover-native">
+    <div class="cover-native-label">Prepared for</div>
+    <div class="cover-native-name">{{ native.name }}</div>
+  </div>
+  <div class="cover-birth">
+    <div class="cover-birth-row"><span class="label">Born</span> <span class="value">{{ native.birth_date }}{% if native.birth_time %} &middot; {{ native.birth_time }}{% endif %}</span></div>
+    {% if native.birth_place %}<div class="cover-birth-row"><span class="label">At</span> <span class="value">{{ native.birth_place }}</span></div>{% endif %}
+    {% if native.coordinates %}<div class="cover-birth-row"><span class="label">Coordinates</span> <span class="value">{{ native.coordinates }}</span></div>{% endif %}
+  </div>
+  <div class="cover-meta">
+    <div>Reading prepared on {{ generated_on }}</div>
+    <div class="cover-source-note">Grounded in the works of P.V.R. Narasimha Rao</div>
+  </div>
+</section>
+
+{# ============ CHART DIGEST ============ #}
+<section class="digest">
+  <h2>Chart at a Glance</h2>
+  <div class="digest-block">
+    <div class="digest-row"><span class="label">Ascendant (Lagna)</span><span class="value">{{ chart_digest.ascendant }}</span></div>
+    {% if chart_digest.current_dasha %}<div class="digest-row"><span class="label">Current Dasha</span><span class="value">{{ chart_digest.current_dasha }}</span></div>{% endif %}
+    {% if chart_digest.divisional_charts_provided %}<div class="digest-row"><span class="label">Divisional charts available</span><span class="value">{{ chart_digest.divisional_charts_provided | join(", ") }}</span></div>{% endif %}
+  </div>
+
+  <h3>Planetary Placements</h3>
+  <table class="planets">
+    <thead>
+      <tr>
+        <th>Graha</th>
+        <th>Sign</th>
+        <th>Degree</th>
+        <th>House</th>
+        <th>Nakshatra</th>
+        <th>Note</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in chart_digest.planets %}
+      <tr>
+        <td class="graha">{{ p.name }}</td>
+        <td>{{ p.sign }}</td>
+        <td>{{ p.degree or "—" }}</td>
+        <td>{{ p.house }}</td>
+        <td>{{ p.nakshatra or "—" }}</td>
+        <td>{% if p.retrograde %}Retrograde{% endif %}{% if p.extra %}{% if p.retrograde %} · {% endif %}{{ p.extra }}{% endif %}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% if chart_digest.notes %}
+  <p class="digest-notes">{{ chart_digest.notes }}</p>
+  {% endif %}
+</section>
+
+{# ============ SECTIONS ============ #}
+{% for section in sections %}
+
+  {% if section.kind == "prose" %}
+  <section class="prose-section">
+    <h2>{{ section.title }}</h2>
+    {% if section.subtitle %}<p class="subtitle">{{ section.subtitle }}</p>{% endif %}
+    <div class="body">{{ section.body_html | safe }}</div>
+  </section>
+
+  {% elif section.kind == "life_areas_intro" %}
+  <section class="divider">
+    <h2 class="divider-title">Part I — Life Areas</h2>
+    {% if section.body_html %}<div class="body">{{ section.body_html | safe }}</div>{% endif %}
+  </section>
+
+  {% elif section.kind == "life_area" %}
+  <section class="life-area">
+    <h3>{{ section.title }}</h3>
+    {% if section.verdict %}<p class="verdict"><em>{{ section.verdict }}</em></p>{% endif %}
+    <div class="body">{{ section.body_html | safe }}</div>
+    {% if section.current_period_note %}
+    <div class="current-period">
+      <div class="current-period-label">In the current period</div>
+      <div class="current-period-body">{{ section.current_period_note_html | safe }}</div>
+    </div>
+    {% endif %}
+    {% if section.remedies %}
+    <div class="area-remedies">
+      <div class="area-remedies-label">Targeted remedies</div>
+      <ul>
+        {% for r in section.remedies %}<li>{{ r | safe }}</li>{% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </section>
+
+  {% elif section.kind == "houses_intro" %}
+  <section class="divider">
+    <h2 class="divider-title">Part II — The Twelve Houses</h2>
+    {% if section.body_html %}<div class="body">{{ section.body_html | safe }}</div>{% endif %}
+  </section>
+
+  {% elif section.kind == "house" %}
+  <section class="house">
+    <h3>House {{ section.house_number }} — {{ section.title }}</h3>
+    {% if section.metadata %}
+    <div class="house-meta">
+      {% for key, val in section.metadata.items() %}
+      <div class="house-meta-row"><span class="label">{{ key }}</span><span class="value">{{ val }}</span></div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <div class="body">{{ section.body_html | safe }}</div>
+  </section>
+
+  {% elif section.kind == "yogas_intro" %}
+  <section class="divider">
+    <h2 class="divider-title">Part III — Active Yogas</h2>
+    {% if section.body_html %}<div class="body">{{ section.body_html | safe }}</div>{% endif %}
+  </section>
+
+  {% elif section.kind == "yoga" %}
+  <section class="yoga">
+    <h3>{{ section.name }}</h3>
+    {% if section.description %}<p class="yoga-desc"><em>{{ section.description }}</em></p>{% endif %}
+    <div class="body">{{ section.body_html | safe }}</div>
+  </section>
+
+  {% elif section.kind == "dasha_forecast" %}
+  <section class="divider">
+    <h2 class="divider-title">Part IV — Dasha Forecast</h2>
+  </section>
+  <section class="dasha">
+    {% if section.mahadasha_html %}
+    <h3>Current Mahadasha{% if section.mahadasha_title %} — {{ section.mahadasha_title }}{% endif %}</h3>
+    <div class="body">{{ section.mahadasha_html | safe }}</div>
+    {% endif %}
+    {% if section.antardasha_html %}
+    <h3>Current Antardasha{% if section.antardasha_title %} — {{ section.antardasha_title }}{% endif %}</h3>
+    <div class="body">{{ section.antardasha_html | safe }}</div>
+    {% endif %}
+    {% if section.upcoming %}
+    <h3>Upcoming Periods</h3>
+    {% for u in section.upcoming %}
+    <div class="upcoming-period">
+      <div class="upcoming-period-title">{{ u.title }}</div>
+      <div class="body">{{ u.body_html | safe }}</div>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </section>
+
+  {% elif section.kind == "remedies" %}
+  <section class="divider">
+    <h2 class="divider-title">Part V — Remedies</h2>
+  </section>
+  <section class="remedies">
+    {% if section.opening_html %}<div class="body">{{ section.opening_html | safe }}</div>{% endif %}
+
+    {% if section.gemstones %}
+    <h3>Gemstones</h3>
+    <ul class="remedy-list">
+      {% for g in section.gemstones %}<li>{{ g | safe }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if section.mantras %}
+    <h3>Mantras &amp; Propitiation</h3>
+    <ul class="remedy-list mantras">
+      {% for m in section.mantras %}<li>{{ m | safe }}</li>{% endfor %}
+    </ul>
+    <p class="mantra-note">Mantras should be learned from a priest or experienced practitioner before recitation. The books are emphatic that mispronunciation can produce adverse effects <span class="cite">[Textbook §34.4, p.454]</span>.</p>
+    {% endif %}
+
+    {% if section.deities %}
+    <h3>Deity Worship</h3>
+    <ul class="remedy-list">
+      {% for d in section.deities %}<li>{{ d | safe }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if section.good_deeds %}
+    <h3>Good Deeds &amp; Charity</h3>
+    <ul class="remedy-list">
+      {% for g in section.good_deeds %}<li>{{ g | safe }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if section.common_sense %}
+    <h3>Common-sense Precautions</h3>
+    <ul class="remedy-list">
+      {% for c in section.common_sense %}<li>{{ c | safe }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if section.closing_html %}
+    <div class="body remedies-closing">{{ section.closing_html | safe }}</div>
+    {% endif %}
+  </section>
+
+  {% elif section.kind == "closing" %}
+  <section class="closing">
+    <h2>{{ section.title or "A Closing Note" }}</h2>
+    <div class="body">{{ section.body_html | safe }}</div>
+  </section>
+
+  {% endif %}
+
+{% endfor %}
+
+{# ============ SOURCES APPENDIX ============ #}
+<section class="sources">
+  <h2>Sources</h2>
+  <p class="sources-intro">Every substantive claim in this reading is drawn from one of the following works by <strong>P.V.R. Narasimha Rao</strong>, who stands in the Parashari tradition of Vedic astrology.</p>
+  <ul class="sources-list">
+    {% for s in sources %}
+    <li>
+      <span class="source-short">{{ s.short }}</span>
+      &mdash;
+      <span class="source-full">{{ s.full_html | safe if s.full_html else s.full }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="sources-note">Citations in the form <span class="cite">[Textbook Ch 7, p.67]</span> or <span class="cite">[Lessons-I L16, p.65]</span> point to the internal (printed) page numbers of the books, not the PDF page numbers. The books' own bibliographies and worked examples are the ultimate ground of every interpretation offered here.</p>
+</section>
+
+<section class="colophon">
+  <div class="colophon-line">॥ शुभं भवतु ॥</div>
+  <div class="colophon-text">May auspiciousness prevail.</div>
+</section>
+
+</body>
+</html>

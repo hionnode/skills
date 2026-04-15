@@ -1,0 +1,80 @@
+{
+  "expectations": [
+    {
+      "text": "Diagnoses the user's passive-consumption / watch-videos-feels-like-learning pattern explicitly",
+      "passed": true,
+      "evidence": "Section 'The diagnosis: you're stuck in the consumption loop' explicitly names 'Consumption without production' — 'Duolingo taps, YouTube videos, watching someone play Chopin — all of that is input. Almost none of it is output.'"
+    },
+    {
+      "text": "Names the 'illusion of comprehension' / recognition-vs-recall distinction (following along is not knowing)",
+      "passed": true,
+      "evidence": "Explicitly says 'Following along produces what cognitive scientists call the illusion of comprehension' and distinguishes 'understanding in the moment isn't the same as being able to do it unassisted later.'"
+    },
+    {
+      "text": "Explains why Duolingo / YouTube videos produce felt progress without transferable skill",
+      "passed": true,
+      "evidence": "Notes 'Duolingo's phrase drills don't cover conversational recovery, listening under speed, or the ~1500 highest-frequency words' and 'It's gamified in ways that don't produce fluency — it trains tap-matching, not speaking.'"
+    },
+    {
+      "text": "Diagnoses attempting an advanced target (Chopin piece) without prerequisite/foundational skill",
+      "passed": true,
+      "evidence": "Point 3: 'Jumping to the shiny thing instead of building the foundation...stage-3 task attempted at stage-1 fluency...The piece requires sub-skills (independent hand coordination, sight-reading basic rhythms, pedaling, dynamic control) you hadn't built yet.'"
+    },
+    {
+      "text": "Includes a concrete daily session structure with time allocations",
+      "passed": true,
+      "evidence": "Section 4 provides 'Warm-up (5-10 min)', 'New material (15-25 min)', 'Interleaved mixed practice (10-15 min)', 'Retrieval quiz (2-5 min)'."
+    },
+    {
+      "text": "Prescribes high active-production to passive-intake ratio (e.g., 3:1 or stated numerically)",
+      "passed": true,
+      "evidence": "'Design the daily session so it's ~70% production, ~15% intake' and 'for every 1 minute consuming, spend 3 minutes producing.'"
+    },
+    {
+      "text": "Includes spaced / distributed review of previously-learned material",
+      "passed": true,
+      "evidence": "Section 6 'Catch the drift with spaced review + a weekly mixed quiz' — 'Every day, do a short spaced review of older material (Anki handles this automatically)...Every week, a 15-minute mixed practice / quiz on everything from the past 2-4 weeks.'"
+    },
+    {
+      "text": "Includes retrieval-based practice or self-testing without looking at notes",
+      "passed": true,
+      "evidence": "'review yesterday's material from memory, no notes. Write/speak/play it cold, then check' and 'Retrieval quiz...Answer out loud, then check.'"
+    },
+    {
+      "text": "Names specific resources or tool types (e.g., Anki, tutor/language partner, a specific course)",
+      "passed": true,
+      "evidence": "Explicitly names 'iTalki tutor', 'Anki' with Spanish frequency deck, 'Dreaming Spanish' podcast, and 'Language Transfer'."
+    },
+    {
+      "text": "Warns that the right approach will feel harder/slower than what they were doing before (desirable difficulty)",
+      "passed": true,
+      "evidence": "Section 9 'A note on how this will feel' — 'This setup will feel worse than your prior approach for the first 2-3 weeks...That's not a sign it's failing; that's the sign it's working.'"
+    },
+    {
+      "text": "Explicitly recommends focusing on ONE skill rather than multiple simultaneously",
+      "passed": true,
+      "evidence": "'Pick one skill. Not two. Spanish, I'd suggest, since you have unfinished business and a concrete goal.'"
+    },
+    {
+      "text": "Provides a concrete starting template or plan (not just principles) they can act on",
+      "passed": true,
+      "evidence": "'If I were you, this week' section with 7 concrete numbered steps: pick one skill, book forcing function, book weekly iTalki tutor, set up Anki, define minimum viable session, pick time/place, tell one person."
+    },
+    {
+      "text": "Names at least one explicit accountability/habit mechanism (tutor, partner, streak, public commitment, scheduled forcing function, etc.) directly addressing the fizzle-out pattern",
+      "passed": true,
+      "evidence": "Section 2 'Book the forcing function before you start' (non-refundable flights, dated events) and Section 3 'Get a human in the loop' (weekly tutor, study partner). Explicitly ties these to 'Tuesday-in-week-4 you has a reason to sit down.'"
+    },
+    {
+      "text": "Addresses the restart problem specifically — how to rebuild after a lapse or how to prevent the next lapse",
+      "passed": true,
+      "evidence": "Section 7 'Define a minimum viable session for bad days' — 'The main reason 3-month plans die isn't one bad day — it's that one bad day turns into a week off, which turns into I've already broken the streak...Prevent this by defining the smallest thing that still counts as a session.'"
+    }
+  ],
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 14,
+    "failed": 0,
+    "total": 14
+  }
+}

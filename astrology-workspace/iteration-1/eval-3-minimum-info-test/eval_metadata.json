@@ -1,0 +1,62 @@
+{
+  "eval_id": 3,
+  "eval_name": "minimum-info-test",
+  "prompt": "can u do a vedic reading from this? lagna virgo, sun in libra house 2, moon aries house 8, mars sag house 4, merc libra house 2, jup leo house 12, venus libra house 2, saturn pisces house 7, rahu virgo house 1, ketu pisces house 7. dont have dasha info or anything else. produce pdf",
+  "assertions": [
+    {
+      "name": "pdf_exists",
+      "text": "An output PDF file is present and is at least 50 KB.",
+      "programmatic": true
+    },
+    {
+      "name": "min_citation_count",
+      "text": "The output contains at least 15 inline citations in [Textbook ...] or [Lessons-...] format.",
+      "programmatic": true
+    },
+    {
+      "name": "missing_info_acknowledged_in_digest",
+      "text": "The chart digest's notes field (or a prominent upfront paragraph) explicitly states that dasha info and divisional charts were not provided and limits the skill's analysis accordingly.",
+      "programmatic": false
+    },
+    {
+      "name": "no_fabricated_dasha",
+      "text": "The PDF does NOT invent specific dasha periods or dates for the native. Either the dasha forecast section is omitted/minimized, or it is presented as general trajectory without specific calendar periods.",
+      "programmatic": false
+    },
+    {
+      "name": "covers_all_twelve_houses",
+      "text": "The reading contains dedicated sections for all 12 houses.",
+      "programmatic": true
+    },
+    {
+      "name": "libra_stellium_recognized",
+      "text": "The triple conjunction of Sun, Mercury, and Venus in Libra in the 2nd house is identified as a notable configuration for wealth and/or speech.",
+      "programmatic": false
+    },
+    {
+      "name": "saturn_in_7th_handled_carefully",
+      "text": "Saturn in the 7th house is discussed with appropriate care \u2014 acknowledging it as a classical nuance in marriage without fatalistic predictions.",
+      "programmatic": false
+    },
+    {
+      "name": "rahu_in_lagna_identified",
+      "text": "Rahu in the 1st house (Virgo) is recognized as a significant personality/identity feature.",
+      "programmatic": false
+    },
+    {
+      "name": "jupiter_alone_in_12th_noted",
+      "text": "Jupiter alone in the 12th house (Leo) is noted \u2014 either for spiritual tendency, foreign connections, or hidden wisdom.",
+      "programmatic": false
+    },
+    {
+      "name": "asks_user_for_dasha_info",
+      "text": "The reading invites the user to provide dasha info to unlock a better forecast.",
+      "programmatic": false
+    },
+    {
+      "name": "non_fatalistic_tone",
+      "text": "No predictions of death, divorce with certainty, or specific disease.",
+      "programmatic": false
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "expectations": [
+    {
+      "text": "Includes a concrete daily session structure with time allocations (minutes per activity)",
+      "passed": true,
+      "evidence": "The 'How to actually use 45 minutes' section breaks down a weekday session: 5 min reviewing notes, 20 min new material, 15 min problems/numpy, 5 min reflection."
+    },
+    {
+      "text": "Includes a phased roadmap with named milestones and approximate timelines",
+      "passed": true,
+      "evidence": "Three named phases (Core linear algebra, The 'ML layer,' Apply it) over weeks 1-4, 5-7, 8-10, plus explicit week-by-week named topics and an end-of-Phase-1 milestone."
+    },
+    {
+      "text": "Explicitly prioritizes active problem-solving / production over passive consumption",
+      "passed": true,
+      "evidence": "Principle 2: 'Do the exercises. Actually do them... Budget at least half your time for problems.' Also 'measure progress by problems solved' rather than pages read."
+    },
+    {
+      "text": "Includes spaced / distributed review of previously-learned material",
+      "passed": true,
+      "evidence": "Principle 5 'Spaced practice beats marathons' and the daily session begins with '5 min — skim yesterday's notes.' Also 'Every week, look at [the paper] again.'"
+    },
+    {
+      "text": "Includes interleaved or mixed-practice review drawing from multiple past topics",
+      "passed": false,
+      "evidence": "The plan has sequential weekly topics with daily review of the prior day's material, but does not prescribe mixed practice drawing from multiple past topics simultaneously."
+    },
+    {
+      "text": "Includes retrieval-based practice or self-quizzing without looking at notes",
+      "passed": true,
+      "evidence": "Week 6: 'Derive PCA from SVD in your notes. When you can do this cold, you've cleared a big hurdle.' Also 1-month check: 'Explain, without notes, what SVD does.'"
+    },
+    {
+      "text": "Requires mastery of prerequisites before advancing (not moving on from 'kinda getting it')",
+      "passed": false,
+      "evidence": "The plan says 'Adjust pacing but don't skip topics' and warns 'Don't switch resources when you hit a hard chapter,' but does not explicitly require mastery checks before moving to the next topic or warn against advancing while only 'kinda getting it.'"
+    },
+    {
+      "text": "Names specific resources (textbooks, videos, tools) rather than vague pointers",
+      "passed": true,
+      "evidence": "Names 3Blue1Brown Essence of Linear Algebra, Strang's Introduction to Linear Algebra 6th ed. + MIT OCW 18.06, Axler, Deisenroth MML book, Matrix Cookbook, Goodfellow DL Ch. 2, Khan Academy, Rougier numpy-100, Karpathy Zero to Hero."
+    },
+    {
+      "text": "Warns that the plan will feel slower/harder than intuitive study methods (desirable difficulty)",
+      "passed": false,
+      "evidence": "The plan warns against skimming and switching resources when hitting hard chapters, but does not explicitly tell the learner the correct approach will feel slower or harder than intuitive study methods."
+    },
+    {
+      "text": "Names specific anti-patterns or failure modes tailored to this learner",
+      "passed": true,
+      "evidence": "The 'What not to do' section calls out engineer-specific pitfalls: 'the temptation to skim is enormous,' don't start with Axler/Hoffman & Kunze, don't try to learn probability/stats/optimization simultaneously, don't switch resources on hard chapters, don't skip numpy ('You're an engineer')."
+    },
+    {
+      "text": "Recommends a problem-heavy primary resource (ideally a textbook like Strang) and flags video-first as insufficient",
+      "passed": true,
+      "evidence": "Recommends Strang as primary textbook; explicitly says about 3Blue1Brown: 'It will not teach you to compute' — positioning videos as intuition-only, with the textbook as where computation is learned."
+    },
+    {
+      "text": "References eigenvalues/SVD as target-level topics the plan should reach",
+      "passed": true,
+      "evidence": "Week 5 is eigenvalues/eigenvectors and Week 6 is dedicated to SVD ('Strang Ch. 7. Read it twice. SVD is the single most important matrix decomposition for ML')."
+    },
+    {
+      "text": "Names at least one explicit accountability mechanism (tutor, study partner, public commitment, forcing function, streak, etc.)",
+      "passed": false,
+      "evidence": "No tutor, study partner, public commitment, streak, or explicit accountability mechanism is mentioned. The paper check-in is a self-progress metric, not an external accountability mechanism."
+    },
+    {
+      "text": "Specifies pivot signals — explicit conditions that, if they occur, would mean the plan needs adjustment",
+      "passed": false,
+      "evidence": "The plan offers positive success markers ('at 1 month... you should be able to') but does not specify explicit failure/pivot conditions that would indicate the plan needs adjustment."
+    }
+  ],
+  "summary": {
+    "pass_rate": 0.6428571428571429,
+    "passed": 9,
+    "failed": 5,
+    "total": 14
+  }
+}

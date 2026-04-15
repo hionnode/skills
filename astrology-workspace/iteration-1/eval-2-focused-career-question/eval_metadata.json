@@ -1,0 +1,57 @@
+{
+  "eval_id": 2,
+  "eval_name": "focused-career-question",
+  "prompt": "I'm 38 and considering leaving my software engineering job to start a consulting practice. My friend's astrologer cousin sent me my chart positions and said it's a 'good time' but didn't really explain. Can you help me understand what my chart actually says about career direction and timing? I want a proper PDF I can think over.\n\nLagna: Leo 23\u00b0\nSun in Leo (1st house) - own sign\nMoon in Scorpio (4th house)\nMars in Cancer (12th house) - debilitated\nMercury in Leo (1st house)\nJupiter in Libra (3rd house)\nVenus in Cancer (12th house)\nSaturn in Sagittarius (5th house)\nRahu in Aquarius (7th house)\nKetu in Leo (1st house) \u2014 yes, with Sun and Mercury\n\nCurrent dasha: Mercury Mahadasha started 2019, ends 2036. Currently in Mercury-Venus antardasha (May 2024 to Mar 2027).\n\nI don't have any divisional charts.",
+  "assertions": [
+    {
+      "name": "pdf_exists",
+      "text": "An output PDF file is present and is at least 50 KB.",
+      "programmatic": true
+    },
+    {
+      "name": "min_citation_count",
+      "text": "The output contains at least 20 inline citations in [Textbook ...] or [Lessons-...] format.",
+      "programmatic": true
+    },
+    {
+      "name": "d10_absence_acknowledged",
+      "text": "The reading explicitly notes upfront that D-10 was not provided, which limits the granularity of career analysis.",
+      "programmatic": false
+    },
+    {
+      "name": "career_section_developed",
+      "text": "The Career & Professional Life life-area section is notably developed (longer or more detailed than other life-area sections), reflecting the user's focused ask.",
+      "programmatic": false
+    },
+    {
+      "name": "full_structure_preserved",
+      "text": "Despite the focused ask, the PDF still contains all structural sections: cover, digest, overall tenor, life areas, 12 houses, dasha forecast, remedies, sources.",
+      "programmatic": true
+    },
+    {
+      "name": "budha_aditya_or_stellium_recognized",
+      "text": "Sun, Mercury, and Ketu co-located in Leo in the 1st house is explicitly identified as a significant configuration (whether called Budha-Aditya yoga, triple conjunction, or lagna stellium).",
+      "programmatic": false
+    },
+    {
+      "name": "mercury_md_tied_to_lagna_placement",
+      "text": "The dasha section recognizes that the current Mercury Mahadasha is especially potent because Mercury sits in the lagna with the Sun.",
+      "programmatic": false
+    },
+    {
+      "name": "debilitated_mars_in_12th_addressed",
+      "text": "Mars's debilitation in the 12th house is specifically addressed in the house/life-area analysis or remedies.",
+      "programmatic": false
+    },
+    {
+      "name": "measured_advisory_tone",
+      "text": "The PDF does not answer 'should I leave my job' as a yes/no oracle. It presents chart indications with hedged language ('this chart tends to favor...', 'a time in the chart that supports...').",
+      "programmatic": false
+    },
+    {
+      "name": "remedies_chart_tuned",
+      "text": "The remedies section prescribes remedies chosen for THIS chart (e.g., Mercury-related given current dasha; Jupiter in 3rd; debilitated Mars) rather than a generic grab-bag.",
+      "programmatic": false
+    }
+  ]
+}

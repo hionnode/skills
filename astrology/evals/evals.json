@@ -1,0 +1,66 @@
+{
+  "skill_name": "vedic-chart-reading",
+  "evals": [
+    {
+      "id": 1,
+      "name": "full-reading-rich-chart",
+      "prompt": "hey, can you do a full vedic astrology reading for me? i finally got my chart from a jyotishi and i want a real proper writeup, not the sun-sign nonsense. here's what they gave me:\n\nName: Priya Iyengar\nBorn: 12 March 1992, 04:18 AM IST, Bangalore (12.97N, 77.59E)\n\nLagna: Capricorn, 7°23'\n\nPlanets in rasi:\n- Sun: Pisces 28°12' (3rd house), Revati nakshatra\n- Moon: Cancer 14°06' (7th house), Pushya nakshatra\n- Mars: Aries 22°45' (4th house), Bharani nakshatra (own sign)\n- Mercury: Pisces 11°33' (3rd house), Uttara Bhadrapada (debilitated)\n- Jupiter: Virgo 02°08' (9th house), Uttara Phalguni (R) - retrograde\n- Venus: Aquarius 19°50' (2nd house), Shatabhisha\n- Saturn: Capricorn 18°21' (1st house), Shravana (own sign)\n- Rahu: Sagittarius 04°15' (12th house)\n- Ketu: Gemini 04°15' (6th house)\n\nNavamsa (D-9) lagna: Aries; D-9 has Jupiter in 7th, Venus in 1st, Saturn in 10th.\nDasamsa (D-10) lagna: Libra; D-10 has Mars in 10th, Sun in 7th, Saturn in 4th.\n\nCurrent vimshottari: Rahu Mahadasha (Apr 2018 - Apr 2036), Saturn Antardasha (started Aug 2024, ends Jun 2027).\n\ngive me the full thing — overview, life areas, house by house, dasha forecast, remedies. as long as it needs to be. i want a beautiful pdf i can keep and refer back to.",
+      "expected_output": "A polished, multi-page PDF saved to disk with cover, digest, overall tenor, 8-10 life-area sections, all 12 houses, dasha forecast, remedies, sources. Every substantive claim cites Rao's books with chapter/page. Parashari framework only. Non-fatalistic. Chart-specific (not generic).",
+      "files": [],
+      "assertions": [
+        {"name": "pdf_exists", "text": "An output PDF file is present at reading.pdf and is at least 50 KB.", "programmatic": true},
+        {"name": "min_citation_count", "text": "The output contains at least 30 inline citations in [Textbook ...], [Lessons-I ...], or [Lessons-II ...] format.", "programmatic": true},
+        {"name": "citations_reference_valid_chapters", "text": "All [Textbook Ch N, ...] citations reference chapters 1-37 (the textbook's actual range). No citation references a chapter or page that doesn't exist.", "programmatic": true},
+        {"name": "covers_all_twelve_houses", "text": "The reading contains dedicated sections for all 12 houses (House 1 through House 12).", "programmatic": true},
+        {"name": "remedies_section_complete", "text": "The remedies section includes at least one gemstone, one mantra, one deity, and one good-deed recommendation, each with a citation.", "programmatic": false},
+        {"name": "uses_parashari_terminology", "text": "Uses terms such as lagna, bhava, kendra, trikona, Vimshottari, Navamsa, yogakaraka, and dasha appropriately — not generic Western astrology terms.", "programmatic": false},
+        {"name": "d9_navamsa_analysis", "text": "The reading explicitly uses the D-9 Navamsa data (Aries lagna; Jupiter 7th, Venus 1st, Saturn 10th) in the marriage / relationship analysis.", "programmatic": false},
+        {"name": "d10_dasamsa_analysis", "text": "The reading explicitly uses the D-10 Dasamsa data (Libra lagna; Mars 10th, Sun 7th, Saturn 4th) in the career analysis.", "programmatic": false},
+        {"name": "current_dasha_discussed", "text": "The dasha forecast explicitly discusses the current Rahu Mahadasha (2018-2036) and Saturn Antardasha (Aug 2024 - Jun 2027), interpreting them in the context of this chart.", "programmatic": false},
+        {"name": "saturn_lagna_own_sign_recognized", "text": "Saturn's placement in Capricorn lagna (its own sign) is specifically recognized as a significant structural feature.", "programmatic": false},
+        {"name": "debilitated_mercury_flagged", "text": "Debilitated Mercury in the 3rd house is called out with appropriate remedies.", "programmatic": false},
+        {"name": "non_fatalistic_tone", "text": "The reading does NOT predict death timing, divorce with certainty, or specific disease. All sensitive topics are hedged per Rao's approach.", "programmatic": false},
+        {"name": "sources_appendix_present", "text": "The PDF contains a Sources appendix citing all three Rao books with full bibliographic info.", "programmatic": false}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "focused-career-question",
+      "prompt": "I'm 38 and considering leaving my software engineering job to start a consulting practice. My friend's astrologer cousin sent me my chart positions and said it's a 'good time' but didn't really explain. Can you help me understand what my chart actually says about career direction and timing? I want a proper PDF I can think over.\n\nLagna: Leo 23°\nSun in Leo (1st house) - own sign\nMoon in Scorpio (4th house)\nMars in Cancer (12th house) - debilitated\nMercury in Leo (1st house)\nJupiter in Libra (3rd house)\nVenus in Cancer (12th house)\nSaturn in Sagittarius (5th house)\nRahu in Aquarius (7th house)\nKetu in Leo (1st house) — yes, with Sun and Mercury\n\nCurrent dasha: Mercury Mahadasha started 2019, ends 2036. Currently in Mercury-Venus antardasha (May 2024 to Mar 2027).\n\nI don't have any divisional charts.",
+      "expected_output": "A focused PDF emphasizing career, full structure preserved. Missing D-10 noted. Sun-Mercury-Ketu conjunction recognized. 10th lord Venus in 12th read carefully. Mercury MD tied to lagna placement. Measured advisory tone. All claims cited.",
+      "files": [],
+      "assertions": [
+        {"name": "pdf_exists", "text": "An output PDF file is present and is at least 50 KB.", "programmatic": true},
+        {"name": "min_citation_count", "text": "The output contains at least 20 inline citations in [Textbook ...] or [Lessons-...] format.", "programmatic": true},
+        {"name": "d10_absence_acknowledged", "text": "The reading explicitly notes upfront that D-10 was not provided, which limits the granularity of career analysis.", "programmatic": false},
+        {"name": "career_section_developed", "text": "The Career & Professional Life life-area section is notably developed (longer or more detailed than other life-area sections), reflecting the user's focused ask.", "programmatic": false},
+        {"name": "full_structure_preserved", "text": "Despite the focused ask, the PDF still contains all structural sections: cover, digest, overall tenor, life areas, 12 houses, dasha forecast, remedies, sources.", "programmatic": true},
+        {"name": "budha_aditya_or_stellium_recognized", "text": "Sun, Mercury, and Ketu co-located in Leo in the 1st house is explicitly identified as a significant configuration (whether called Budha-Aditya yoga, triple conjunction, or lagna stellium).", "programmatic": false},
+        {"name": "mercury_md_tied_to_lagna_placement", "text": "The dasha section recognizes that the current Mercury Mahadasha is especially potent because Mercury sits in the lagna with the Sun.", "programmatic": false},
+        {"name": "debilitated_mars_in_12th_addressed", "text": "Mars's debilitation in the 12th house is specifically addressed in the house/life-area analysis or remedies.", "programmatic": false},
+        {"name": "measured_advisory_tone", "text": "The PDF does not answer 'should I leave my job' as a yes/no oracle. It presents chart indications with hedged language ('this chart tends to favor...', 'a time in the chart that supports...').", "programmatic": false},
+        {"name": "remedies_chart_tuned", "text": "The remedies section prescribes remedies chosen for THIS chart (e.g., Mercury-related given current dasha; Jupiter in 3rd; debilitated Mars) rather than a generic grab-bag.", "programmatic": false}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "minimum-info-test",
+      "prompt": "can u do a vedic reading from this? lagna virgo, sun in libra house 2, moon aries house 8, mars sag house 4, merc libra house 2, jup leo house 12, venus libra house 2, saturn pisces house 7, rahu virgo house 1, ketu pisces house 7. dont have dasha info or anything else. produce pdf",
+      "expected_output": "A PDF that handles minimal input gracefully. Missing-info flagged in digest. No fabricated dasha. Full house/life-area coverage still present. Key features (Saturn 7th, Rahu 1st, Libra 2nd stellium, Jupiter alone 12th) called out. Citations present.",
+      "files": [],
+      "assertions": [
+        {"name": "pdf_exists", "text": "An output PDF file is present and is at least 50 KB.", "programmatic": true},
+        {"name": "min_citation_count", "text": "The output contains at least 15 inline citations in [Textbook ...] or [Lessons-...] format.", "programmatic": true},
+        {"name": "missing_info_acknowledged_in_digest", "text": "The chart digest's notes field (or a prominent upfront paragraph) explicitly states that dasha info and divisional charts were not provided and limits the skill's analysis accordingly.", "programmatic": false},
+        {"name": "no_fabricated_dasha", "text": "The PDF does NOT invent specific dasha periods or dates for the native. Either the dasha forecast section is omitted/minimized, or it is presented as general trajectory without specific calendar periods.", "programmatic": false},
+        {"name": "covers_all_twelve_houses", "text": "The reading contains dedicated sections for all 12 houses.", "programmatic": true},
+        {"name": "libra_stellium_recognized", "text": "The triple conjunction of Sun, Mercury, and Venus in Libra in the 2nd house is identified as a notable configuration for wealth and/or speech.", "programmatic": false},
+        {"name": "saturn_in_7th_handled_carefully", "text": "Saturn in the 7th house is discussed with appropriate care — acknowledging it as a classical nuance in marriage without fatalistic predictions.", "programmatic": false},
+        {"name": "rahu_in_lagna_identified", "text": "Rahu in the 1st house (Virgo) is recognized as a significant personality/identity feature.", "programmatic": false},
+        {"name": "jupiter_alone_in_12th_noted", "text": "Jupiter alone in the 12th house (Leo) is noted — either for spiritual tendency, foreign connections, or hidden wisdom.", "programmatic": false},
+        {"name": "asks_user_for_dasha_info", "text": "The reading invites the user to provide dasha info to unlock a better forecast.", "programmatic": false},
+        {"name": "non_fatalistic_tone", "text": "No predictions of death, divorce with certainty, or specific disease.", "programmatic": false}
+      ]
+    }
+  ]
+}

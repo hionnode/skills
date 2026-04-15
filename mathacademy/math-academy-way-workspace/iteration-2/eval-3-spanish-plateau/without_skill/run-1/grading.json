@@ -1,0 +1,70 @@
+{
+  "expectations": [
+    {
+      "text": "Diagnoses the situation as distinct from the three other possibilities (burnout, fundamentally wrong approach, actual regression) rather than assuming",
+      "passed": true,
+      "evidence": "Explicitly addresses all four: 'you are not burnt out in the clinical sense, your approach is not wrong, and nothing is specifically broken' and explains the 'understand less' feeling is not real regression but illusion of sharper ear."
+    },
+    {
+      "text": "Distinguishes normal consolidation plateau (1-3 weeks) from a structural plateau (3+ weeks) requiring plan change",
+      "passed": false,
+      "evidence": "The response identifies this as a plateau requiring rebalancing and gives a 3-week trial, but it does not explicitly distinguish a short consolidation plateau (1-3 weeks) from a structural one (3+ weeks). It treats the 6-week plateau as needing a mix change without naming the threshold distinction."
+    },
+    {
+      "text": "Addresses the 'brain freezes in conversation even when I know the words' phenomenon specifically — the gap between recognition and production fluency",
+      "passed": true,
+      "evidence": "Point 2 explicitly distinguishes recognition (Anki), parsing (Dreaming Spanish), and production, noting 'pull a word you know out of your head in real time... That skill is its own thing and it's probably undertrained.' Also addresses cognitive/emotional component of freeze."
+    },
+    {
+      "text": "Suggests specific diagnostic questions the learner can ask themselves to figure out which problem they have",
+      "passed": false,
+      "evidence": "The response diagnoses on behalf of the learner rather than offering a set of diagnostic self-questions. It gives one sanity-check ('re-watch a Dreaming Spanish video from 8 weeks ago') but doesn't offer a structured diagnostic checklist."
+    },
+    {
+      "text": "Recommends a specific concrete adjustment (not just 'keep going' or 'rest') — e.g., rebalancing session time, adding or reducing specific practice types, a pivot option",
+      "passed": true,
+      "evidence": "Detailed prescriptions: cap Anki at 10 new cards/day, add sentence cards, add self-talk 10 min/day, journal 5-10 min/day, second italki session, drop Dreaming Spanish difficulty, address freeze directly with tutor."
+    },
+    {
+      "text": "Addresses the possibility of burnout and gives a specific recovery protocol (e.g., reduced load for a week, rest days)",
+      "passed": true,
+      "evidence": "Explicitly addresses cognitive fatigue and prescribes 'Take one full day off per week. No Anki, no video, nothing. This is not indulgence, it's consolidation.' Also caps Anki load and pauses new cards for 2 weeks option."
+    },
+    {
+      "text": "Addresses the possibility that the Anki load (200 cards/day) is too high and contributing to the problem",
+      "passed": true,
+      "evidence": "Point 5 explicitly states '200 Anki cards a day at month 4 is a lot' estimating 45-75 minutes and identifies cognitive fatigue, and prescribes capping new cards at 10/day or pausing entirely for 2 weeks."
+    },
+    {
+      "text": "Names that subjective feelings of 'understanding less' during plateau can coexist with objective progress the tutor observes",
+      "passed": true,
+      "evidence": "Point 2 affirms the tutor is right that grammar is improving, and Point 3 explains the 'understand less' illusion: 'Your comprehension went up; your awareness of the gap went up faster.'"
+    },
+    {
+      "text": "Emphasizes that the learner should not lower the bar / quit but should adjust the approach",
+      "passed": true,
+      "evidence": "Closing: 'The people who get fluent are just the ones who recognize this moment for what it is and adjust, instead of quitting or grinding harder on the thing that stopped scaling. You're at the adjust step.'"
+    },
+    {
+      "text": "Gives a concrete week-by-week or phase-by-phase adjustment plan, not just principles",
+      "passed": true,
+      "evidence": "The 'What to expect' section breaks it down week-by-week: 'Week 1: you'll feel slightly guilty doing less Anki...', 'Week 2: self-talk or journaling starts paying off...', 'Week 3: the stuck feeling is usually mostly gone.'"
+    },
+    {
+      "text": "Warns against the common pivot mistakes (switching resources in response to desirable difficulty, trying to cram harder, etc.)",
+      "passed": true,
+      "evidence": "Warns against chasing harder videos ('Stop chasing harder videos. Drop down one level') and against grinding harder ('grinding harder on the thing that stopped scaling'), and frames not-quitting-but-adjusting explicitly."
+    },
+    {
+      "text": "Validates the learner's feeling without being sycophantic — acknowledges that 4 months of stagnation is a real signal worth taking seriously",
+      "passed": true,
+      "evidence": "Opens with 'take a breath' and validates without flattery; notes 'The demoralization is not evidence that it's not working. It's evidence that you've been pushing hard enough, long enough, to hit the first real plateau' — takes the signal seriously and treats it as actionable."
+    }
+  ],
+  "summary": {
+    "pass_rate": 0.8333333333333334,
+    "passed": 10,
+    "failed": 2,
+    "total": 12
+  }
+}

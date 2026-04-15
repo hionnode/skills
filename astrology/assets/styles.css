@@ -1,0 +1,435 @@
+/* ---------- Page setup ---------- */
+@page {
+  size: A4;
+  margin: 26mm 22mm 28mm 22mm;
+
+  @bottom-center {
+    content: counter(page);
+    font-family: "EB Garamond", "Libre Caslon Text", Georgia, serif;
+    font-size: 9pt;
+    color: #8a7f6e;
+  }
+  @top-right {
+    content: string(running-header);
+    font-family: "EB Garamond", "Libre Caslon Text", Georgia, serif;
+    font-size: 9pt;
+    color: #a89c89;
+    font-style: italic;
+  }
+}
+@page :first {
+  margin: 0;
+  @bottom-center { content: none; }
+  @top-right { content: none; }
+}
+
+/* ---------- Color palette ---------- */
+:root {
+  --ink: #221c15;
+  --ink-soft: #4b4036;
+  --cream: #fbf6ec;
+  --rule: #b89c6e;
+  --accent: #8a2a12;       /* deep vermilion — traditional */
+  --accent-soft: #b85538;
+  --muted: #8a7f6e;
+  --cite: #7a5a35;
+  --ornament: #a07545;
+}
+
+/* ---------- Type ---------- */
+html {
+  font-family: "EB Garamond", "Libre Caslon Text", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: 11pt;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--cream);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+}
+
+h1, h2, h3, h4 {
+  font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+
+h1 { font-size: 28pt; line-height: 1.15; }
+h2 { font-size: 20pt; margin-top: 1.2em; margin-bottom: 0.4em; color: var(--accent); string-set: running-header content(); }
+h3 { font-size: 14pt; margin-top: 1em; margin-bottom: 0.3em; color: var(--accent-soft); }
+h4 { font-size: 12pt; margin-top: 0.8em; }
+
+p { margin: 0.45em 0 0.85em; text-align: justify; hyphens: auto; }
+em { font-style: italic; }
+strong { font-weight: 600; }
+
+/* ---------- Citations ---------- */
+.cite, .body {
+  /* body uses a helper to style [Textbook ...] spans via a small JS-free approach:
+     the renderer wraps citation brackets in <span class="cite"> before templating. */
+}
+.cite, .body .cite {
+  display: inline;
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 0.84em;
+  color: var(--cite);
+  font-variant-numeric: oldstyle-nums;
+  letter-spacing: 0.02em;
+}
+.cite::before { content: ""; }
+.cite::after  { content: ""; }
+
+/* ---------- Cover ---------- */
+.cover {
+  page-break-after: always;
+  background: var(--cream);
+  height: 297mm;
+  padding: 40mm 30mm;
+  box-sizing: border-box;
+  position: relative;
+  text-align: center;
+  border-top: 12mm solid var(--accent);
+}
+.cover::after {
+  content: "";
+  position: absolute;
+  left: 30mm; right: 30mm; bottom: 20mm;
+  height: 1px; background: var(--rule);
+}
+.cover-ornament-top {
+  font-size: 14pt;
+  color: var(--ornament);
+  margin-bottom: 30mm;
+  letter-spacing: 0.08em;
+  font-family: "Noto Serif Devanagari", "EB Garamond", serif;
+}
+.cover-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 36pt;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--accent);
+  margin: 0 auto 4mm;
+  max-width: 120mm;
+}
+.cover-rule {
+  width: 40mm;
+  height: 2px;
+  background: var(--rule);
+  margin: 8mm auto 15mm;
+}
+.cover-native-label {
+  font-size: 10pt;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  margin-bottom: 3mm;
+}
+.cover-native-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30pt;
+  color: var(--ink);
+  margin-bottom: 12mm;
+}
+.cover-birth {
+  margin: 0 auto 20mm;
+  font-size: 12pt;
+  color: var(--ink-soft);
+}
+.cover-birth-row { margin: 1mm 0; }
+.cover-birth-row .label {
+  color: var(--muted);
+  font-style: italic;
+  margin-right: 4mm;
+}
+.cover-meta {
+  position: absolute;
+  bottom: 35mm;
+  left: 30mm; right: 30mm;
+  font-size: 10pt;
+  color: var(--muted);
+  font-style: italic;
+}
+.cover-source-note {
+  margin-top: 2mm;
+  font-size: 9pt;
+}
+
+/* ---------- Chart digest ---------- */
+.digest {
+  page-break-after: always;
+}
+.digest h2 { border-bottom: 1px solid var(--rule); padding-bottom: 2mm; margin-top: 0; }
+.digest-block {
+  margin: 6mm 0 10mm;
+  padding: 5mm 8mm;
+  background: rgba(184, 156, 110, 0.08);
+  border-left: 3px solid var(--accent);
+  font-size: 10.5pt;
+}
+.digest-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2mm 0;
+}
+.digest-row .label {
+  color: var(--muted);
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+.digest-row .value { color: var(--ink); font-weight: 500; }
+
+table.planets {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10pt;
+  margin: 4mm 0 8mm;
+}
+table.planets th {
+  text-align: left;
+  padding: 3mm 4mm 2mm;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-weight: 500;
+  border-bottom: 1.5px solid var(--rule);
+  font-size: 9.5pt;
+}
+table.planets td {
+  padding: 2.4mm 4mm;
+  border-bottom: 0.5px solid rgba(184, 156, 110, 0.3);
+}
+table.planets td.graha {
+  font-weight: 600;
+  color: var(--ink);
+}
+.digest-notes {
+  font-style: italic;
+  font-size: 10pt;
+  color: var(--ink-soft);
+  margin-top: 4mm;
+}
+
+/* ---------- Section dividers ---------- */
+.divider {
+  page-break-before: always;
+  text-align: center;
+  padding-top: 30mm;
+}
+.divider-title {
+  font-size: 22pt;
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 400;
+  border: none;
+  margin-bottom: 4mm;
+  display: inline-block;
+  padding-bottom: 4mm;
+  border-bottom: 1px solid var(--rule);
+}
+.divider .body {
+  max-width: 130mm;
+  margin: 6mm auto 0;
+  font-size: 11pt;
+  color: var(--ink-soft);
+  font-style: italic;
+  text-align: center;
+}
+
+/* ---------- Prose sections (overall tenor, closing, etc.) ---------- */
+.prose-section {
+  margin-top: 4mm;
+  page-break-inside: avoid;
+}
+.prose-section .subtitle {
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-top: -2mm;
+  margin-bottom: 4mm;
+}
+.body {
+  text-align: justify;
+  hyphens: auto;
+}
+.body p:first-child { margin-top: 0; }
+
+/* ---------- Life areas ---------- */
+.life-area {
+  page-break-inside: avoid;
+  margin-top: 8mm;
+  padding-bottom: 4mm;
+  border-bottom: 0.5px dotted var(--rule);
+}
+.life-area:last-child { border-bottom: none; }
+.life-area h3 {
+  color: var(--accent);
+}
+.life-area .verdict {
+  color: var(--ink-soft);
+  font-size: 11.5pt;
+  margin-top: 0;
+  margin-bottom: 3mm;
+}
+.current-period {
+  margin: 4mm 0;
+  padding: 3mm 5mm;
+  background: rgba(184, 85, 56, 0.05);
+  border-left: 2px solid var(--accent-soft);
+  font-size: 10.5pt;
+}
+.current-period-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: var(--accent-soft);
+  font-size: 9pt;
+  margin-bottom: 1.5mm;
+}
+.area-remedies {
+  margin: 4mm 0;
+  font-size: 10.5pt;
+}
+.area-remedies-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-size: 9pt;
+  margin-bottom: 1.5mm;
+}
+.area-remedies ul { margin: 0; padding-left: 6mm; }
+.area-remedies li { margin-bottom: 1.5mm; }
+
+/* ---------- House readings ---------- */
+.house {
+  page-break-inside: avoid;
+  margin-top: 6mm;
+  padding-bottom: 3mm;
+}
+.house h3 {
+  color: var(--accent);
+  border-bottom: 0.5px solid var(--rule);
+  padding-bottom: 1.5mm;
+}
+.house-meta {
+  margin: 3mm 0 4mm;
+  padding: 3mm 5mm;
+  background: rgba(184, 156, 110, 0.08);
+  font-size: 10pt;
+}
+.house-meta-row {
+  display: flex;
+  padding: 0.6mm 0;
+}
+.house-meta-row .label {
+  color: var(--muted);
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  min-width: 30mm;
+}
+
+/* ---------- Yogas ---------- */
+.yoga {
+  page-break-inside: avoid;
+  margin-top: 5mm;
+}
+.yoga h3 { color: var(--accent); }
+.yoga .yoga-desc {
+  color: var(--ink-soft);
+  margin-top: -1mm;
+  margin-bottom: 2mm;
+}
+
+/* ---------- Dasha ---------- */
+.dasha { page-break-before: avoid; }
+.dasha h3 { color: var(--accent); margin-top: 6mm; }
+.upcoming-period {
+  margin: 3mm 0 5mm;
+  padding: 2mm 4mm;
+  border-left: 2px solid var(--rule);
+}
+.upcoming-period-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: var(--accent-soft);
+  font-size: 10pt;
+  margin-bottom: 1.5mm;
+}
+
+/* ---------- Remedies ---------- */
+.remedies h3 { color: var(--accent); margin-top: 6mm; }
+ul.remedy-list { padding-left: 6mm; }
+ul.remedy-list li { margin-bottom: 2.5mm; }
+ul.mantras {
+  font-family: "EB Garamond", serif;
+}
+.mantra-note {
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-top: 3mm;
+}
+.remedies-closing {
+  margin-top: 6mm;
+  padding-top: 3mm;
+  border-top: 0.5px solid var(--rule);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* ---------- Closing ---------- */
+.closing {
+  page-break-before: always;
+  padding-top: 10mm;
+}
+.closing h2 { text-align: center; border: none; }
+
+/* ---------- Sources ---------- */
+.sources {
+  page-break-before: always;
+  padding-top: 4mm;
+}
+.sources h2 { border-bottom: 1px solid var(--rule); padding-bottom: 2mm; }
+.sources-intro { font-size: 10.5pt; color: var(--ink-soft); }
+ul.sources-list { padding-left: 0; list-style: none; }
+ul.sources-list li {
+  padding: 2mm 0;
+  border-bottom: 0.5px dotted var(--rule);
+  font-size: 10.5pt;
+}
+.source-short {
+  display: inline-block;
+  min-width: 22mm;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-weight: 600;
+}
+.sources-note {
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-top: 6mm;
+}
+
+/* ---------- Colophon ---------- */
+.colophon {
+  text-align: center;
+  margin-top: 15mm;
+  padding-top: 10mm;
+  border-top: 0.5px solid var(--rule);
+  color: var(--ornament);
+}
+.colophon-line {
+  font-family: "Noto Serif Devanagari", "EB Garamond", serif;
+  font-size: 14pt;
+  letter-spacing: 0.08em;
+}
+.colophon-text {
+  font-style: italic;
+  margin-top: 2mm;
+  color: var(--muted);
+  font-size: 10pt;
+}

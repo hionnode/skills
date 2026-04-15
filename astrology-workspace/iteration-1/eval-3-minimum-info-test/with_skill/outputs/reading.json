@@ -1,0 +1,311 @@
+{
+  "native": {
+    "name": "The Native",
+    "birth_date": "— not provided —",
+    "birth_time": "— not provided —",
+    "birth_place": "— not provided —"
+  },
+
+  "generated_on": "2026-04-15",
+
+  "chart_digest": {
+    "ascendant": "Virgo",
+    "planets": [
+      { "name": "Sun",     "sign": "Libra",       "degree": "—", "house": 2,  "nakshatra": "—", "retrograde": false, "extra": "" },
+      { "name": "Moon",    "sign": "Aries",       "degree": "—", "house": 8,  "nakshatra": "—", "retrograde": false, "extra": "" },
+      { "name": "Mars",    "sign": "Sagittarius", "degree": "—", "house": 4,  "nakshatra": "—", "retrograde": false, "extra": "" },
+      { "name": "Mercury", "sign": "Libra",       "degree": "—", "house": 2,  "nakshatra": "—", "retrograde": false, "extra": "" },
+      { "name": "Jupiter", "sign": "Leo",         "degree": "—", "house": 12, "nakshatra": "—", "retrograde": false, "extra": "" },
+      { "name": "Venus",   "sign": "Libra",       "degree": "—", "house": 2,  "nakshatra": "—", "retrograde": false, "extra": "" },
+      { "name": "Saturn",  "sign": "Pisces",      "degree": "—", "house": 7,  "nakshatra": "—", "retrograde": false, "extra": "" },
+      { "name": "Rahu",    "sign": "Virgo",       "degree": "—", "house": 1,  "nakshatra": "—", "retrograde": false, "extra": "" },
+      { "name": "Ketu",    "sign": "Pisces",      "degree": "—", "house": 7,  "nakshatra": "—", "retrograde": false, "extra": "" }
+    ],
+    "current_dasha": "— not provided —",
+    "divisional_charts_provided": [],
+    "notes": "This reading was prepared from a minimum-information input: lagna and the nine planetary rasi placements only. No degrees, no nakshatra of the natal Moon, no Vimshottari Mahadasha / Antardasha, and no divisional charts (D-9 Navamsa, D-10 Dasamsa, D-7, D-12 etc.) were supplied. As a result, (a) the dasha forecast has been limited to general natal-period tendencies rather than calendar-dated periods, and no specific Mahadasha is named as 'current'; (b) marriage analysis (which Rao insists is incomplete without D-9 — Textbook Ch 6, pp.51–66) and career analysis (which is preliminary without D-10) are consciously hedged; (c) chara karakas (AK, AmK, DK etc.), arudha lagna, upapada, and shadbala-grade strength judgments are omitted, since they all require degrees. If the user can supply a computed chart with degrees, the current Vimshottari dasha, and at least D-9 and D-10, a much more granular reading becomes possible."
+  },
+
+  "sections": [
+
+    { "kind": "prose",
+      "title": "On the Scope of This Reading",
+      "subtitle": "What can and cannot be said from a rasi-only chart",
+      "body": "This reading is grounded in the *rasi* (main natal) chart only. You supplied the lagna and the nine planetary placements by sign and house — the minimum viable input for a reading [Textbook Ch 7, p.67]. You did not supply degrees, the natal Moon's nakshatra, your current Vimshottari Mahadasha, or any divisional charts.\n\nTwo practical consequences follow. First, the **dasha forecast** below cannot name a specific current Mahadasha or Antardasha — the Vimshottari sequence depends on the Moon's nakshatra at birth [Textbook Ch 16, p.209], which we do not have. Instead I describe the *general tenor* of each of the nine Mahadashas as they would unfold in your chart, so that when you identify the current one from your chart software, the relevant paragraph applies.\n\nSecond, **marriage and career readings are hedged**. Rao is explicit that analysis of the 7th house is incomplete without the D-9 Navamsa [Textbook Ch 6, pp.51–66], and that career analysis without the D-10 Dasamsa is preliminary only [Textbook Ch 6]. I give you what the rasi chart shows on both fronts, but mark those judgments as provisional.\n\nEverything else — personality, wealth, family, education, health, spirituality, yogas, remedies — can be read responsibly from the rasi alone and is presented here in full." },
+
+    { "kind": "prose",
+      "title": "Overall Tenor",
+      "subtitle": "A learning-and-wealth chart with a powerful 2nd-house cluster, tempered by a difficult 7th and a 12th-house Jupiter",
+      "body": "You are born with *Kanya lagna* (Virgo ascendant). For Virgo natives the lagna lord Mercury and the 9th lord Venus are the two functional benefics of the chart; Moon, Mars and Jupiter are functional malefics; Sun and Saturn are functionally neutral [Textbook Ch 13 Table 30, p.167]. This classification shapes everything that follows and is counterintuitive — Jupiter, usually the great benefic, here carries karmic friction because he owns the 4th (a quadrant he turns malefic as a natural benefic) and the 7th (a maraka) from this lagna.\n\nThe single most striking feature of your chart is the tight cluster of **three planets — Sun, Mercury and Venus — in Libra in the 2nd house**. Of these, Mercury is your lagna lord and also the 10th lord (career); Venus is the 2nd lord (wealth) and the 9th lord (fortune and dharma). Their conjunction is the classical **Dharma-Karmadhipati Yoga** — a Raja Yoga formed when the lords of the 9th (most important trine) and the 10th (most important quadrant) associate [Textbook §11.7.1, p.134]. Rao calls this a combination that makes one *'sincere, devoted and righteous… fortunate'* [Textbook §11.7.1, p.134]. Venus is additionally in his own sign Libra, which gives this yoga real substance.\n\nAlongside this there is a **Budha-Aditya (Nipuna) Yoga** — Sun and Mercury together in one sign — which Rao associates with intelligence, skill and being *'well-known, respected and happy'* [Textbook §11.2.4, pp.113–114]; and an **Anapha Yoga**, because a planet other than Sun (Saturn, joined by Ketu) sits in the 12th house from the natal Moon [Textbook §11.3.2, p.115]. The Anapha result is classically *'a king with good looks… free from disease… man of character and great reputation'* [Textbook §11.3.2, p.115] — read in the calibrated sense of integrity and a settled character.\n\nAgainst these strong supports, there are two quieter weights on the chart. **Saturn and Ketu together in Pisces in the 7th house** is a difficult partnership axis — 7th is a maraka, Saturn is a natural malefic there, Ketu separates, and Pisces is the *baadhaka sthana* (troubling spot) for Virgo lagna, whose baadhaka is Jupiter [Textbook §13.3 Table 31, p.168]. **Jupiter alone in the 12th in Leo** is a 12th-house placement of a functional malefic for you — which is not catastrophic; 12th-house Jupiter often inclines the native toward spiritual, contemplative or service-oriented expenditure of energy, and Jupiter as natural karaka of wisdom still carries learning [Textbook Ch 8 Table 15, p.83].\n\nThe net judgment: this is a chart where **the mind, speech, learning and earned status** (the 2nd-house cluster) are the strongest ground, **partnerships and health of the body-axis** (1st-7th axis with Rahu in lagna and Saturn-Ketu in 7th) need conscious care, and **the inner life** (12th-house Jupiter, Ketu in 7th) is naturally inclined toward depth rather than surface." },
+
+    { "kind": "life_areas_intro",
+      "body": "What follows is a synthesis across ten life areas. Each section combines the relevant houses, lords, and karakas as specified by Rao's interpretation methodology [Textbook Ch 13, pp.166–179]. Every substantive claim is cited to a specific page." },
+
+    { "kind": "life_area",
+      "title": "1. Self & Personality",
+      "verdict": "Intellectual, earthy, communicative; a Mercury-coloured personality with a restless, ambition-prone 8th-house Moon.",
+      "body": "Your lagna is Virgo — an earthy, dual sign ruled by Mercury [Textbook Ch 2, p.21]. Virgo rising natives are typically analytical, service-minded, discriminating and careful with detail; Mercury's signature is intellect, speech and adaptability [Textbook Ch 8 Table 16, p.84]. That Mercury himself sits in the 2nd in Libra — an airy, relational sign — further refines this into a mind that thinks *with* others, that reasons through conversation and language rather than alone.\n\n**Rahu in the 1st house in Virgo** colours this baseline strongly. Rahu in lagna gives an unconventional, hungry, sometimes polarising personality; Rao notes Rahu as karaka for accidents, foreign travel, pilgrimages and the unorthodox [Textbook Ch 8 Table 16, p.84]. With Rahu *in* the self-house, these themes attach to how you present yourself — others may perceive an ambitious, boundary-crossing, hard-to-pin-down quality in you. Rahu in lagna also tends to produce strong desire-nature; temper this with the discrimination Virgo naturally supplies.\n\n**The Moon in Aries in the 8th house** is the deepest and most tender piece of your personality [Textbook Ch 8 Table 15, p.83]. Moon is mind (*manas*); in the 8th it means a mind given to depth, research, the hidden, the transformational — and also to some emotional turbulence, because the 8th is a *dusthana* (difficult house) [Textbook §7.4, p.75]. In fiery Aries the Moon is sharp, impatient and brave; the Aries Moon doesn't linger. Combine Moon-in-Aries-in-8th: you think quickly, feel intensely, are drawn to what is hidden or difficult, and may experience more inner upheaval than the outer persona lets on.\n\n**Sun in the 2nd in Libra** gives you a soul-signature (Sun = *atma* [Textbook Ch 8 Table 15, p.83]) of someone whose sense of self is tied up with speech, family, values, and money or resources. Sun in Libra is in the sign of its debilitation — a subtle hint that your sense of self-assertion may be quietly negotiated rather than forcefully declared [Textbook Ch 3, pp.28–40]. But this debilitation is softened by the presence of Mercury and Venus in the same sign: the two functional benefics of your chart keep company with your Sun." },
+
+    { "kind": "life_area",
+      "title": "2. Wealth & Finances",
+      "verdict": "Strong — a classical money-and-speech combination in the 2nd house, with fortune (9th lord) joining wealth (2nd lord).",
+      "body": "This is one of the strongest domains of your chart. The 2nd house is *Dhana Bhava* (wealth, family, speech) [Textbook §7.2, p.68], and in your chart it contains three planets, including the 2nd lord himself (Venus) and the 10th lord (Mercury). That the 2nd lord sits in the 2nd in his own sign is a textbook indication that money, family resources and voice *stay* in your life.\n\nThe overlay of **Venus as both 2nd lord and 9th lord** is even more important. The 9th is *Bhagya Bhava* (fortune, dharma, grace) [Textbook §7.2, p.69]. When the fortune-lord occupies the wealth-house in his own sign, fortune *expresses itself through* material stability — this is precisely the pattern Rao identifies as a Dhana Yoga-bearing configuration; the general principle is that planets joining the 5th and 9th lords give wealth [Textbook §11.9, p.141], and Venus here functions as that kind of trine-lord settled into a wealth-house.\n\n**Mercury, the lagna lord, joining Venus in the 2nd** is the classical Virgo-lagna combination Rao names on page 452 of Chapter 34 as forming *Dharma-Karmadhipati Yoga* — a Raja Yoga formed by the 9th lord and 10th lord [Textbook §11.7.1, p.134; Textbook §34.2, p.452]. Rao states this yoga's natives are *'sincere, devoted and righteous… fortunate'*. This same page (p.452) is why the classical remedy for Virgo natives is the emerald-plus-diamond combination (Mercury + Venus) — see the Remedies section below.\n\n**Jupiter's placement in the 12th**, though, slightly qualifies the picture: Jupiter is the natural karaka of wealth [Textbook Ch 8 Table 15, p.83], and placed in the 12th he supports *spending on dharmic things, foreign travel, charity, retreat* more than raw accumulation. The 11th house (gains) is Cancer, empty, with its lord Moon in the 8th — not afflicted but not in a prosperity-friendly house. So income may arrive in waves or through unusual channels (the 8th is the house of hidden/transformational wealth, inheritance, research [Textbook §7.2, p.68]) rather than as a smooth salary.\n\nThe picture: stable and plentiful *accumulation* (2nd), steady *self-earned* wealth through speech/skill/career (Mercury there), fortune flowing in through material channels (Venus 9th-lord in 2nd), but *gains* (11th) coming through less predictable routes." },
+
+    { "kind": "life_area",
+      "title": "3. Family & Emotional Foundation",
+      "verdict": "Mixed. Family wealth and lineage look strong; emotional life runs deeper and more turbulent than it looks from outside.",
+      "body": "The 2nd house covers family lineage (*kutumba*), food, speech and the family one is born into [Textbook §7.2, p.68]. As established above, your 2nd is strong and sattvic — suggesting a family environment that valued speech, refinement, maybe art or religion (Venus in own sign, Mercury, Sun all gathered there). Family resources are unlikely to fail you.\n\nThe 4th house is *Sukha Bhava* — the house of mother, home, happiness, landed property and emotional peace [Textbook §7.2, p.68]. Your 4th is Sagittarius, occupied by **Mars**. Mars in the 4th is classically a difficult placement for domestic peace — it can give a fiery home atmosphere, property disputes, or relocations. However, Mars in Sagittarius is in a friendly (Jupiter-owned) sign, which tempers the fire; and the 4th-house Mars gives courage applied to home and mother, and often ties the native to land or property in a Mars-flavoured way (real estate, construction, defense, engineering). Still, expect the 4th-house theme to contain heat: either literally (frequent moves, disputes about property) or figuratively (emotional intensity in the home).\n\nThe deeper emotional axis is **Moon in 8th**. Moon, the karaka for mother and emotions [Textbook Ch 8 Table 15, p.83], sitting in the 8th (a *dusthana*) in Aries, signals that your inner emotional life is neither shallow nor easy. The 8th is the house of transformation, the hidden, upheavals, inheritance and occult/psychological depth [Textbook §7.2, p.68]. With Moon there, you are more psychologically layered than most — the things you feel are intense but often concealed. Your relationship with your mother may have had a transformative or mysterious quality; maternal health or longevity may have been a theme at some point. This is not a bad placement for inner work, writing, psychology, research, healing professions; it is a harder placement for baseline *sukha* (comfort)." },
+
+    { "kind": "life_area",
+      "title": "4. Education & Intellect",
+      "verdict": "Strong. Mercury and Venus' 2nd-house cluster, and Jupiter's 12th-house placement, together favour deep, language-centred, possibly self-taught learning.",
+      "body": "Education is synthesized from the 4th (formal schooling), 5th (intelligence and purva-punya), 9th (higher wisdom) and the karakas Mercury (intellect) and Jupiter (wisdom) [Textbook §7.2, pp.68–69; Textbook Ch 8 Table 15, p.83].\n\n- **Mercury in own sign/2nd house** is excellent for speech, writing, scholarship — Mercury is karaka for *learning, memory, scholarship, students* [Textbook Ch 8 Table 16, p.84]. Placed in the 2nd (house of voice), this often manifests as an articulate, literate, possibly multilingual mind.\n- **Venus in own sign in the 2nd** adds aesthetic intelligence — design, poetry, music, arts (Venus is karaka for vehicles and pleasures, but in broader classical reading also for poetry and refinement [Textbook Ch 8 Table 15 & 16]).\n- **Jupiter in the 12th** is an interesting case. On one hand, 12th-house Jupiter is a functional malefic placed in a *dusthana* — not helpful for worldly expansion. On the other, Jupiter in 12th is the classical placement for **renunciate wisdom, moksha-pursuit, philosophical scholarship, solitary study, foreign study** [Textbook Ch 8 Table 16, p.84 — Jupiter significations; §7.2, p.69 — 12th house as foreign lands and moksha]. You likely read, think and learn *in private*, and find formal systems less satisfying than self-directed study or deep reading.\n- **Rahu in lagna** and Rahu's involvement with the intellectual cluster (Rahu aspects the 5th house of intelligence by its graha-drishti pattern through rasi drishti) can make you drawn to unconventional, cross-disciplinary, or esoteric knowledge.\n\nThe 5th house (Capricorn, empty, ruled by Saturn in Pisces) is neither strongly afflicted nor strongly supported — intelligence is adequate but the real learning-signature in your chart comes from Mercury and Jupiter, both strong in their own ways." },
+
+    { "kind": "life_area",
+      "title": "5. Career & Professional Life",
+      "verdict": "Provisional (no D-10 supplied). The rasi picture shows a Mercury-Venus-Sun 2nd-house cluster powering the 10th lord — likely a career in speech, writing, finance, law, arts, or a professional field requiring refined communication.",
+      "body": "**Caveat first**: Rao considers career analysis without the D-10 Dasamsa preliminary only [Textbook Ch 6, pp.51–66]. What follows is the rasi-level reading.\n\n**Mercury is your 10th lord** (10th from Virgo is Gemini, owned by Mercury) **and sits in the 2nd in Libra with Sun and Venus**. A 10th lord in the 2nd connects career to wealth, speech and family — a natural indicator for professions centred on communication, finance, negotiation, law, teaching, writing, publishing, or client-facing advisory work [Textbook §7.2, p.68 — 2nd as speech; Ch 8 Table 16, p.84 — Mercury as work and achievements].\n\nBecause your career-lord is also your lagna-lord (Mercury rules both for Virgo), **your career is closely tied to your identity** — you work *as* yourself rather than in a role that hides you.\n\nThe conjunction with Venus (9th lord) brings the fortune/dharma-dimension into career: this is the Dharma-Karmadhipati Yoga mentioned earlier [Textbook §11.7.1, p.134]. Classically such natives do ethical, principled work; often professions that touch on dharma — law, teaching, mentoring, public service, the arts.\n\nThe Sun in the same cluster supplies authority (Sun is karaka for fame and power [Textbook Ch 8 Table 15, p.83]) — though the Sun is in the sign of his debilitation (Libra), so authority comes through *collaboration and negotiation* rather than raw command. You are more likely to rise as a respected expert or senior professional than as a lone commander.\n\n**What the rasi does not tell you**: the D-10 would show whether career is government vs. private, creative vs. administrative, public vs. behind-the-scenes. If you can supply the D-10 in a follow-up, this section can be sharpened considerably.\n\nOne note on **Saturn in the 7th** (Pisces): Saturn in the 7th classically adds longevity and steadiness to partnerships, including business partnerships — work involving senior, slow-moving, serious collaborators is likely to feature in your life [Textbook Ch 8 Table 15 & 16 — Saturn as karaka for work and longevity]." },
+
+    { "kind": "life_area",
+      "title": "6. Marriage & Relationships",
+      "verdict": "Needs care (and really needs D-9 to finalise). The 7th-house Saturn-Ketu conjunction in Pisces is the most delicate configuration of the chart. Not a prediction of failure; a prediction of responsibility.",
+      "body": "**Caveat first and loudly**: Rao is adamant that 7th-house analysis is incomplete without the D-9 Navamsa [Textbook Ch 6, pp.51–66]. Without it I will describe what your rasi shows and stop well short of any categorical prediction.\n\nThe rasi shows: **Saturn and Ketu together in the 7th in Pisces**. Several things are layered in here.\n\n- **Saturn in the 7th** is a heavy, serious, delaying placement for partnerships. Partners may be older, more serious, or carry a greater weight of responsibility; marriage itself may happen later than the social norm, or after a serious delay.\n- **Ketu in the 7th** has a separating, detaching quality — Ketu is *moksha* karaka [Textbook Ch 8 Table 16, p.84] and wherever Ketu sits, the soul is finishing a karmic chapter rather than starting one. In the 7th, this classically produces a relationship life that asks for maturity, spiritual understanding, and sometimes acceptance that conventional partnership models don't fit.\n- **Pisces is the baadhaka sthana for Virgo lagna** [Textbook §13.3 Table 31, p.168]. That means this sign (and specifically its occupants Saturn and Ketu) can produce a generalised friction-signal for you — obstructions that seem to come 'from nowhere'. That this falls on the 7th house doubles the partnership-weight of the placement.\n- **Jupiter, your baadhaka planet, sits in the 12th** — further separating him from the 7th-house support he would otherwise bring.\n\nThese things together do *not* mean you will not marry, or that your marriage will fail. They mean: **the 7th-house axis is karmically serious, and demands conscious, mature handling.** Possible positive expressions: a marriage that begins after 30 or after a pivotal experience; a spouse who is older, more responsible, spiritually inclined, or drawn from a different cultural/social background; a partnership that deepens through shared adversity.\n\nI will not predict divorce, a bad marriage, or childlessness from this configuration. Rao is clear that even classical indicators of difficulty must be hedged [Textbook §34.1, p.450], and without the D-9 I cannot see whether Navamsa corrections redeem this configuration (they often do — Rao repeatedly emphasises the D-9 as *'the chart within the chart'* [Textbook Ch 6, pp.51–66]).\n\n**Targeted advice**: if possible supply the D-9. A D-9 with a strong Venus, a strong 7th lord, or Jupiter in an angle will significantly brighten this picture." },
+
+    { "kind": "life_area",
+      "title": "7. Children",
+      "verdict": "Mixed and provisional (no D-7 supplied).",
+      "body": "The 5th house is *Putra Bhava* (children, intelligence, creative output) [Textbook §7.2, p.68]; Jupiter is the natural karaka for children [Textbook Ch 8 Table 15, p.83]; the D-7 Saptamsa is the dedicated divisional chart [Textbook Ch 6, pp.51–66].\n\nYour 5th is Capricorn (empty), ruled by Saturn — and Saturn sits in the 7th, Pisces, with Ketu. So the 5th lord is in a maraka/baadhaka-sthana position, which tends to delay but not deny progeny.\n\n**Jupiter, the karaka for children, is in the 12th house** — this is classically a placement that can indicate either delays, fewer children than hoped for, or children born in distant places / after a long gap. It is one of the placements for which Rao's remedies chapter prescribes Jupiter-propitiation.\n\nThese are **tendencies, not fates**. Vedic tradition has millennia of remedies for exactly this configuration, and the absence of a D-7 here means we are reading on thin evidence. If children are a specific concern, (a) supply the D-7 for a more grounded read and (b) see the Jupiter remedies in the Remedies section below." },
+
+    { "kind": "life_area",
+      "title": "8. Health & Vitality",
+      "verdict": "Generally robust build with specific vigilance areas around the head/brain (Rahu in lagna), the abdomen/digestion (Virgo themes), and chronic tendencies (Moon-8th, Saturn-7th).",
+      "body": "Health is synthesized from the 1st (body), 6th (disease), 8th (chronic conditions), and the karakas Sun (vitality) and Moon (mental/emotional health) [Textbook §7.2, pp.67–68; Ch 8 Table 15, p.83].\n\n- **Lagna is Virgo, ruled by Mercury, with Rahu in it**. Virgo governs the intestines and digestion in classical correspondences; Rahu in lagna can bring unusual or hard-to-diagnose health complaints, particularly affecting the head, nervous system, or creating periodic 'Rahu-flares' (skin, allergies, unexplained episodes). Lagna lord Mercury is reasonably placed (in own sign's trine — Libra 2nd) so baseline vitality is preserved.\n- **Sun in debilitation** (Libra) subtly weakens the vitality karaka. Expect constitutional stamina to be good but not invincible; pacing matters more than pushing.\n- **Moon in the 8th in Aries** is the most important mental-health signal. Aries Moon is sharp and quick, but the 8th house gives it an undertow of hidden feeling and sometimes anxiety or depressive episodes that come and go. Regular emotional hygiene (meditation, therapy, journaling, spiritual practice) is genuinely protective here.\n- **Saturn and Ketu in the 7th** in Pisces — 7th is a maraka (life-shortening house) [Textbook §7.4, p.76], and Saturn there adds chronic / slow-onset themes. This is not a prediction of disease; it is a flag that chronic or slow-burn conditions (if they occur) will tend to centre around the 7th-house themes — lower abdomen, kidneys (Libra rules them and 7th is adjacent), or circulation (Pisces/Saturn combinations).\n- **Mars in the 4th** (Sagittarius) can mean blood-pressure or temperature-regulation sensitivity, especially under stress — Mars in a fire sign in the 'heart' house [Textbook §7.2, p.68 — 4th as heart].\n\n**Always pair astrology with medicine**. Rao himself says so explicitly — *'we should not neglect medical care'* [Textbook §34.1.1, pp.450–451]. The chart shows tendencies, not diagnoses." },
+
+    { "kind": "life_area",
+      "title": "9. Spiritual Life & Inner Growth",
+      "verdict": "Strong and quiet. The 12th-house Jupiter and 7th-house Ketu both point toward a well-laid foundation for contemplative practice.",
+      "body": "Spirituality is read from the 9th (dharma, guru), the 12th (moksha, seclusion) and the karakas Ketu (moksha) and Jupiter (wisdom) [Textbook §7.2, p.69; Ch 8 Table 16, p.84].\n\nYour chart is quietly but unmistakably spiritually weighted:\n\n- **Jupiter in the 12th in Leo** — Jupiter, natural karaka for wisdom, sits in the house of moksha. This is one of the classical signatures of a contemplative or devotional life, of foreign spiritual study, or of a long-term relationship with a teacher. Rao explicitly writes of the 12th house from Atma Karaka (and lagna itself here, via the Karakamsa framework) as the *'liberation of the soul'* axis [Textbook §7.3.6, p.72; §34.5, p.457].\n- **Ketu in the 7th** — Ketu is the moksha karaka. His presence in an angle (the 7th is a kendra) means spiritual detachment is a structural feature of your life, not a late-life add-on.\n- **Venus as 9th lord in 2nd** — the dharma-lord settled into a sattvic sign (Libra) brings a *refined, aesthetic* approach to dharma — devotional arts, beauty, harmony as a path, rather than austere renunciation.\n- **Moon in 8th** complements this — the 8th is the house of occult knowledge and hidden wisdom [Textbook §7.2, p.68], and a mind settled there is a mind drawn to the hidden side of reality.\n\nThe likely path: **contemplative, private, book-and-practice-based, devotional rather than ceremonial, inclined to mentorship either as student or later as guide**. A D-20 Vimsamsa would let us name the specific deity / ishta-devata lineage [Textbook Ch 6, pp.51–66]; without it, the Deity section in the Remedies chapter gives a primary recommendation." },
+
+    { "kind": "life_area",
+      "title": "10. Longevity & Later Life",
+      "verdict": "Not definitively analysed (and deliberately so).",
+      "body": "Rao is firm that longevity analysis requires specific techniques (Balarishta, Ayur Dasa) and is *not* to be turned into prediction of death [Textbook Ch 14, pp.180–186]. This skill's guidelines, which I am following, also forbid specific longevity/death predictions in a general reading.\n\nWhat can be said, held loosely: you have Saturn (karaka for longevity [Textbook Ch 8 Table 15, p.83]) in the 7th, a maraka [Textbook §7.4, p.76] — so longevity analysis in a full reading would need care. The 8th house (Aries, Moon) and its lord (Mars in 4th in Sagittarius, own-sign-friend and in a kendra) are reasonably placed, suggesting adequate underlying resilience. The 3rd house (8th from 8th) is Scorpio, empty — unafflicted.\n\nIf longevity analysis is something you specifically want, supply a full chart with degrees and an explicit request, and I can produce a Chapter-14-style reading with all the appropriate hedges." },
+
+    { "kind": "houses_intro",
+      "body": "This section walks house-by-house through the chart. For each bhava (house) I list its lord, occupants, and the dominant read. The twelve-house canon is from Textbook Chapter 7 [pp.67–78]; where specific pages are cited below they refer to the detailed paragraph in the source." },
+
+    { "kind": "house",
+      "house_number": 1,
+      "title": "Tanu Bhava (Self, body, personality)",
+      "metadata": {
+        "Sign on cusp": "Virgo",
+        "Lord": "Mercury — in 2nd (Libra), with Sun and Venus",
+        "Occupants": "Rahu",
+        "Karaka": "Sun (for soul/self) [Textbook Ch 8 Table 15, p.83]"
+      },
+      "body": "First house = physical body, appearance, personality, health, head [Textbook §7.2, p.68]. Your lagna lord Mercury is placed in the 2nd — a neighbouring, upachaya-adjacent house — giving a self that finds its ground in speech, family and earned resources. **Rahu in lagna** is the major feature: it colours appearance and self-presentation with an unconventional, ambition-driven, cross-cultural, or unusual quality. Rao lists Rahu's karakatwas as accidents, occult knowledge, pilgrimages and going abroad [Textbook Ch 8 Table 16, p.84]; in lagna, these themes attach to the person themselves. Pair with a strong lagna lord in the 2nd (Mercury in own-adjacent sign with benefic company) and this becomes a 'refined Rahu' — using Rahu's hunger for learning and ambition, not for recklessness. The classification of lagna as both a kendra and a trikona (a rare double-strength house) [Textbook §7.4, p.74] makes *any* planet here consequential; Rahu's role in your life is definitional, not secondary." },
+
+    { "kind": "house",
+      "house_number": 2,
+      "title": "Dhana Bhava (Wealth, family, speech)",
+      "metadata": {
+        "Sign on cusp": "Libra",
+        "Lord": "Venus — in the 2nd itself (own sign)",
+        "Occupants": "Sun, Mercury, Venus",
+        "Karaka": "Jupiter (wealth); Mercury (speech) [Textbook Ch 8 Table 15, p.83]"
+      },
+      "body": "This is the richest house in your chart by sheer occupancy. The 2nd signifies *wealth, assets, family, speech, eyes, mouth, voice, food* [Textbook §7.2, p.68]. You have three planets here, including the 2nd lord in own sign, the 10th lord (career), and the Sun. The Dharma-Karmadhipati Yoga of Venus+Mercury sits here [Textbook §11.7.1, p.134]. The Budha-Aditya yoga of Sun+Mercury sits here [Textbook §11.2.4, pp.113–114]. Three of the nine grahas are here, including two functional benefics and one functional-neutral planet.\n\nCombined read: **strong wealth, strong family-of-origin values, strong voice, some tendency to speak with authority that can come across as didactic** (Sun's debilitation in the cluster softens this into persuasion-by-dialogue rather than lecture). Family and speech are the two clearest karmic gifts of this chart." },
+
+    { "kind": "house",
+      "house_number": 3,
+      "title": "Sahaja Bhava (Siblings, courage, initiative, communications)",
+      "metadata": {
+        "Sign on cusp": "Scorpio",
+        "Lord": "Mars — in 4th (Sagittarius)",
+        "Occupants": "—",
+        "Karaka": "Mars (courage), Mercury [Textbook Ch 8 Table 15, p.83]"
+      },
+      "body": "The 3rd is *younger siblings, courage, hands-skills, short journeys, writing* [Textbook §7.2, p.68]. Empty — not a problem. An empty upachaya house with its lord placed in a friendly sign elsewhere is fine.\n\n**Mars, the 3rd lord, is in the 4th in Sagittarius (Jupiter's sign)**. Mars in a kendra, in a friendly sign, is a supportive placement — it gives courage applied to home, land, vehicles, and to younger siblings' welfare. Initiative is channelled into domestic and property matters.\n\nSince 3rd is an upachaya (improves with effort/time) [Textbook §7.4, p.76], courage is something that grows over time in your life rather than arrives ready-made." },
+
+    { "kind": "house",
+      "house_number": 4,
+      "title": "Sukha Bhava (Mother, home, happiness, property)",
+      "metadata": {
+        "Sign on cusp": "Sagittarius",
+        "Lord": "Jupiter — in 12th (Leo)",
+        "Occupants": "Mars",
+        "Karaka": "Moon (mother, emotions), Mercury (education) [Textbook Ch 8 Table 15, p.83]"
+      },
+      "body": "The 4th is the 'core happiness' house [Textbook §7.2, p.68]. Here, **the 4th lord Jupiter sits in the 12th** — a dusthana from the 4th's perspective (12th-from-lagna is the 9th from the 4th, actually positive; but 12th from lagna = loss house in absolute terms). This configuration classically indicates a bhava (house) whose lord is placed in an expenditure-oriented position — *sukha* (happiness, comfort) is spent on higher things: travel, study, dharma, foreign experiences.\n\n**Mars in the 4th** is a classical flag: Mars in 4th can mean property disputes, relocations, or fiery domestic atmospherics. In Sagittarius (a Jupiter-ruled sign), the edge is blunted — the fire is more enthusiastic than angry.\n\nTogether: domestic comfort is real but interrupted; the mother-figure has been loving but perhaps carried weight; property and vehicles are part of the story but not untroubled." },
+
+    { "kind": "house",
+      "house_number": 5,
+      "title": "Putra Bhava (Children, intelligence, purva-punya, devotion)",
+      "metadata": {
+        "Sign on cusp": "Capricorn",
+        "Lord": "Saturn — in 7th (Pisces), with Ketu",
+        "Occupants": "—",
+        "Karaka": "Jupiter (children), Mercury (intelligence) [Textbook Ch 8 Table 15, p.83]"
+      },
+      "body": "The 5th is a trikona — highly auspicious [Textbook §7.4, p.74]. Empty, with its lord Saturn in the 7th. Saturn as 5th lord is not himself ill-placed (7th is a kendra), but Saturn carries his own delaying signature; mixed with Ketu, the 5th-lord is colored by detachment. See the Children and Education sections for implications. The 5th also governs *purva-punya* (merit from past lives) and mantra-upasana [Textbook §7.2, p.68] — the Saturn-in-7th rulership here suggests that the fruits of past merit manifest slowly, through serious practice, rather than as windfalls." },
+
+    { "kind": "house",
+      "house_number": 6,
+      "title": "Ripu / Roga Bhava (Enemies, disease, daily work, obstacles overcome)",
+      "metadata": {
+        "Sign on cusp": "Aquarius",
+        "Lord": "Saturn — in 7th (Pisces)",
+        "Occupants": "—",
+        "Karaka": "Mars (enemies), Saturn (disease, service) [Textbook Ch 8 Table 15, p.83]"
+      },
+      "body": "The 6th is an upachaya dusthana — it benefits from malefics but it is still a difficult house [Textbook §7.4, pp.76–77]. Your 6th is empty, lord Saturn in the 7th (a neighbour / kendra). The 6th lord in a kendra is generally fine — it means daily work, enemies, and debts don't dominate your life's picture.\n\nThat said, Saturn as 6th lord in the 7th creates a 7th-house dusthana-lord overlay — partners-and-daily-work or partners-and-enemies themes can interact. Be careful with business partnerships that involve lots of routine hand-to-hand work (the 6th-7th overlay). Litigation involving partners is a classical expression of this combination." },
+
+    { "kind": "house",
+      "house_number": 7,
+      "title": "Kalatra Bhava (Marriage, partners, public self)",
+      "metadata": {
+        "Sign on cusp": "Pisces",
+        "Lord": "Jupiter — in 12th (Leo)",
+        "Occupants": "Saturn, Ketu",
+        "Karaka": "Venus (for men — wife), Jupiter (for women — husband) [Textbook Ch 8 Table 15, p.83]"
+      },
+      "body": "Already discussed under Marriage above. To summarise the technical picture: 7th lord Jupiter in 12th (partner may be spiritual/foreign/reclusive or the marriage has a retreat quality); 7th itself occupied by Saturn + Ketu (delays, gravity, separation-themed karma); Venus, the sthira karaka for spouse (in male charts) and the natural karaka for relationships, is in the 2nd — *not* in the 7th, not in a difficult house; that's actually good for the *quality* of relationship when it manifests. The Pisces 7th also means Pisces-themed partners — emotional, imaginative, compassionate, possibly artistic or service-oriented.\n\nA final note: Rao emphasises the upapada lagna (UL) for marriage nuance [Textbook Ch 9, pp.85–99]; without the degree of the 12th lord I cannot compute UL. If you supply degrees this can be added." },
+
+    { "kind": "house",
+      "house_number": 8,
+      "title": "Ayur Bhava (Longevity, transformations, occult, inheritance)",
+      "metadata": {
+        "Sign on cusp": "Aries",
+        "Lord": "Mars — in 4th (Sagittarius)",
+        "Occupants": "Moon",
+        "Karaka": "Saturn [Textbook Ch 8 Table 15, p.83]"
+      },
+      "body": "The 8th is a dusthana but it is also the house of deep knowledge, research, and transformation [Textbook §7.2, p.68]. Moon in the 8th is a psychologically rich placement — it adds depth, sensitivity to the occult/hidden, and a natural fit for psychological, research-oriented or therapeutic work. **The 8th lord (Mars) is in the 4th, which is a 9th-from-the-8th — a trine from the 8th, traditionally considered favourable for the 8th's own signification.** Inheritance, research, occult knowledge are all supported by this lord placement.\n\nClassical handling: do not exaggerate difficulties of 8th-house Moon. Rao's own framing is that the 8th is the house of the hidden, not merely of ruin [Textbook §7.2, p.68]." },
+
+    { "kind": "house",
+      "house_number": 9,
+      "title": "Bhagya Bhava (Father, dharma, fortune, higher learning)",
+      "metadata": {
+        "Sign on cusp": "Taurus",
+        "Lord": "Venus — in 2nd (Libra, own sign)",
+        "Occupants": "—",
+        "Karaka": "Sun (father), Jupiter (guru, dharma) [Textbook Ch 8 Table 15, p.83]"
+      },
+      "body": "The 9th is the single most fortunate house after the 1st [Textbook §7.4.1, p.75]. **Empty 9th, but 9th lord Venus in own sign in the 2nd** — an excellent placement. Fortune/dharma settles into the wealth-house in full strength. This is why the overall tenor is 'chart with dharmic and material stability' rather than 'chart with hidden blessings'.\n\nThe Sun (karaka for father) is in the 2nd — so father is linked to voice, family values, possibly business/finance. Jupiter (karaka for guru/dharma) is in the 12th — suggesting you find your spiritual teachers in quieter, less public, or foreign contexts." },
+
+    { "kind": "house",
+      "house_number": 10,
+      "title": "Karma Bhava (Career, profession, public image)",
+      "metadata": {
+        "Sign on cusp": "Gemini",
+        "Lord": "Mercury — in 2nd (Libra), with Sun and Venus",
+        "Occupants": "—",
+        "Karaka": "Sun, Mercury, Jupiter, Saturn (Rao gives Saturn as karaka for 'work') [Textbook Ch 8 Table 16, p.84]"
+      },
+      "body": "Empty 10th house but extremely well-activated **through** its lord. Mercury in 2nd with Sun and Venus gives career a wealth-and-dharma orientation (Dharma-Karmadhipati yoga again [Textbook §11.7.1, p.134]). The 10th itself (Gemini, empty) is aspected by Jupiter from the 12th (Jupiter's 5th aspect from Leo falls on Sagittarius, 9th from Gemini — no; Jupiter aspects 5th/7th/9th, so from Leo aspects Sagittarius, Aquarius and Aries, not Gemini). So 10th is not directly aspected by Jupiter here.\n\n**Without D-10, the picture stops at: career is powered by the lagna-lord-in-2nd configuration, channelled through Mercury's karakatwas (speech, writing, intellect, skill), and sanctified by Venus's 9th-lordship (ethical/dharmic work).** That is a strong basic read." },
+
+    { "kind": "house",
+      "house_number": 11,
+      "title": "Labha Bhava (Gains, elder siblings, friends, aspirations fulfilled)",
+      "metadata": {
+        "Sign on cusp": "Cancer",
+        "Lord": "Moon — in 8th (Aries)",
+        "Occupants": "—",
+        "Karaka": "Jupiter [Textbook Ch 8 Table 15, p.83]"
+      },
+      "body": "The 11th is gains and friends [Textbook §7.2, p.69], an upachaya [Textbook §7.4.3, p.76]. Empty, with lord Moon in the 8th.\n\nThe 11th lord in the 8th is a classic 'gains through hidden/unusual/inheritance-type channels' placement — income that arrives through research, legacy, transformation-work, investment in hidden assets (intellectual property, therapy, occult/depth-professions). Not a bad placement *per se*; but gains are not straightforward.\n\nAlso note: **Jupiter, natural karaka for gains, sits in the 12th** — supporting dharmic gains rather than maximal acquisition. This is consistent with the whole chart's tenor: substantial, refined, but not accumulation-maximising." },
+
+    { "kind": "house",
+      "house_number": 12,
+      "title": "Vyaya Bhava (Losses, expenditures, foreign lands, moksha)",
+      "metadata": {
+        "Sign on cusp": "Leo",
+        "Lord": "Sun — in 2nd (Libra)",
+        "Occupants": "Jupiter",
+        "Karaka": "Saturn (losses), Ketu (moksha) [Textbook Ch 8 Table 16, p.84]"
+      },
+      "body": "The 12th is the moksha house [Textbook §7.2, p.69]. Here **Jupiter occupies it** — a signature for contemplative / philosophical / foreign / spiritual expenditure of energy. The 12th lord Sun is in the 2nd, close to lagna — meaning 'losses' come back to the 2nd's affairs (occasional family or speech-related expenses), but also that the natural karaka of fame is placed in the wealth-house, a sign of a generally constructive outflow rather than destructive loss.\n\n**For Virgo lagna Jupiter is both a functional malefic and the baadhaka planet**, so his 12th placement is a classic case where the baadhaka planet goes into the 12th and becomes *somewhat defanged* — his harm to worldly life is muted because he is in a house whose natural function is loss/moksha. This is the kind of placement Rao might call 'a functional malefic in a dusthana doing the dusthana's real work' [Textbook Ch 13, p.167 — note at bottom of the Table 30 paragraph]." },
+
+    { "kind": "yogas_intro",
+      "body": "Rao organizes yogas into Ravi (solar), Chandra (lunar), Mahapurusha, Naabhasa, Other Popular, Raja, Dhana and Daridra categories [Textbook §11.1, p.112]. The yogas active in your rasi are listed below, each with its definition and the specific page in the Textbook." },
+
+    { "kind": "yoga",
+      "name": "Dharma-Karmadhipati Yoga",
+      "description": "A special Raja Yoga formed when the lords of the 9th (dharma) and 10th (karma) associate",
+      "body": "For Virgo lagna, the 9th lord is Venus (owner of Taurus) and the 10th lord is Mercury (owner of Gemini). These two planets are **conjoined in Libra in the 2nd house**, with Venus in his own sign. Rao defines this yoga explicitly: *'If the lords of dharma sthana (9th) and karma sthana (10th) form a raja yoga, it is known by this special name. The 9th house is the most important trine and the 10th house is the most important quadrant. Raja yoga involving the lords of these two houses is excellent. One born with this yoga is sincere, devoted and righteous. He is fortunate'* [Textbook §11.7.1, p.134]. Rao returns to this same yoga on p.452 as the textbook example for Virgo lagna, where emerald-plus-diamond is the classical remedy to strengthen its planets [Textbook §34.2, p.452].\n\n**Expression in your life**: a natural alignment between your values (dharma) and your work (karma), a principled career, and — importantly — the active presence of this yoga during the dasas/antardashas of Mercury and Venus throughout your life." },
+
+    { "kind": "yoga",
+      "name": "Budha-Aditya Yoga (Nipuna Yoga)",
+      "description": "Sun and Mercury conjoined in one sign",
+      "body": "Rao's definition: *'Budha means Mercury, Aditya means Sun and yoga means togetherness. If Sun and Mercury are together (in one sign), this yoga is present.'* Result: *'One born with this yoga is intelligent and skillful in all works. He is well-known, respected and happy. Nipuna means an expert'* [Textbook §11.2.4, pp.113–114].\n\nCaveat from Rao himself on the same page: *'If Mercury is too close to Sun, he is combust (asta or astangata). Yogas formed by combust planets lose some of their power to do good.'* Without degrees I cannot check combustion. If Mercury's degree differs from Sun's by more than about 14° of ecliptic distance, the yoga is clean; if they are within a few degrees of each other, partial combustion reduces the yoga's force." },
+
+    { "kind": "yoga",
+      "name": "Anapha Yoga",
+      "description": "A planet (other than the Sun) placed in the 12th house from the Moon",
+      "body": "Rao's definition: *'If there are planets other than Sun in the 12th house from Moon, this yoga is present.'* Results: *'One born with this yoga becomes a king with good looks. His body is free from disease. He is a man of character and has great reputation. He is surrounded by comforts'* [Textbook §11.3.2, p.115].\n\nIn your chart, Moon is in Aries, so the 12th from Moon is Pisces, and Pisces is occupied by Saturn (and Ketu, whom the yoga-definitions in Chapter 11 often do not count). The active planet is Saturn, a slow natural malefic — which tempers the yoga's 'king and good looks' reading into something more like 'durable character, hard-earned reputation, slow-maturing dignity'." },
+
+    { "kind": "dasha_forecast",
+      "mahadasha_title": "— not provided —",
+      "mahadasha_html": "**No current Mahadasha/Antardasha was supplied**, and Vimshottari dasha sequence begins from the Moon's natal nakshatra [Textbook Ch 16, p.209], which I also do not have. I therefore cannot tell you which period is currently active, when it began, or when it ends.\n\nWhat I *can* give you is a **tenor-profile for each of the nine Mahadashas as they would unfold in your specific chart**, so that when you look up your current dasha in your chart software (Jagannatha Hora, AstroSage, etc.) the corresponding paragraph below applies. This is consistent with Rao's method — Ch 13 [pp.166–179] teaches that a dasha's effects come from the lord's placement, ownership, and yoga-participation in the specific chart being read, not from the generic 'Sun dasa brings fame' line.\n\n**Please treat what follows as natal-dasha tenor, not timing.** If you supply current dasha info, I can regenerate this section with calendar-dated periods and much more specific predictions.",
+
+      "antardasha_title": "Natal Tenor of Each of the Nine Mahadashas in This Chart",
+      "antardasha_html": "**Sun Mahadasha (6 years)** — Sun sits in his sign of debilitation (Libra) in the 2nd house, with Mercury and Venus. 12th lord in the 2nd. Tenor: a period of soul-negotiation around money and family; public recognition is muted but voice and speech-based work come forward. Not a catastrophic Sun period because of benefic company.\n\n**Moon Mahadasha (10 years)** — Moon in Aries in the 8th, also the 11th lord. Tenor: transformation-themed years, with gains (11th rulership) arriving through hidden or research-like channels. Emotional intensity high. Good for psychotherapy, contemplative practice, writing about inner life. Mental-health vigilance matters in these ten years.\n\n**Mars Mahadasha (7 years)** — Mars in 4th, 8th-lord of the chart. Tenor: shakes up home and property, but Mars-in-friend's-sign keeps the fire constructive. Work-changes, travel, real-estate moves are classical. 8th-lord's period can also bring breakthroughs in hidden/research domains.\n\n**Rahu Mahadasha (18 years)** — Rahu in lagna. Tenor: the longest Mahadasha, and for you one of the most life-shaping, because Rahu occupies your self-house. Expect significant identity-change, foreign or cross-cultural exposure, unconventional paths, and ambition surges. Proper Rahu remedies (pilgrimage, research, Durga worship) are particularly relevant in this period [Textbook §34.5 Table 78, p.458].\n\n**Jupiter Mahadasha (16 years)** — Jupiter in 12th, functional malefic and baadhaka. Tenor: paradoxical. A period good for spirituality, solitary study, foreign travel, charitable expenditure; less good for worldly expansion. This is *not* a 'great Jupiter dasa'; it's a 'contemplative Jupiter dasa'. Jupiter propitiation is especially important here [Textbook §34.4.5, p.456].\n\n**Saturn Mahadasha (19 years)** — Saturn in 7th, 5th and 6th lord. Tenor: serious partnership and work years. A period that asks for maturity about responsibilities, partnerships, routines. The 5th-lordship brings children's-theme events (if aligned with age); 6th-lordship brings daily-work themes. Saturn remedies belong here.\n\n**Mercury Mahadasha (17 years)** — Mercury in 2nd, lagna lord and 10th lord. Tenor: **the strongest and most career-defining of all your Mahadashas**, because Mercury activates both lagna and 10th and participates in the Dharma-Karmadhipati Yoga. Expect peak productive years, strong income, professional recognition, speech-and-writing work. Emerald in this period is classically indicated [Textbook §34.2 Table 77, p.452].\n\n**Ketu Mahadasha (7 years)** — Ketu in 7th with Saturn. Tenor: a detaching period, often one of spiritual turn. Partnerships may restructure. Not a worldly-growth period; a deepening one.\n\n**Venus Mahadasha (20 years)** — Venus in own sign in the 2nd, 9th and 2nd lord. Tenor: **the wealth-and-fortune peak of your life**. Venus is the single most productive planet in your chart by placement, ownership and yoga-participation. 20 years of sustained material and dharmic flourishing. Diamond is classically indicated here [Textbook §34.2 Table 77, p.452]. If Venus Mahadasha falls late in life (as it often does for many charts), this is the 'late-bloomer' signature of an otherwise reasonable life giving way to a spectacular later chapter. If early, it is simply the chart's core strength expressing itself young.",
+
+      "upcoming": [
+        { "title": "Once you provide the current dasha", "body": "I will regenerate this section with: (1) the specific current Mahadasha with its date range; (2) the current Antardasha and next 2–3 upcoming Antardashas, each read through the chart-specific lens above; (3) targeted remedies per period; (4) flags on periods that activate the more delicate parts of the chart (Rahu MD, Saturn MD's early years, etc.). For now, use the natal-tenor paragraphs above to orient yourself." }
+      ]
+    },
+
+    { "kind": "remedies",
+      "opening": "A word first, in Rao's own framing: *'Remedial measures are the measures we take in order to manipulate the exact details to be relatively favorable to us'* — they modulate the detail that free will can touch; they do not erase karma [Textbook §34.1, p.450]. Rao also writes on the same page that those with no belief in Vedic remedies may simply skip this chapter; no remedy is offered as a demand. What follows is a *targeted* set — chosen for your specific chart, not a generic list — and should be taken up only in a spirit that resonates with you, ideally under the guidance of a priest or experienced jyotishi.\n\nThe four methods of planetary pacification [Textbook §34.1.2, p.451] are: (1) wearing a gemstone, (2) good deeds in the planet's domain, (3) mantras/stotras, (4) worship of the ruling deity. The following weaves across all four, but restrained in number.",
+
+      "gemstones": [
+        "**Emerald (Mercury's gem), set in silver or platinum** — Mercury is your lagna lord and 10th lord, and a functional benefic for Virgo [Textbook §13.2 Table 30, p.167]. Strengthening him strengthens both self and career. First worn on a Wednesday [Textbook §34.2, p.453]. This is a primary prescription.",
+        "**Diamond (Venus's gem), set in silver or platinum** — Venus is your 9th lord and 2nd lord, a functional benefic, and placed in his own sign. Diamond strengthens fortune and wealth [Textbook §34.2 Table 77, p.452]. First worn on a Friday.",
+        "**Emerald + Diamond together** — Rao explicitly gives this combination as the canonical Virgo-lagna gemstone remedy, because Mercury and Venus form a Dharma-Karmadhipati Yoga: *'emerald and diamond for Virgo lagna (Mercury + Venus = dharma-karmadhipati yoga)'* [Textbook §34.2, p.452]. Consult a priest for correct installation and weights before wearing.",
+        "**Do NOT wear** gemstones of Moon (pearl), Mars (coral), or Jupiter (yellow sapphire) — these planets are functional malefics for Virgo lagna [Textbook §13.2 Table 30, p.167], and Rao is firm that *'wearing a gemstone of a functional malefic is harmful'* [Textbook §34.2, p.451]. This is important and often gets misprescribed by well-meaning amateurs who assume 'Jupiter for everyone'."
+      ],
+
+      "mantras": [
+        "*Om Aim Shrim Budhaya Namah* — Mercury's mantra, 17,000 repetitions recommended, recited on Wednesdays [Textbook §34.4.4, p.456]. Targets your lagna lord and career-lord together.",
+        "*Om Hrim Shrim Shukraya Namah* — Venus's mantra, 20,000 repetitions, recited on Fridays [Textbook §34.4.6, p.456]. Targets your 9th and 2nd lords together — the single most productive planet in your chart.",
+        "*Om Aim Klim Brihaspataye Namah* — Jupiter's mantra, 16,000 repetitions, Thursdays [Textbook §34.4.5, p.456]. Jupiter is a functional malefic here (a rare case where we propitiate rather than strengthen the malefic); 12th-house Jupiter benefits from quiet worship, and since Jupiter is also karaka for children, this mantra serves that area too.",
+        "*Om Aim Hrim Rahave Namah* — Rahu's mantra, 18,000 repetitions [Textbook §34.4.8, p.457]. Rahu in your lagna is a defining planet; his proper propitiation matters throughout life."
+      ],
+
+      "deities": [
+        "**Vishnu / Narayana** — the deity corresponding to Mercury [Textbook §34.5 Table 78, p.458]. As your lagna-lord-deity and career-lord-deity, primary devotion to a Vishnu-form (Narayana, Krishna, Rama, Venkateshwara) is especially appropriate. Which specific form resonates best is a matter of personal affinity and is best chosen with a priest.",
+        "**Lakshmi / Parvati** — the deities of Venus [Textbook §34.5 Table 78, p.458]. Lakshmi worship specifically resonates with the Venus-in-2nd strong placement and the wealth-generating configuration.",
+        "**Durga / Narasimha** — the deities of Rahu [Textbook §34.5 Table 78, p.458]. For Rahu-in-lagna natives, Durga worship (particularly during Navratri) is a classical remedy. The specific form is best chosen in consultation with a priest.",
+        "**Ganesha** — the deity of Ketu [Textbook §34.5 Table 78, p.458]. Worth including given Ketu's 7th-house placement; Ganesha is a gentle propitiation for the Ketu signature in partnerships."
+      ],
+
+      "good_deeds": [
+        "Pleasing Mercury: *'donate to an organization of scholars or receive blessings from a scholar'* [Textbook §34.3, p.453]. Also: donations of moong daal (the grain associated with Mercury, p.453), especially on Wednesdays.",
+        "Pleasing Venus: *'read poetry; help a poet'* [Textbook §34.3, p.453]. Help artists; support aesthetic/cultural institutions. The grain is a whitish grain (e.g., white rice or white lentils), donated on Fridays.",
+        "Pleasing Rahu: *'donate to a research organization; go on a pilgrimage'* [Textbook §34.3, p.453]. For Rahu-in-lagna natives, *pilgrimage is a particularly resonant remedy* — this is a chart that benefits from travel to sacred places.",
+        "Pleasing Jupiter (the baadhaka — propitiating, not strengthening): *'respect and donate to a learned Brahmin or priest; donate cows to a priest'* [Textbook §34.3, p.453]. On Thursdays, donate chick peas (Jupiter's grain, p.453)."
+      ],
+
+      "common_sense": [
+        "**Pair astrology with medicine**, not instead of it [Textbook §34.1.1, pp.450–451]. Especially relevant given the 8th-house Moon and 7th-house Saturn-Ketu configuration.",
+        "**Mental-health hygiene as practice** — not as cure for a disease, but as ongoing attention. Moon in 8th is a chart that benefits from meditation, journaling, regular sleep, and non-stimulant morning routines.",
+        "**In partnership decisions, take your time.** Saturn in 7th is not a catastrophe, but it rewards patience and punishes rush. This is not a chart for whirlwind marriages.",
+        "**Pilgrimage once a year** if feasible, even domestic — Rahu in lagna + 12th-house Jupiter + Ketu in 7th all agree this is a chart that heals in sacred places [Textbook §34.3, p.453]."
+      ],
+
+      "closing": "One caution from Rao on mantras, which the renderer also surfaces automatically: *'A mantra should be recited with accurate pronunciation and intonation … Some mantras can produce negative effects with improper recitation. So one should be careful'* [Textbook §34.4, p.454]. Learn the mantras you choose from a priest or teacher, not from a page alone.\n\nFinally: *'the exact application … depends on an astrologer's knowledge of mythology and classics and familiarity with the natures of various deities'* [Textbook §34.5, p.458]. The remedies above are pointers, not prescriptions. Rao himself closes Chapter 34 by pointing interested readers to Pt. Sanjay Rath's *Vedic Remedies in Astrology* [Textbook §34.6, p.459]; that's the recommended next step if any of this resonates."
+    },
+
+    { "kind": "closing",
+      "title": "A Closing Note",
+      "body": "This reading rests on a rasi chart alone. You have been given what that chart responsibly supports: a full personality and life-area synthesis, a house-by-house walk, three real yogas with their definitions and specific pages, a natal-tenor sketch for each of the nine Vimshottari Mahadashas, and a targeted set of remedies chosen for the specific planets that carry your chart.\n\nThree things, however, were *not* produced:\n\n1. **A calendar-dated dasha forecast.** You did not supply current Mahadasha/Antardasha, and without the Moon's nakshatra the Vimshottari sequence cannot be computed. Once you supply the current dasha from your chart software, regenerating this section is straightforward.\n2. **A refined Navamsa-based marriage read.** Rao is emphatic that the 7th-house analysis is incomplete without the D-9 [Textbook Ch 6, pp.51–66]. The Saturn-Ketu-in-7th configuration here warrants a D-9 check before any firm predictions are made.\n3. **A Dasamsa-based career read.** The rasi shows strong career indicators; the D-10 would tell us the flavour (public vs. private, creative vs. administrative, national vs. international).\n\nAll three can be added if you provide (a) your current dasha, (b) the D-9 Navamsa, (c) the D-10 Dasamsa. At minimum the current dasha is worth supplying even by itself — it unlocks a calendar-based forecast without needing the vargas.\n\nAs Rao himself writes at the end of his remedies chapter, and as this skill takes seriously: *'The pattern to be followed by one's life is decided at the time of one's birth … However, it only decides the basic pattern and not all the minute details'* [Textbook §34.1, p.450]. Your chart shows pattern; the details are yours to make.\n\n*Om tat sat.*"
+    }
+  ],
+
+  "sources": [
+    { "short": "Textbook",   "full": "P.V.R. Narasimha Rao, *Vedic Astrology: An Integrated Approach* (2000). 515 pages. Primary source for all substantive claims in this reading." },
+    { "short": "Lessons-I",  "full": "P.V.R. Narasimha Rao, *Lessons on Vedic Astrology, Volume I* (Lessons 1–45), comp. Sri Jagannath Center-Boston. Pedagogical companion to the Textbook. *Not directly cited in this rasi-only reading,* but would be used if divisional charts and chara karakas were analysed." },
+    { "short": "Lessons-II", "full": "P.V.R. Narasimha Rao, *Lessons on Vedic Astrology, Volume II* (Lessons 46–77), comp. Sri Jagannath Center-Boston, 2007. Advanced techniques continuation. *Not directly cited in this reading* — reserved for deeper analyses that require divisional charts or advanced yogas beyond the Textbook's treatment." }
+  ]
+}

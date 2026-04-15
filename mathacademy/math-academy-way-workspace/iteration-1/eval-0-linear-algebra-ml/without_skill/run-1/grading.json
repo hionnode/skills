@@ -1,0 +1,70 @@
+{
+  "expectations": [
+    {
+      "text": "Includes a concrete daily session structure with time allocations (minutes per activity)",
+      "passed": true,
+      "evidence": "The weekly rhythm section splits weekdays into '3 weekdays (45 min each): Read the textbook section / watch the lecture. Work the examples BY HAND' and '2 weekdays (45 min each): Exercises from the book... about 5-8 per section', plus 'Weekend (2 hrs): One longer session' with a numpy experiment."
+    },
+    {
+      "text": "Includes a phased roadmap with named milestones and approximate timelines",
+      "passed": true,
+      "evidence": "Explicit phased roadmap: 'Weeks 1-2: Geometric foundations', 'Weeks 3-4: Linear systems, rank, null space, projections, least squares', 'Weeks 5-6: Eigendecomposition and SVD', 'Weeks 7-8: Multivariable calculus for ML', 'Weeks 9+: Apply', plus a week-by-week breakdown."
+    },
+    {
+      "text": "Explicitly prioritizes active problem-solving / production over passive consumption (reading, watching videos)",
+      "passed": true,
+      "evidence": "'An hour of active engagement beats four hours of passive video-watching every time.' Also emphasizes 'Work the examples BY HAND', weekly numpy implementations from scratch, and 'Do fewer exercises, but do them completely.'"
+    },
+    {
+      "text": "Includes spaced / distributed review of previously-learned material",
+      "passed": true,
+      "evidence": "'Keep a \"questions\" file. Every time you read something and don't fully get it, jot it down with the date. Review it every two weeks.' Also week 8 includes 'Re-read MML Chapters 2-5 as a consolidation pass'. The review is somewhat limited but present."
+    },
+    {
+      "text": "Includes interleaved or mixed-practice review drawing from multiple past topics (not just today's)",
+      "passed": false,
+      "evidence": "The plan is largely sequential (one chapter per week) with consolidation passes but does not explicitly prescribe mixed-practice review drawing from multiple past topics during sessions. The backprop project in week 8 integrates topics but this is a synthesis project, not routine interleaved practice."
+    },
+    {
+      "text": "Includes retrieval-based practice or self-quizzing without looking at notes",
+      "passed": true,
+      "evidence": "'When you're stuck for more than 15 minutes, look it up, then redo the problem from scratch the next day without looking.' Also 'By Friday you should be able to explain, in plain English, why a dot product relates to angle and projection' suggests retrieval-style checks."
+    },
+    {
+      "text": "Requires mastery of prerequisites before advancing (not moving on from 'kinda getting it')",
+      "passed": false,
+      "evidence": "The plan sets weekly targets but doesn't explicitly require mastery gating before advancing. It says 'Adjust as you go - this is a plan, not a contract' and follows a calendar-driven schedule rather than enforcing 'don't move on until you've mastered X'."
+    },
+    {
+      "text": "Names specific resources (textbooks, videos, tools) rather than vague pointers",
+      "passed": true,
+      "evidence": "Names specific resources: 3Blue1Brown's Essence of Linear Algebra, Gilbert Strang's Introduction to Linear Algebra (6th ed), MIT 18.06 OCW, Sheldon Axler's Linear Algebra Done Right, Jim Hefferon's Linear Algebra, MML book by Deisenroth/Faisal/Ong, Matrix Cookbook by Petersen, Khan Academy Multivariable Calculus."
+    },
+    {
+      "text": "Warns that the plan will feel slower/harder than intuitive study methods (desirable difficulty)",
+      "passed": true,
+      "evidence": "'The first two weeks are the hardest. You're going to feel slow and stupid, especially after 10+ years of feeling competent in your day job. This is normal and it passes.' Also 'You will feel dumb for about 4 days and then something clicks.'"
+    },
+    {
+      "text": "Names specific anti-patterns or failure modes tailored to this learner",
+      "passed": true,
+      "evidence": "Multiple tailored anti-patterns: 'bouncing between six resources', 'Resist the urge to jump to \"cooler\" material... skip ahead to tensors or transformers', jumping straight to Goodfellow Ch. 2 as a teacher, and 'writing numpy code from a stackoverflow answer'. Also 'I know, you're an engineer, you want to type' - tailored to a coder."
+    },
+    {
+      "text": "Recommends a problem-heavy primary resource (ideally a textbook like Strang) and flags video-first approaches as insufficient",
+      "passed": true,
+      "evidence": "Primary resource is explicitly 'Gilbert Strang's Introduction to Linear Algebra (6th edition)' with Strang's problems called 'well-chosen'. Videos alone are flagged: 'An hour of active engagement beats four hours of passive video-watching every time.' However, the plan does give 3B1B equal billing as 'primary' which slightly weakens the textbook-first framing."
+    },
+    {
+      "text": "References eigenvalues/SVD as target-level topics the plan should reach",
+      "passed": true,
+      "evidence": "Eigenvalues/SVD are explicit named milestones: 'Weeks 5-6: Eigendecomposition and SVD. This is the big unlock.' Week 5 targets eigenvalues; Week 6 targets SVD ('Strang Ch. 7. The most important decomposition in applied linear algebra')."
+    }
+  ],
+  "summary": {
+    "pass_rate": 0.8333333333333334,
+    "passed": 10,
+    "failed": 2,
+    "total": 12
+  }
+}

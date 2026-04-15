@@ -1,0 +1,80 @@
+{
+  "expectations": [
+    {
+      "text": "Includes a concrete daily session structure with time allocations (minutes per activity)",
+      "passed": true,
+      "evidence": "Explicit table in 'The time allocation' section: Tactics puzzles 40% (~15 min), Rapid games 30% (~12 min), Review 20% (~8 min), Endgames 10% (~5 min) out of 40 daily minutes."
+    },
+    {
+      "text": "Includes a phased roadmap with named milestones tied to rating or skill markers",
+      "passed": true,
+      "evidence": "'The month-by-month arc' section has four named phases: Months 1-2 'Stop hanging pieces. Target ~1000'; Months 3-4 'See tactics before they happen. Target ~1200'; Months 5-6 'Real positional ideas. Target ~1350'; Months 7-9 'Polish. Target 1500'."
+    },
+    {
+      "text": "Prioritizes tactics/puzzles heavily, appropriate for the 800-1500 band",
+      "passed": true,
+      "evidence": "Tactics puzzles are the top allocation at 40% of daily time, called 'the #1 lever for you' with 15-25 puzzles per day and justified by '~90% of games are decided by one side hanging a piece.'"
+    },
+    {
+      "text": "Deprioritizes openings / warns against opening-theory rabbit holes at 800 ELO",
+      "passed": true,
+      "evidence": "Section 5 explicitly titled 'Openings (do almost nothing here)' calling it 'the biggest trap for improving players' and capping opening study at '30 minutes total'; failure-mode list also warns against 'Memorizing opening traps' and 'Chasing the latest shiny opening repertoire.'"
+    },
+    {
+      "text": "Recommends slower time controls (rapid / classical) over blitz/bullet for learning",
+      "passed": true,
+      "evidence": "'Play rapid only — specifically 15+10 or 10+5. Do not play blitz or bullet regularly.' and later recommends occasional 30+0 / 30+20 longer controls for calculation."
+    },
+    {
+      "text": "Includes post-game analysis / reviewing losses as a core practice",
+      "passed": true,
+      "evidence": "Section 3 'Reviewing your own games (the hidden superpower)' assigns 20% of daily time and gives explicit review steps: self-review first, then Lichess computer analysis focused on blunders/mistakes, then notes on recurring patterns."
+    },
+    {
+      "text": "Includes spaced / distributed review of previously-seen positions or missed puzzles",
+      "passed": true,
+      "evidence": "For failed puzzles: 'look at the solution, understand the pattern, then redo it mentally before moving on'; plus a weekly 'Sunday evening' check-in reviewing recurring mistakes and a notes file tracking patterns. This is a light form of distributed review — partially meets the assertion."
+    },
+    {
+      "text": "Emphasizes active production (solving puzzles, calculating) over passive consumption (streamers, videos)",
+      "passed": true,
+      "evidence": "Section 6 labels content 'entertainment that occasionally teaches' and says 'Treat this as bonus — a video during lunch, not in place of your 40 minutes'; failure modes call out 'Watching 2 hours of chess YouTube and calling it studying. It's not.'"
+    },
+    {
+      "text": "Names specific resources (books, courses, or tools) rather than vague pointers",
+      "passed": true,
+      "evidence": "Names Lichess Puzzles, Chessable's '1001 Chess Exercises for Beginners', Lichess Practice tab, GothamChess, Naroditsky speedruns, John Bartholomew's Chess Fundamentals, 'Logical Chess: Move by Move' by Chernev, Silman's 'The Amateur's Mind', and specific openings (London, Italian, Caro-Kann, KID)."
+    },
+    {
+      "text": "Warns about common failure modes tailored to this rating (e.g., blitz tilt, opening obsession, streamer-watching)",
+      "passed": true,
+      "evidence": "'Habits that will silently sink you' section explicitly lists playing bullet/blitz to warm up, watching 2 hours of YouTube, memorizing opening traps, chasing shiny repertoires, playing tilted, and resigning too early."
+    },
+    {
+      "text": "Warns that the plan will feel slower/harder than intuitive approaches (desirable difficulty)",
+      "passed": true,
+      "evidence": "'This sounds slow and obvious... Doing this religiously is worth ~200 Elo on its own' and 'The plan is simple; the discipline is the hard part' and 'Don't rush... Guessing trains bad habits' — flags that the disciplined approach feels harder than intuitive shortcuts."
+    },
+    {
+      "text": "Includes a feedback mechanism for identifying specific weaknesses to drill",
+      "passed": true,
+      "evidence": "'Keep a simple notes file: I keep hanging my knight on f6... Patterns in your mistakes tell you what to work on' and 'Revisit openings only when the same position keeps confusing you in game review. Let your actual games tell you what to study.'"
+    },
+    {
+      "text": "Names at least one explicit accountability mechanism (coach, study group, club, scheduled tournament as forcing function, streak, public commitment, etc.)",
+      "passed": true,
+      "evidence": "Months 7-9 recommends 'one lesson with a coach (~$30-50 on Chess.com or Lichess) to get a personalized diagnosis'; also a 'weekly check-in with yourself (Sunday evening, 5 minutes).' The coach suggestion is explicit though optional — meets the bar as an accountability mechanism named."
+    },
+    {
+      "text": "Specifies pivot signals — explicit conditions that, if they occur, would mean the plan needs adjustment",
+      "passed": false,
+      "evidence": "The plan mentions a weekly self-check and says 'Adjust based on where you're stuck' and 'Adjust next week's focus accordingly,' but does not specify explicit threshold conditions (e.g., 'if rating hasn't moved in X weeks, do Y') that would trigger a pivot. Guidance is generic rather than defining pivot signals."
+    }
+  ],
+  "summary": {
+    "pass_rate": 0.9285714285714286,
+    "passed": 13,
+    "failed": 1,
+    "total": 14
+  }
+}

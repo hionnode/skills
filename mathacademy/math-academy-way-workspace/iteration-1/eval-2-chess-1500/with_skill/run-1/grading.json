@@ -1,0 +1,70 @@
+{
+  "expectations": [
+    {
+      "text": "Includes a concrete daily session structure with time allocations (minutes per activity)",
+      "passed": true,
+      "evidence": "The 45-minute day is broken down into explicit segments: 0\u20135 min warm-up retrieval, 5\u201320 min new tactics, 20\u201340 min rapid game, 40\u201345 min review; a 30-minute alternative is also given."
+    },
+    {
+      "text": "Includes a phased roadmap with named milestones tied to rating or skill markers",
+      "passed": true,
+      "evidence": "Five named phases, each with explicit milestones: Phase 1 blunder rate <2/game and puzzle rating +150; Phase 2 puzzle rating 1600\u20131800; Phase 3 ~1200 rapid; Phase 4 ~1350 rapid; Phase 5 stable 1500."
+    },
+    {
+      "text": "Prioritizes tactics/puzzles heavily, appropriate for the 800-1500 band",
+      "passed": true,
+      "evidence": "Tactics puzzles are allocated ~40% of time, called 'single highest-ROI activity at your level,' and the whole plan is built around the claim that games at 800\u20131500 are decided by tactics."
+    },
+    {
+      "text": "Deprioritizes openings / warns against opening-theory rabbit holes at 800 ELO",
+      "passed": true,
+      "evidence": "Openings are capped at ~5% of time, only 5 moves deep, and 'Opening rabbit holes' is called out as an anti-pattern with 'Five minutes of opening per day, cap.'"
+    },
+    {
+      "text": "Recommends slower time controls (rapid / classical) over blitz/bullet for learning",
+      "passed": true,
+      "evidence": "Phase 3 states 'Play only 15+10 rapid. No blitz, no bullet,' and the anti-patterns section explicitly flags 'Just one more blitz game' as empty calories at this level."
+    },
+    {
+      "text": "Includes post-game analysis / reviewing losses as a core practice",
+      "passed": true,
+      "evidence": "Review every loss with Lichess engine analysis is allocated ~20% of time, is non-negotiable, and there is a dedicated 'deep review day' once per week to examine 2\u20133 losses."
+    },
+    {
+      "text": "Includes spaced / distributed review of previously-seen positions or missed puzzles",
+      "passed": true,
+      "evidence": "Missed puzzles go into a list re-attempted 'the next day, then 3 days later, then a week later,' and the daily warm-up retrieval redoes 3\u20135 puzzles from prior days."
+    },
+    {
+      "text": "Emphasizes active production (solving puzzles, calculating) over passive consumption (streamers, videos)",
+      "passed": true,
+      "evidence": "The plan explicitly skips streamers and videos ('Watching chess instead of playing chess' is an anti-pattern), caps YouTube at 30 min/week, and centers on puzzles, games, and calculation."
+    },
+    {
+      "text": "Names specific resources (books, courses, or tools) rather than vague pointers",
+      "passed": true,
+      "evidence": "Names concrete resources: Lichess puzzles, Bain/van Wijgerden's '1001 Chess Exercises,' Weteschnik's 'Chess Tactics from Scratch,' Silman's 'Complete Endgame Course,' Aagaard's 'Positional Play,' Naroditsky's speedrun series, ChessBook, chesstempo.com."
+    },
+    {
+      "text": "Warns about common failure modes tailored to this rating (e.g., blitz tilt, opening obsession, streamer-watching)",
+      "passed": true,
+      "evidence": "Entire 'Anti-patterns to watch for \u2014 by name' section lists blitz, opening rabbit holes, streamer-watching, puzzle rush, tilt, and memorizing solutions \u2014 explicitly tailored to 800-level traps."
+    },
+    {
+      "text": "Warns that the plan will feel slower/harder than intuitive approaches (desirable difficulty)",
+      "passed": true,
+      "evidence": "The 'On the feel' section says 'For the first 2\u20134 weeks this plan will feel slow and annoying. You will play fewer games than before... The puzzles will feel harder than blitz because you're forced to calculate rather than pattern-match on vibes. All of that is the point.'"
+    },
+    {
+      "text": "Includes a feedback mechanism for identifying specific weaknesses to drill",
+      "passed": true,
+      "evidence": "The 'feedback loop' section requires logging each loss as position/played/should-have-played/tactic-missed in a running notes file, reviewed weekly for patterns that 'dictate next week's emphasis.'"
+    }
+  ],
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 12,
+    "failed": 0,
+    "total": 12
+  }
+}

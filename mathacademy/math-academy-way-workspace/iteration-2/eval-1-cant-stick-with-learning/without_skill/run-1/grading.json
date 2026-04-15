@@ -1,0 +1,80 @@
+{
+  "expectations": [
+    {
+      "text": "Diagnoses the user's passive-consumption / watch-videos-feels-like-learning pattern explicitly",
+      "passed": true,
+      "evidence": "Response opens with 'The diagnosis: you're consuming, not practicing' and explicitly calls out 'Passive input disguised as learning' from watching YouTube videos."
+    },
+    {
+      "text": "Names the 'illusion of comprehension' / recognition-vs-recall distinction (following along is not knowing)",
+      "passed": true,
+      "evidence": "States 'Recognition is not recall. Comprehension is not production.' and contrasts understanding-when-explained with producing it yourself under pressure."
+    },
+    {
+      "text": "Explains why Duolingo / YouTube videos produce felt progress without transferable skill",
+      "passed": true,
+      "evidence": "Explains Duolingo is 'mostly pattern-matching multiple choice in a controlled environment' and YouTube gives 'zero feedback,' so you're 'rehearsing the feeling of learning' which collapsed when Mexico tested the real skill."
+    },
+    {
+      "text": "Diagnoses attempting an advanced target (Chopin piece) without prerequisite/foundational skill",
+      "passed": true,
+      "evidence": "Under 'Ambition without a staircase' calls picking Chopin the 'piano equivalent of trying to have a conversation in Mexico after three months of Duolingo' with the gap being 'so huge that you can't actually work on the target.'"
+    },
+    {
+      "text": "Includes a concrete daily session structure with time allocations",
+      "passed": true,
+      "evidence": "Provides a structure: '2 min: warmup / review ... 10-15 min: work on the one specific thing ... 3-5 min: attempt to use it in something real.'"
+    },
+    {
+      "text": "Prescribes high active-production to passive-intake ratio (e.g., 3:1 or stated numerically)",
+      "passed": true,
+      "evidence": "Says 'Aim for roughly 80% active production, 20% input. That's the opposite of what you've been doing.'"
+    },
+    {
+      "text": "Includes spaced / distributed review of previously-learned material",
+      "passed": true,
+      "evidence": "Session structure includes '2 min: warmup / review the thing you worked on yesterday' and mentions consolidation between sessions requiring daily practice."
+    },
+    {
+      "text": "Includes retrieval-based practice or self-testing without looking at notes",
+      "passed": true,
+      "evidence": "Prescribes 'A weekly 5-minute self-test (record yourself answering a prompt, or play a piece cold)' and 'Weekly self-test: record a 2-min voice memo answering a prompt.'"
+    },
+    {
+      "text": "Names specific resources or tool types (e.g., Anki, tutor/language partner, a specific course)",
+      "passed": true,
+      "evidence": "Names iTalki tutors, Language Transfer, Pimsleur, Dreaming Spanish, Alfred's and Faber piano method books."
+    },
+    {
+      "text": "Warns that the right approach will feel harder/slower than what they were doing before (desirable difficulty)",
+      "passed": true,
+      "evidence": "States 'you should fail about 15-30% of the time' and 'the grinding through fundamentals you're bad at phase is where actual progress is made' - explicitly framing it as the harder phase."
+    },
+    {
+      "text": "Explicitly recommends focusing on ONE skill rather than multiple simultaneously",
+      "passed": true,
+      "evidence": "Final line: 'Pick one skill. Don't try to fix both at once. Start this week.'"
+    },
+    {
+      "text": "Provides a concrete starting template or plan (not just principles) they can act on",
+      "passed": true,
+      "evidence": "Section 'If you applied this to Spanish starting tomorrow' gives a concrete plan: 2x 30-min iTalki lessons, 20 min/day Dreaming Spanish, weekly voice memo self-test, 90-day target."
+    },
+    {
+      "text": "Names at least one explicit accountability/habit mechanism (tutor, partner, streak, public commitment, scheduled forcing function, etc.) directly addressing the fizzle-out pattern",
+      "passed": true,
+      "evidence": "Prescribes booking 'a tutor or teacher' (iTalki lessons twice weekly) as the 'single biggest lever' and a pre-committed '20 minutes a day for 90 days' minimum commitment."
+    },
+    {
+      "text": "Addresses the restart problem specifically — how to rebuild after a lapse or how to prevent the next lapse",
+      "passed": true,
+      "evidence": "Section 'Pre-commit to pushing through the dip' directly addresses the fizzle-out: 'Around week 3-6 I will feel like I'm not making progress and want to quit. That feeling is the signal that real learning is starting, not the signal to stop,' plus the 90-day re-evaluate rule."
+    }
+  ],
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 14,
+    "failed": 0,
+    "total": 14
+  }
+}

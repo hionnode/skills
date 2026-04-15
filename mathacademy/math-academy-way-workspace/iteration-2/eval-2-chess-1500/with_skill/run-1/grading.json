@@ -1,0 +1,80 @@
+{
+  "expectations": [
+    {
+      "text": "Includes a concrete daily session structure with time allocations (minutes per activity)",
+      "passed": true,
+      "evidence": "The 'daily session (30-45 min)' section breaks down: 5 min warm-up puzzles, 15 min focused tactical training, 15-20 min one rapid game, 5-10 min analysis."
+    },
+    {
+      "text": "Includes a phased roadmap with named milestones tied to rating or skill markers",
+      "passed": true,
+      "evidence": "Four named phases ('Stop hanging stuff', 'See the tactics', 'Don't fall apart in quiet positions', 'Consolidate to 1500') with explicit rating milestones (e.g., '950+ across 20 rapid games', 'stable above 1150', 'stable above 1300', '1500 by end of December')."
+    },
+    {
+      "text": "Prioritizes tactics/puzzles heavily, appropriate for the 800-1500 band",
+      "passed": true,
+      "evidence": "Daily session dedicates 15 min to focused tactics plus 5 min warm-up puzzles; states 'doing tactics puzzles daily' is one of the two things that matter most; emphasizes 'Hundreds of them' in phase 1."
+    },
+    {
+      "text": "Deprioritizes openings / warns against opening-theory rabbit holes at 800 ELO",
+      "passed": true,
+      "evidence": "Explicitly states 'Twenty total minutes of opening study per phase is enough through 1500' and includes an anti-pattern: 'Opening rabbit holes... Through 1500, opening depth is almost zero ROI compared to tactics and endgames.'"
+    },
+    {
+      "text": "Recommends slower time controls (rapid / classical) over blitz/bullet for learning",
+      "passed": true,
+      "evidence": "Daily plan specifies 'One Lichess Rapid game at 10+5 or 15+10' and states 'Blitz and bullet at your level will actively make you worse... Rapid only until 1400+.'"
+    },
+    {
+      "text": "Includes post-game analysis / reviewing losses as a core practice",
+      "passed": true,
+      "evidence": "Step (d) of daily session is 'Analyze the game — 5-10 min' with engine review; phase 3 makes post-game analysis 'mandatory' with a loss journal; anti-patterns call out skipping analysis as leaving 'free rating points on the table.'"
+    },
+    {
+      "text": "Includes spaced / distributed review of previously-seen positions or missed puzzles",
+      "passed": true,
+      "evidence": "'Warm-up / spaced review — 5 min. Five puzzles at your current puzzle rating... wakes up pattern recognition'; also 'replay the position, try to find the move again 10 minutes later' and monthly re-study of the loss journal."
+    },
+    {
+      "text": "Emphasizes active production (solving puzzles, calculating) over passive consumption (streamers, videos)",
+      "passed": true,
+      "evidence": "Ratio check explicitly targets '~60-70% active production (puzzles + playing)' vs '~15% passive'; 'The temptation at your level is to increase the passive percentage — watch streamers, read a book, watch GothamChess. Resist.'"
+    },
+    {
+      "text": "Names specific resources (books, courses, or tools) rather than vague pointers",
+      "passed": true,
+      "evidence": "Names Lichess puzzle training, Daniel Naroditsky's Speedrun, John Bartholomew's Climbing the Rating Ladder and Chess Fundamentals, Irving Chernev's 'Logical Chess: Move by Move', Lichess endgame practice module, specific openings (Italian, Caro-Kann)."
+    },
+    {
+      "text": "Warns about common failure modes tailored to this rating (e.g., blitz tilt, opening obsession, streamer-watching)",
+      "passed": true,
+      "evidence": "Dedicated 'Anti-patterns' section covers watching streamers, playing blitz/bullet, opening rabbit holes, skipping post-game analysis, re-playing solved puzzles, and declaring phases done prematurely."
+    },
+    {
+      "text": "Warns that the plan will feel slower/harder than intuitive approaches (desirable difficulty)",
+      "passed": true,
+      "evidence": "'On the feel of this plan' section: 'It will feel frustrating and slow in weeks 2-4. The blunder-check routine makes you play worse for 2 weeks before you play better.' Also: 'This feels insultingly slow at first. Keep doing it.'"
+    },
+    {
+      "text": "Includes a feedback mechanism for identifying specific weaknesses to drill",
+      "passed": true,
+      "evidence": "'Feedback and assessment' section includes per-puzzle, per-game loss journal, weekly check ('Any pattern that shows up 3+ times is next week's puzzle theme'), and phase milestones."
+    },
+    {
+      "text": "Names at least one explicit accountability mechanism (coach, study group, club, scheduled tournament as forcing function, streak, public commitment, etc.)",
+      "passed": true,
+      "evidence": "'Accountability' section lists three tiers: a cheap coach every 2 weeks, a chess-improvement partner with weekly game, or public streak + milestone dates shared with someone. 'Pick one by Friday.'"
+    },
+    {
+      "text": "Specifies pivot signals — explicit conditions that, if they occur, would mean the plan needs adjustment",
+      "passed": true,
+      "evidence": "'Pivot signals' section lists four explicit conditions: missing the week-4 milestone, stuck at 1200 for 3+ weeks, fewer than 4 sessions/week for 2 weeks, and hitting 1500 before October — each with a prescribed adjustment."
+    }
+  ],
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 14,
+    "failed": 0,
+    "total": 14
+  }
+}

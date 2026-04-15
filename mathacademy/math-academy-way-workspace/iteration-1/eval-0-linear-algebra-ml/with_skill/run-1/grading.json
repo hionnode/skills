@@ -1,0 +1,70 @@
+{
+  "expectations": [
+    {
+      "text": "Includes a concrete daily session structure with time allocations (minutes per activity)",
+      "passed": true,
+      "evidence": "The 'daily session template (45 min weekday)' breaks the session into 0-7 min warm-up retrieval, 7-15 min reading, 15-35 min produce, 35-43 min interleaved mixed practice, 43-45 min retrieval quiz, plus a detailed weekend 90-min breakdown."
+    },
+    {
+      "text": "Includes a phased roadmap with named milestones and approximate timelines",
+      "passed": true,
+      "evidence": "Five named phases with week ranges: Phase 1 (Weeks 1-2) Vectors and the column picture, Phase 2 (Weeks 3-5) Matrices/Ax=b, Phase 3 (Weeks 6-7) Orthogonality and projection, Phase 4 (Weeks 8-9) Determinants and eigenvalues, Phase 5 (Weeks 10-11) SVD and the synthesis, each with an end-of-phase milestone check."
+    },
+    {
+      "text": "Explicitly prioritizes active problem-solving / production over passive consumption (reading, watching videos)",
+      "passed": true,
+      "evidence": "Ratios specified as '~15-20% reading, ~55-60% producing new problems, ~20-25% review + interleaving + retrieval', plus 'If you're past 10 minutes and still reading, stop - you're consuming when you should be producing.'"
+    },
+    {
+      "text": "Includes spaced / distributed review of previously-learned material",
+      "passed": true,
+      "evidence": "The 0-7 min 'Warm-up retrieval (spaced review)' block explicitly samples 'one from yesterday, one from ~4 days ago, one from ~2 weeks ago', and the anti-patterns section calls spaced review 'the one thing to not drop'."
+    },
+    {
+      "text": "Includes interleaved or mixed-practice review drawing from multiple past topics (not just today's)",
+      "passed": true,
+      "evidence": "The 35-43 min 'Interleaved mixed practice' block has '3-5 problems sampled from any previous chapter you've done. Not today's topic,' and the weekend session starts with 8-12 problems 'sampled from across the whole course so far.'"
+    },
+    {
+      "text": "Includes retrieval-based practice or self-quizzing without looking at notes",
+      "passed": true,
+      "evidence": "The 43-45 min 'Retrieval quiz' asks learner to 'Write down, from memory, the answer to one conceptual question... No notes, one sentence, on paper.' Also 'No peeking at old solutions until you've tried' in the warm-up block."
+    },
+    {
+      "text": "Requires mastery of prerequisites before advancing (not moving on from 'kinda getting it')",
+      "passed": true,
+      "evidence": "'If you're not there, you extend the phase - you do not \"kind of move on.\"' and 'On the bar: when (not if) a topic feels stuck, the fix is never to lower the standard and move on... \"Kind of got it\" is the single most common reason self-study plans crack.'"
+    },
+    {
+      "text": "Names specific resources (textbooks, videos, tools) rather than vague pointers",
+      "passed": true,
+      "evidence": "Names 'Gilbert Strang, Introduction to Linear Algebra, 6th edition', 'MIT OCW... 18.06', '3Blue1Brown's Essence of Linear Algebra', numpy, and specific projects like PCA via SVD and the Transformer paper."
+    },
+    {
+      "text": "Warns that the plan will feel slower/harder than intuitive study methods (desirable difficulty)",
+      "passed": true,
+      "evidence": "Entire 'On how this is going to feel' section: 'For the first 2-3 weeks, this plan will feel slower and harder... Cognitive science has a specific name for this - \"desirable difficulties\"... the study methods that feel most productive in the moment... produce the worst long-term retention.'"
+    },
+    {
+      "text": "Names specific anti-patterns or failure modes tailored to this learner",
+      "passed": true,
+      "evidence": "Anti-patterns section is specifically tailored ('You've been coding for a decade and you have adult-engineer learning habits'), covering reading-first tendency, 3Blue1Brown rescue, Jupyter with numpy at hand, skipping interleaving, ChatGPT shortcuts, and marathon weekends."
+    },
+    {
+      "text": "Recommends a problem-heavy primary resource (ideally a textbook like Strang) and flags video-first approaches as insufficient",
+      "passed": true,
+      "evidence": "Strang's textbook is declared 'the primary resource' and 3Blue1Brown is 'strictly capped' as 'a dessert, not a meal'; the anti-patterns section explicitly warns 'Reaching for 3Blue1Brown when a topic feels hard... That feeling is familiarity, not recall.'"
+    },
+    {
+      "text": "References eigenvalues/SVD as target-level topics the plan should reach",
+      "passed": true,
+      "evidence": "Phase 4 covers 'Determinants and eigenvalues' (Strang ch. 5-6) and Phase 5 covers 'SVD and the synthesis' (Strang ch. 7); goals list explicitly includes 'Work through problems in Strang's Introduction to Linear Algebra through eigenvalues and SVD (chapters 1-7).'"
+    }
+  ],
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 12,
+    "failed": 0,
+    "total": 12
+  }
+}

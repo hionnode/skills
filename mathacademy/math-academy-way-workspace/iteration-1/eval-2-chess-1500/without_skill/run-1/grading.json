@@ -1,0 +1,70 @@
+{
+  "expectations": [
+    {
+      "text": "Includes a concrete daily session structure with time allocations (minutes per activity)",
+      "passed": true,
+      "evidence": "The 'daily/weekly split' section gives explicit minute budgets: '10\u201315 min of tactics puzzles', 'One 15-minute rapid game', '5\u201310 min' for post-game analysis, and '20\u201325 min structured study' twice a week."
+    },
+    {
+      "text": "Includes a phased roadmap with named milestones tied to rating or skill markers",
+      "passed": true,
+      "evidence": "The 'month-by-month trajectory' section lays out rating milestones: 'Month 1\u20132: 800 \u2192 ~1000. You stop hanging pieces...', 'Month 3\u20134: 1000 \u2192 ~1200. Tactics start clicking...' through Month 9, each tied to both rating and skill markers."
+    },
+    {
+      "text": "Prioritizes tactics/puzzles heavily, appropriate for the 800-1500 band",
+      "passed": true,
+      "evidence": "Tactics is explicitly labeled 'your #1 tool' and 'the single highest-ROI activity you can do'; daily puzzles are 'non-negotiable' at 10\u201320 per day."
+    },
+    {
+      "text": "Deprioritizes openings / warns against opening-theory rabbit holes at 800 ELO",
+      "passed": true,
+      "evidence": "'Do NOT buy a Chessable course yet. Do NOT study opening theory deeply.' and 'Spend maybe 2\u20133 hours total on openings across the whole 8 months.' Plus explicit warning about 'Opening rabbit holes' as a stall-out risk."
+    },
+    {
+      "text": "Recommends slower time controls (rapid / classical) over blitz/bullet for learning",
+      "passed": true,
+      "evidence": "'Time control: 10+0 or 15+10 rapid. Not bullet. Not blitz. Bullet and blitz will actively make you worse at 800 because you don't have time to think.'"
+    },
+    {
+      "text": "Includes post-game analysis / reviewing losses as a core practice",
+      "passed": true,
+      "evidence": "Section 3 'Analyzing your games (underrated, huge)' instructs running Lichess computer analysis and 'Learn from your mistakes' after each game, with classification of blunders as tactical vs strategic."
+    },
+    {
+      "text": "Includes spaced / distributed review of previously-seen positions or missed puzzles",
+      "passed": false,
+      "evidence": "The plan mentions a 'blunder log' and revisiting patterns over time, but there is no real spaced-repetition or scheduled re-review of previously-missed puzzles/positions. The blunder log is descriptive pattern-spotting, not distributed review."
+    },
+    {
+      "text": "Emphasizes active production (solving puzzles, calculating) over passive consumption (streamers, videos)",
+      "passed": true,
+      "evidence": "Section 7 explicitly labels streamers as 'entertainment, not study', saying 'almost zero rating gain per hour', while the whole plan centers on active calculation ('spend up to 60\u201390 seconds actually calculating', 'Say the idea out loud before you move')."
+    },
+    {
+      "text": "Names specific resources (books, courses, or tools) rather than vague pointers",
+      "passed": true,
+      "evidence": "Names Lichess Puzzles, John Bartholomew's 'Climbing the Rating Ladder' and 'Chess Fundamentals', Chernev's 'Logical Chess: Move by Move', Aman Hambleton's 'Building Habits', ChessDojo, Silman's Endgame Course, Chessable 'Short & Sweet', Levy Rozman's 'How to Win at Chess'."
+    },
+    {
+      "text": "Warns about common failure modes tailored to this rating (e.g., blitz tilt, opening obsession, streamer-watching)",
+      "passed": true,
+      "evidence": "'Things that will stall you' section lists blitz/bullet substitution, not analyzing losses, 'Opening rabbit holes', 'Tilt' (stop after 2 losses), 'Rating obsession', and Chess.com/Lichess confusion."
+    },
+    {
+      "text": "Warns that the plan will feel slower/harder than intuitive approaches (desirable difficulty)",
+      "passed": false,
+      "evidence": "The plan emphasizes slowing down on puzzles ('Getting them wrong fast without thinking is how people spend years at 800') and playing slower time controls, but it does not explicitly warn the user that this disciplined approach will feel harder, slower, or less satisfying than the intuitive alternatives \u2014 the framing is more 'this is achievable and higher-ROI' than 'this will feel worse in the short term'."
+    },
+    {
+      "text": "Includes a feedback mechanism for identifying specific weaknesses to drill",
+      "passed": true,
+      "evidence": "The blunder log ('one line per game... After a month, patterns emerge. You'll see you keep missing the same type of tactic \u2014 now you know what to drill') plus classifying blunders as tactical vs strategic and using Lichess Puzzle Themes (Fork/Pin/Mate in 2) to drill specific patterns."
+    }
+  ],
+  "summary": {
+    "pass_rate": 0.8333333333333334,
+    "passed": 10,
+    "failed": 2,
+    "total": 12
+  }
+}

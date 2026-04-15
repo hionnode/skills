@@ -1,0 +1,70 @@
+{
+  "expectations": [
+    {
+      "text": "Diagnoses the user's passive-consumption / watch-videos-feels-like-learning pattern explicitly",
+      "passed": true,
+      "evidence": "Opens with 'The diagnosis: you're consuming, not practicing' and states 'you mistook the feeling of learning for actual learning. Watching a YouTube video... activates the same satisfaction circuits as real progress... But you haven't built any skill.'"
+    },
+    {
+      "text": "Names the 'illusion of comprehension' / recognition-vs-recall distinction (following along is not knowing)",
+      "passed": true,
+      "evidence": "Explicitly names 'a specific trap here psychologists call the fluency illusion' and explains 'ease of input has almost no relationship to your ability to retrieve and use that information later.' Also contrasts 'produce under pressure' vs 'recognize when someone else does it.'"
+    },
+    {
+      "text": "Explains why Duolingo / YouTube videos produce felt progress without transferable skill",
+      "passed": true,
+      "evidence": "Explains that videos 'activate the same satisfaction circuits as real progress' and uses the ser vs estar example: 'A Spanish video where the teacher explains \"ser vs estar\" feels clarifying. Three weeks later in Mexico City, you can't conjugate in real time because you never practiced conjugating in real time.'"
+    },
+    {
+      "text": "Diagnoses attempting an advanced target (Chopin piece) without prerequisite/foundational skill",
+      "passed": true,
+      "evidence": "Explicitly: 'This is why the Chopin piece killed your piano habit. Picking something massively above your level means every session is failure with no progress markers.' Also calls out needing a 'graded progression' and 'method book' rather than 'ambitious classical pieces.'"
+    },
+    {
+      "text": "Includes a concrete daily session structure with time allocations",
+      "passed": true,
+      "evidence": "Provides 'A rough template for a 45-minute session: 5 min warmup / recall of last session, 30 min trying to produce at the edge of your ability, 10 min targeted study on whatever specifically tripped you up.' Also gives 20/15 min daily allocation in the Spanish plan."
+    },
+    {
+      "text": "Prescribes high active-production to passive-intake ratio (e.g., 3:1 or stated numerically)",
+      "passed": true,
+      "evidence": "Rule 2 is titled 'Spend 80% of your time producing, 20% consuming' and explicitly says 'Flip the ratio you had.'"
+    },
+    {
+      "text": "Includes spaced / distributed review of previously-learned material",
+      "passed": true,
+      "evidence": "Mentions 'Spaced-repetition apps with production, not recognition. Anki where you produce the Spanish sentence from an English prompt' and includes '5 min warmup / recall of last session' in the session template."
+    },
+    {
+      "text": "Includes retrieval-based practice or self-testing without looking at notes",
+      "passed": true,
+      "evidence": "The production-focused Anki cards ('produce the Spanish sentence from an English prompt') are retrieval practice, and the session template includes 'recall of last session.' The overall thrust is about retrieval/production rather than recognition."
+    },
+    {
+      "text": "Names specific resources or tool types (e.g., Anki, tutor/language partner, a specific course)",
+      "passed": true,
+      "evidence": "Names italki tutors ($15/hour), Anki, Language Transfer, Pimsleur, Dreaming Spanish, Alfred's and Faber method books, and language exchange partners / Discord communities."
+    },
+    {
+      "text": "Warns that the right approach will feel harder/slower than what they were doing before (desirable difficulty)",
+      "passed": true,
+      "evidence": "States 'Production is where learning actually happens \u2014 and where it feels bad, which is why people avoid it' and 'Learning is actually a very boring process of showing up daily, producing slightly above your current ability, getting corrected, and repeating for longer than feels reasonable.' Also 'recording yourself and listening back is brutal but effective.'"
+    },
+    {
+      "text": "Explicitly recommends focusing on ONE skill rather than multiple simultaneously",
+      "passed": true,
+      "evidence": "Closes with 'don't try to fix Spanish and piano at once. Pick one, run this playbook on it for 60 days, prove to yourself it works, then add the second.'"
+    },
+    {
+      "text": "Provides a concrete starting template or plan (not just principles) they can act on",
+      "passed": true,
+      "evidence": "The 'What this looks like concretely' section gives a specific Spanish plan: 90-day goal of 10-min tutor conversation, daily 20 min Language Transfer/Pimsleur + 15 min Anki + 2x/week italki sessions, weekly tracking of minutes spoken and verbs used, and 'book the tutor sessions now' as the forcing function."
+    }
+  ],
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 12,
+    "failed": 0,
+    "total": 12
+  }
+}
