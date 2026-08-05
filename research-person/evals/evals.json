@@ -1,0 +1,19 @@
+{
+  "skill_name": "research-person",
+  "evals": [
+    {
+      "id": 0,
+      "name": "mixed-type-hassabis",
+      "prompt": "Can you research Demis Hassabis for me? I want a proper dossier — background, career, the DeepMind story, the Nobel, controversies if any.",
+      "expected_output": "Structured research/<slug>/ folder: 00-summary, 01-index, 02-detailed-research with footnoted citations, 03-timeline, 04-career-history, _working-notes, sources/. Subject-type detection should handle the academic/scientist + tech-founder mixed case. Tier-1 sources should include Nobel committee materials, peer-reviewed pubs, DeepMind/Google filings.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "politician-mary-robinson",
+      "prompt": "build a background file on Mary Robinson, the former Irish president and UN human rights commissioner",
+      "expected_output": "Same folder structure. Subject classified as politician with secondary activist/legal sections. Tier-1 sources should pull from Oireachtas / Office of the President of Ireland archives, UN documents, court / legal records where relevant.",
+      "files": []
+    }
+  ]
+}
