@@ -1,0 +1,87 @@
+{
+  "expectations": [
+    {
+      "text": "Names the agentic-specific practices GENSEC05-BP01, GENREL03-BP02 and GENCOST05-BP01",
+      "passed": false,
+      "evidence": "Programmatic scan of outputs/response.md for GEN[A-Z]+nn-BPnn returned zero matches. None of the three IDs appears. The Generative AI Lens is not referenced at all — the document's framework references are to GDPR Art. 22 and the EU AI Act. The underlying concerns are covered substantively (§8 'Least-privilege on the Stripe credential', §3 idempotency, §4 caps and kill switch) but not as named Lens practices."
+    },
+    {
+      "text": "Every GEN*-BP* ID cited actually exists in the Lens — no fabricated IDs",
+      "passed": true,
+      "evidence": "Zero GEN*-BP* IDs cited (verified by script against assets/best-practices.csv), therefore zero fabricated. Passing vacuously — the run invented no Lens IDs, but also grounded nothing in the Lens."
+    },
+    {
+      "text": "Recommends establishing a ground-truth evaluation dataset (GENPERF01-BP01) before or during model selection",
+      "passed": false,
+      "evidence": "The substantive recommendation is strong and correctly sequenced — §3 'The asset you should start building *this week*: Before any code: **a golden set of 200–500 historical refund cases with known-correct outcomes** ... Without it you cannot answer \"is it safe to ship,\" you cannot compare two prompts, and you cannot tell whether a model upgrade broke you.' It also defines the release metrics (false approve/deny rate, policy citation accuracy). What is missing is the GENPERF01-BP01 citation. Graded against the standard applied consistently across this eval — an assertion that names a specific Lens ID requires that ID to appear — so this fails on citation only; the analysis itself is at least as good as the with_skill run's."
+    },
+    {
+      "text": "Organises advice by generative AI lifecycle stage (scoping / model selection) rather than as an undifferentiated checklist",
+      "passed": false,
+      "evidence": "The document is organised by theme and reversibility, not by generative AI lifecycle stage: 'Part 1 — Decisions that are expensive to reverse', 'Part 2 — Bedrock Agents specifically', 'Part 3 — The asset you should start building this week', 'Part 4 — Rollout staging', 'Part 5 — Business logic that will surprise you', then a flat closing checklist. The terms 'scoping' and 'model selection' do not appear as organising stages anywhere; Part 4's staging is a production rollout ladder (shadow → human-approves → auto-approve narrow band → widen), which is post-build, not a genAI lifecycle stage. It is not an undifferentiated checklist, but it is not stage-organised either."
+    },
+    {
+      "text": "Ties the permissions boundary and human-escalation requirement specifically to the Stripe refund action, not to agents in general",
+      "passed": true,
+      "evidence": "§8 is Stripe-specific: 'The Lambda that touches Stripe should hold a **restricted API key** scoped to refunds-write on charges only — no payouts, no customer object writes, no key rotation ability. Separate execution role per action group ... Separate keys per environment with a hard guarantee that non-prod cannot reach live mode.' The escalation requirement is likewise bound to the money movement: 'the LLM should never be the entity whose output directly authorizes a Stripe `refunds.create`'; §4 'Per-refund maximum (start low — e.g. auto-approve only under $50)', 'fail *closed* to a holding response, never fail open to auto-approve'; §7 adds a 10–30 minute cancellation window before execution."
+    },
+    {
+      "text": "Distinguishes decisions that are expensive to retrofit later from ones that can wait",
+      "passed": true,
+      "evidence": "This is the document's primary organising axis. 'Part 1 — Decisions that are expensive to reverse. These are the ones to nail in the design doc. The rest you can iterate on.' Each of the eight items closes with an explicit '**Corner you avoid:**' line (e.g. '#3 Idempotency, from the first line of code — Corner you avoid: the class of bug that is invisible in testing and expensive in production'). §4 marks the deferrable side too: 'Make the thresholds *configuration*, not code, because you will tune them weekly'. §4 of Part 4: 'Cheap to build now, painful to retrofit.'"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 3,
+    "total": 6,
+    "pass_rate": 0.5
+  },
+  "claims": [
+    {
+      "claim": "Bedrock Agents' orchestration prompt is partially opaque and awkward to unit test locally",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Accurate characterisation of Bedrock Agents. The derived advice — keep policy engine, Stripe execution, OMS reads and ledger in Lambdas behind stable contracts so the orchestrator is swappable — is sound and is an angle the with_skill run touches only via its F1 design fork."
+    },
+    {
+      "claim": "Charges older than Stripe's 180-day window cannot be refunded through the normal path",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Correct Stripe behaviour, and a genuinely useful domain detail (§5) that the with_skill run does not surface. Part 5's list of business-logic traps (tax/shipping treatment, unreturned Stripe fees, split tender, order-level lease for concurrency) is the strongest content in the document and is not covered by any assertion."
+    },
+    {
+      "claim": "GDPR Art. 22 / EU AI Act transparency obligations bite on automated refund denials",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Directionally correct (automated decisions with significant effect, right to human review) and appropriately hedged as a reason to design an appeal path. The run flags it as a design consequence rather than asserting a legal conclusion."
+    },
+    {
+      "claim": "The document recommends against letting Bedrock Agents become load-bearing in the design doc",
+      "type": "process",
+      "verified": true,
+      "evidence": "§Part 2: 'I'd push back gently on locking to Bedrock Agents in the design doc' and 'The honest question to answer in the doc: does this need an agent at all?' This directly answers the user's 'so we don't paint ourselves into a corner' framing."
+    }
+  ],
+  "timing": {
+    "executor_duration_seconds": 143.1,
+    "total_duration_seconds": 143.1,
+    "total_tokens": 32183
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Recommends establishing a ground-truth evaluation dataset (GENPERF01-BP01) before or during model selection",
+        "reason": "The parenthetical ID makes this assertion do two jobs at once, and the two verdicts diverge: this run nails the substance ('Before any code: a golden set of 200–500 historical refund cases', with launch thresholds defined) but cites no ID. Split into two assertions so the eval reports 'good advice, no Lens grounding' rather than a flat fail."
+      },
+      {
+        "assertion": "Organises advice by generative AI lifecycle stage (scoping / model selection) rather than as an undifferentiated checklist",
+        "reason": "The assertion's stated contrast is 'undifferentiated checklist', but this run is highly differentiated (by reversibility cost) while not being stage-organised — so it fails an assertion whose stated failure mode it does not exhibit. Either drop the 'rather than' clause or name lifecycle staging as the sole criterion."
+      },
+      {
+        "reason": "This run is 15.7k chars vs the with_skill run's 39k, and the eval has no assertion touching the domain-specific traps it surfaces (Stripe's 180-day refund window, fee non-return, split tender, order-level lease for concurrent sessions, refund-vs-store-credit tiering as a reversibility lever). Those are the kind of thing that sinks a Q3 delivery. Worth an assertion on identifying irreversibility/duplicate-payment hazards specific to money movement."
+      }
+    ],
+    "overall": "Three of six failures are attributable to Lens grounding, which is the intended signal. But two assertions bundle substance with citation, which makes this run's genuine strength invisible in the score."
+  }
+}

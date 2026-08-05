@@ -1,0 +1,13 @@
+{
+ "eval_id": 1,
+ "eval_name": "design-mode-refund-agent",
+ "prompt": "We're scoping a new thing for Q3 \u2014 an agent that handles refund requests end to end. It'd read the order from our OMS, check it against refund policy, and actually issue the refund through Stripe if it qualifies, escalating to a human otherwise. Planning to build it on Bedrock Agents. Nothing's built yet, we're still writing the design doc. What should we be designing against so we don't paint ourselves into a corner?",
+ "assertions": [
+  "Names the agentic-specific practices GENSEC05-BP01, GENREL03-BP02 and GENCOST05-BP01",
+  "Every GEN*-BP* ID cited actually exists in the Lens \u2014 no fabricated IDs",
+  "Recommends establishing a ground-truth evaluation dataset (GENPERF01-BP01) before or during model selection",
+  "Organises advice by generative AI lifecycle stage (scoping / model selection) rather than as an undifferentiated checklist",
+  "Ties the permissions boundary and human-escalation requirement specifically to the Stripe refund action, not to agents in general",
+  "Distinguishes decisions that are expensive to retrofit later from ones that can wait"
+ ]
+}

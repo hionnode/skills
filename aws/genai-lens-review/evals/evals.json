@@ -1,0 +1,56 @@
+{
+  "skill_name": "genai-lens-review",
+  "evals": [
+    {
+      "id": 0,
+      "name": "full-review-rag-app",
+      "prompt": "Can you do a Well-Architected review of our customer support assistant? The code is at FIXTURE_PATH \u2014 Terraform in infra/, the Lambda in src/, and there's a README with context on how it's running in production. We've got a platform review coming up and I want to know what we're going to get hammered on. Write the findings to review.md.",
+      "expected_output": "A structured review report citing specific GEN* best practice IDs, grounded in the actual Terraform/Python (wildcard bedrock:* IAM, no guardrails, hardcoded API key, temperature 0.9, no prompt catalog, single region, no eval set, no caching, 20-result retrieval, cross-tenant data in one KB), with risk ratings and remediation.",
+      "files": [
+        "fixtures/support-rag/"
+      ],
+      "assertions": [
+        "Cites at least 8 distinct real Generative AI Lens best-practice IDs (GENOPS/GENSEC/GENREL/GENPERF/GENCOST/GENSUS nn-BPnn)",
+        "Every GEN*-BP* ID cited actually exists in the Lens \u2014 no fabricated IDs",
+        "Flags the wildcard IAM policy (bedrock:* and Resource=\"*\" in infra/main.tf) as a least-privilege gap tied to GENSEC01-BP01 or GENSEC01-BP03",
+        "Identifies that no Bedrock Guardrail is configured and maps it to GENSEC02-BP01",
+        "Identifies the hardcoded API key literal in src/handler.py",
+        "Connects the README's 'confidently wrong 1 in 20' complaint to the absence of a ground-truth evaluation set (GENPERF01-BP01 or GENOPS01-BP01)",
+        "Addresses the cross-customer data exposure incident \u2014 one knowledge base holding all customers' account records with no per-customer access filtering",
+        "Attributes the 429s and latency spikes to throughput management, citing GENREL01-BP01 or GENOPS02-BP03",
+        "Attributes the tripled Bedrock bill to specific cost practices (20-result retrieval, max_tokens 4096, no prompt caching) with a GENCOST ID",
+        "Includes a per-practice status table using Met / Partially met / Not met / Not applicable",
+        "Every priority finding cites concrete evidence \u2014 a file, Terraform resource, or README statement \u2014 rather than generic advice",
+        "States the review scope (which pillars were assessed) explicitly"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "design-mode-refund-agent",
+      "prompt": "We're scoping a new thing for Q3 \u2014 an agent that handles refund requests end to end. It'd read the order from our OMS, check it against refund policy, and actually issue the refund through Stripe if it qualifies, escalating to a human otherwise. Planning to build it on Bedrock Agents. Nothing's built yet, we're still writing the design doc. What should we be designing against so we don't paint ourselves into a corner?",
+      "expected_output": "Design-mode guidance keyed to scoping/model-selection lifecycle stages, surfacing the agentic best practices (GENSEC05-BP01 permissions boundaries, GENREL03-BP02 timeouts, GENCOST05-BP01 stopping conditions, GENSEC02-BP01 guardrails) plus the expensive-to-retrofit ones (ground truth eval set, model selection, prompt catalog), rather than a generic architecture doc.",
+      "assertions": [
+        "Names the agentic-specific practices GENSEC05-BP01, GENREL03-BP02 and GENCOST05-BP01",
+        "Every GEN*-BP* ID cited actually exists in the Lens \u2014 no fabricated IDs",
+        "Recommends establishing a ground-truth evaluation dataset (GENPERF01-BP01) before or during model selection",
+        "Organises advice by generative AI lifecycle stage (scoping / model selection) rather than as an undifferentiated checklist",
+        "Ties the permissions boundary and human-escalation requirement specifically to the Stripe refund action, not to agents in general",
+        "Distinguishes decisions that are expensive to retrofit later from ones that can wait"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "targeted-security-pillar",
+      "prompt": "security team wants a writeup before they'll sign off on our internal doc-search bot. it's bedrock + a knowledge base over confluence exports, sso'd, only employees can hit it. they specifically asked about prompt injection and data leakage. can you go through the aws genai security best practices and tell me which ones we'd fail and how bad each one is?",
+      "expected_output": "A security-pillar-scoped assessment naming the 10 GENSEC practices, with per-practice status and risk, explicitly adjusting inherent risk for the internal/SSO context rather than echoing the Lens ratings, and flagging where evidence is missing rather than guessing.",
+      "assertions": [
+        "Assesses all ten GENSEC best practices by ID (GENSEC01-BP01..BP04, GENSEC02-BP01, GENSEC03-BP01, GENSEC04-BP01, GENSEC04-BP02, GENSEC05-BP01, GENSEC06-BP01)",
+        "Every GEN*-BP* ID cited actually exists in the Lens \u2014 no fabricated IDs",
+        "Addresses prompt injection through GENSEC04-BP02 and data leakage through GENSEC01-BP03",
+        "Adjusts at least one practice's risk rating away from the Lens's inherent rating because the workload is internal and SSO-gated, and justifies the adjustment",
+        "Flags at least one practice as needing evidence the user hasn't supplied instead of guessing a verdict",
+        "Notes that GENSEC05-BP01 (excessive agency) is not applicable or low relevance for a read-only search bot, with justification"
+      ]
+    }
+  ]
+}

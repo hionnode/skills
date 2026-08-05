@@ -1,0 +1,89 @@
+{
+  "expectations": [
+    {
+      "text": "Assesses all ten GENSEC best practices by ID (GENSEC01-BP01..BP04, GENSEC02-BP01, GENSEC03-BP01, GENSEC04-BP01, GENSEC04-BP02, GENSEC05-BP01, GENSEC06-BP01)",
+      "passed": true,
+      "evidence": "The 'Full assessment' table has exactly ten rows, one per GENSEC practice, each with Status / Lens risk / Adjusted risk / Evidence. Script-verified: the set of GENSEC IDs in the output equals the set of ten GENSEC IDs in assets/best-practices.csv. Seven of the ten also get a developed priority finding; the remaining three (GENSEC01-BP01, GENSEC05-BP01, GENSEC06-BP01) are assessed in the table plus the exclusions section."
+    },
+    {
+      "text": "Every GEN*-BP* ID cited actually exists in the Lens — no fabricated IDs",
+      "passed": true,
+      "evidence": "Verified with a script against assets/best-practices.csv. outputs/response.md cites 13 distinct IDs (the ten GENSEC plus GENOPS01-BP02, GENOPS03-BP01, GENOPS03-BP02 flagged as security-adjacent out-of-scope items); all 13 matched the authoritative list. Fabricated set empty."
+    },
+    {
+      "text": "Addresses prompt injection through GENSEC04-BP02 and data leakage through GENSEC01-BP03",
+      "passed": true,
+      "evidence": "Finding 1 is 'GENSEC01-BP03 — Implement least privilege access permissions for foundation models accessing data stores ... This is your data leakage finding'. Finding 2 is 'GENSEC04-BP02 — Sanitize and validate user inputs to foundation models', which separates direct injection ('Impact is genuinely limited in this workload: no tools means no actions') from indirect injection via retrieved Confluence content ('this is the real finding ... A single line of white text or an HTML comment on an obscure page ... becomes a company-wide misinformation and phishing channel') and names the markdown-image exfiltration variant."
+    },
+    {
+      "text": "Adjusts at least one practice's risk rating away from the Lens's inherent rating because the workload is internal and SSO-gated, and justifies the adjustment",
+      "passed": true,
+      "evidence": "Finding 5, GENSEC01-BP02: '**Risk:** Medium (Lens: High)' with the justification 'It's TLS-encrypted, so this is a defence-in-depth gap rather than an active exposure — which is why I've lowered it from the Lens's inherent High. The workload is internal, SSO-gated, and has no external caller to attract attention.' The full-assessment table records the same in a dedicated 'Adjusted' column ('Lowered: TLS in transit, internal workload, no external caller'), and GENSEC01-BP01 is likewise lowered High→Medium with 'Internal-only use lowers this.' Adjustments run both ways: GENSEC01-BP03 is raised High→Critical with a stated rationale."
+    },
+    {
+      "text": "Flags at least one practice as needing evidence the user hasn't supplied instead of guessing a verdict",
+      "passed": true,
+      "evidence": "'Insufficient evidence' is used as a first-class status, not a caveat. GENSEC01-BP02: 'Status: Insufficient evidence ... Evidence: Network path not described.' GENSEC01-BP04: 'Status: Insufficient evidence — assume not met' with the reasoning stated ('Bedrock model invocation logging is off by default, so absent evidence to the contrary the safe assumption for a sign-off document is that it isn't on'). The 'Assessment at a glance' table carries a dedicated 'Insufficient evidence' column (count 2), and the closing note says these 'need a configuration check rather than new engineering, and several may already be met.'"
+    },
+    {
+      "text": "Notes that GENSEC05-BP01 (excessive agency) is not applicable or low relevance for a read-only search bot, with justification",
+      "passed": true,
+      "evidence": "Table row: 'GENSEC05-BP01 | Least privilege for agentic workflows | N/A | High | — | No agent, no tool use, no actions. Re-open the moment anything is added.' Expanded in exclusions: '**GENSEC05-BP01 (excessive agency) — not applicable today, and fragile.** The bot answers; it does not act. But this is the practice that flips the severity of finding #2 from \"misinformation\" to \"remote code execution by Confluence page\" ... Recommend a written gate: no tool or action capability ships until GENSEC04-BP02 and GENSEC05-BP01 are both assessed as met.' Justification is present and the conditionality is made a sign-off condition."
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1.0
+  },
+  "claims": [
+    {
+      "claim": "The user asked for security only, so the other 41 practices are out of scope",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Arithmetic checks out: 51 total practices in best-practices.csv minus 10 GENSEC = 41. The scope warning is placed at the top ('A clean GENSEC review is not a clean Well-Architected review') and three security-adjacent non-GENSEC practices are named rather than silently dropped."
+    },
+    {
+      "claim": "Confluence exports carry no ACL metadata, so Bedrock Knowledge Bases cannot infer space or page restrictions",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Accurate for a static space export ingested to S3. The run explicitly labels this its most load-bearing assumption (Assumption 1) and states what would change if the Kendra GenAI Index or the native Confluence connector were in use — appropriate hedging for an assessment made without repo access."
+    },
+    {
+      "claim": "Enabling Bedrock invocation logging creates a second, more broadly readable copy of the sensitive corpus",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Correct and non-obvious: invocation logs contain full prompts including retrieved chunks, and central logging buckets typically have broader access than the source spaces. Both runs independently identify this; it is a genuine strength no assertion covers."
+    },
+    {
+      "claim": "GENSEC06-BP01 is N/A as written but the underlying risk transfers to the RAG ingestion pipeline",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Defensible: the practice is scoped to training/customization workflows in best-practices.csv ('Implement data purification filters for model training workflows'), and the run scores it N/A 'to stay faithful to the Lens' while folding the ingestion-sanitization mitigation into finding #2 rather than losing it."
+    },
+    {
+      "claim": "Four of the six High-risk GENSEC practices that apply are not met",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Consistent with the full-assessment table: of the eight applicable practices, those rated Lens-High and marked Not met are GENSEC01-BP03, GENSEC02-BP01, GENSEC04-BP02, plus GENSEC01-BP04 (Insufficient evidence — assume not met). Roll-up counts (0 met / 2 partial / 4 not met / 2 insufficient / 2 N/A = 10) reconcile with the table."
+    }
+  ],
+  "timing": {
+    "executor_duration_seconds": 268.8,
+    "total_duration_seconds": 268.8,
+    "total_tokens": 89255
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "This is the eval where the baseline is genuinely competitive — it also assessed all ten GENSEC practices by correct ID (it web-searched the Lens docs; see its §9 Sources). The assertions that separate the two runs here are the 'insufficient evidence' and risk-adjustment ones, which is the right signal, but the eval would be sharper with an assertion about scope discipline: this run opens with a scope warning that a GENSEC-only pass is not a Well-Architected pass and names the 41 unassessed practices, which is a real reviewer behaviour nothing currently tests."
+      },
+      {
+        "assertion": "Adjusts at least one practice's risk rating away from the Lens's inherent rating because the workload is internal and SSO-gated, and justifies the adjustment",
+        "reason": "'Away from' is directionless, so an upward adjustment justified by the same context also satisfies it. If the intent is specifically that internal+SSO should *lower* something (testing that the reviewer doesn't just parrot Lens ratings upward), say 'lowers'."
+      }
+    ],
+    "overall": "Well-targeted assertions for a scoped single-pillar request; the 'insufficient evidence' assertion is the most discriminating one in the whole suite."
+  }
+}

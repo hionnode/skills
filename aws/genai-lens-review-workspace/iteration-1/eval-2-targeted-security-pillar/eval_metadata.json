@@ -1,0 +1,13 @@
+{
+ "eval_id": 2,
+ "eval_name": "targeted-security-pillar",
+ "prompt": "security team wants a writeup before they'll sign off on our internal doc-search bot. it's bedrock + a knowledge base over confluence exports, sso'd, only employees can hit it. they specifically asked about prompt injection and data leakage. can you go through the aws genai security best practices and tell me which ones we'd fail and how bad each one is?",
+ "assertions": [
+  "Assesses all ten GENSEC best practices by ID (GENSEC01-BP01..BP04, GENSEC02-BP01, GENSEC03-BP01, GENSEC04-BP01, GENSEC04-BP02, GENSEC05-BP01, GENSEC06-BP01)",
+  "Every GEN*-BP* ID cited actually exists in the Lens \u2014 no fabricated IDs",
+  "Addresses prompt injection through GENSEC04-BP02 and data leakage through GENSEC01-BP03",
+  "Adjusts at least one practice's risk rating away from the Lens's inherent rating because the workload is internal and SSO-gated, and justifies the adjustment",
+  "Flags at least one practice as needing evidence the user hasn't supplied instead of guessing a verdict",
+  "Notes that GENSEC05-BP01 (excessive agency) is not applicable or low relevance for a read-only search bot, with justification"
+ ]
+}

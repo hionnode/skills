@@ -1,0 +1,123 @@
+{
+  "expectations": [
+    {
+      "text": "Cites at least 8 distinct real Generative AI Lens best-practice IDs (GENOPS/GENSEC/GENREL/GENPERF/GENCOST/GENSUS nn-BPnn)",
+      "passed": true,
+      "evidence": "Programmatic extraction from outputs/review.md found 96 ID mentions covering 51 distinct IDs (GENOPS01-BP01 ... GENSUS03-BP01) — every practice in the Lens. Far exceeds the threshold of 8."
+    },
+    {
+      "text": "Every GEN*-BP* ID cited actually exists in the Lens — no fabricated IDs",
+      "passed": true,
+      "evidence": "Verified with a script against assets/best-practices.csv (51 authoritative IDs). All 51 distinct IDs cited in review.md matched the CSV exactly; the fabricated set is empty. The cited set is precisely equal to the Lens set."
+    },
+    {
+      "text": "Flags the wildcard IAM policy (bedrock:* and Resource=\"*\" in infra/main.tf) as a least-privilege gap tied to GENSEC01-BP01 or GENSEC01-BP03",
+      "passed": true,
+      "evidence": "Finding 3 is headed 'GENSEC01-BP01 — Least privilege access to foundation model endpoints' and states: '`infra/main.tf:110-113`: the Lambda execution role holds `Action = [\"bedrock:*\"], Resource = \"*\"`'. Verified against the fixture: main.tf lines 110-112 are exactly Effect/Action=[\"bedrock:*\"]/Resource=\"*\". The summary table row for GENSEC01-BP01 repeats '`bedrock:*` on `*` (`main.tf:111`)'."
+    },
+    {
+      "text": "Identifies that no Bedrock Guardrail is configured and maps it to GENSEC02-BP01",
+      "passed": true,
+      "evidence": "Finding 2 'GENSEC02-BP01 — Implement guardrails to mitigate harmful or incorrect model responses ... Status: Not met. Evidence: `src/handler.py:48-59` calls `bedrock.invoke_model` with no `guardrailIdentifier` / `guardrailVersion` ... No `aws_bedrock_guardrail` resource exists in `infra/main.tf`.' Confirmed against the fixture — handler.py:48-59 has no guardrail parameters."
+    },
+    {
+      "text": "Identifies the hardcoded API key literal in src/handler.py",
+      "passed": true,
+      "evidence": "Finding 3: '`src/handler.py:16`: `API_KEY = \"sk-acme-support-2f8a91\"` — a static shared secret committed to source, compared against a client-supplied header at `src/handler.py:40`.' Exact literal and line number match the fixture (handler.py:16)."
+    },
+    {
+      "text": "Connects the README's 'confidently wrong 1 in 20' complaint to the absence of a ground-truth evaluation set (GENPERF01-BP01 or GENOPS01-BP01)",
+      "passed": true,
+      "evidence": "Finding 8 is headed 'GENOPS01-BP01 / GENOPS01-BP02 / GENPERF01-BP01 — No evaluation, no ground truth, no feedback' and quotes README:26-27 verbatim: \"Support leads say answers are 'confidently wrong' maybe 1 in 20 times, but we don't have a way to measure this.\" Remediation step 1 prescribes curating 150-300 stratified ground-truth questions. Both required IDs are present and the connection is explicit."
+    },
+    {
+      "text": "Addresses the cross-customer data exposure incident — one knowledge base holding all customers' account records with no per-customer access filtering",
+      "passed": true,
+      "evidence": "Finding 1 (GENSEC01-BP03, rated Critical): 'retrieve() issues a bedrock-agent-runtime:Retrieve call with retrievalConfiguration.vectorSearchConfiguration containing only numberOfResults: 20 — no filter clause ... customer_id is never read from body ... README.md:18-19 confirms every customer's account records are exported into the same S3 bucket that backs the same knowledge base ... This is the incident in README.md:28.' Explicitly names it as designed behaviour, not a one-off."
+    },
+    {
+      "text": "Attributes the 429s and latency spikes to throughput management, citing GENREL01-BP01 or GENOPS02-BP03",
+      "passed": true,
+      "evidence": "Finding 6 'GENOPS02-BP03 / GENREL01-BP01 — No overload protection, no throughput strategy' cites README.md:23 ('latency spikes to 20s+ under load, occasional 429s from Bedrock') and attributes it to the on-demand single-region quota: 'MODEL_ID (infra/main.tf:61) is the plain on-demand foundation model ID ... not a cross-region inference profile ... so every request is capped by the single-region on-demand quota.' Both eligible IDs are cited."
+    },
+    {
+      "text": "Attributes the tripled Bedrock bill to specific cost practices (20-result retrieval, max_tokens 4096, no prompt caching) with a GENCOST ID",
+      "passed": true,
+      "evidence": "Finding 9 'GENCOST03-BP01 / GENCOST03-BP02 / GENCOST01-BP01 — Uncontrolled token spend' cites all three levers: 'src/handler.py:33 sets numberOfResults: 20 ... src/handler.py:53 sets max_tokens: 4096 ... No prompt caching is used', and ties them to 'README.md:24-25 — spend has roughly tripled since March'. Table rows GENCOST03-BP01/BP02/BP03 repeat each."
+    },
+    {
+      "text": "Includes a per-practice status table using Met / Partially met / Not met / Not applicable",
+      "passed": true,
+      "evidence": "The 'Full assessment' table lists all 51 practice IDs with a Status column drawing on the four-state scheme — e.g. 'GENOPS05-BP01 | Learn when to customize models | Met', 'GENOPS04-BP01 | Automate lifecycle with IaC | Partial', 'GENSEC01-BP03 | ... | Not met', 'GENSEC05-BP01 | ... | N/A'. The roll-up table uses the same four columns (Met / Partial / Not met / N/A). Note: uses the abbreviations 'Partial' and 'N/A' rather than the assertion's 'Partially met' / 'Not applicable' — judged equivalent states, not a different scheme."
+    },
+    {
+      "text": "Every priority finding cites concrete evidence — a file, Terraform resource, or README statement — rather than generic advice",
+      "passed": true,
+      "evidence": "All 13 priority findings carry an explicit **Evidence:** block naming files, line numbers or Terraform resources (e.g. finding 10: '`src/handler.py:54`: \"temperature\": 0.9'; finding 12: 'aws_lambda_function.chat (infra/main.tf:49-64) has no vpc_config block'; finding 13: 'filename = \"../build/chat.zip\" (infra/main.tf:54)'). Spot-checked handler.py:16/21/33/54, main.tf:110-113/140-143 and README:23-28 against the fixture — all accurate."
+    },
+    {
+      "text": "States the review scope (which pillars were assessed) explicitly",
+      "passed": true,
+      "evidence": "Header line 3: '**Scope:** All six pillars, all 51 best practices', followed by 'Evidence base: support-rag/README.md, support-rag/infra/main.tf, support-rag/src/handler.py. Anything not visible in those three files is called out as insufficient evidence rather than assumed absent.' The 'Assessment at a glance' table enumerates all six pillars by name."
+    }
+  ],
+  "summary": {
+    "passed": 12,
+    "failed": 0,
+    "total": 12,
+    "pass_rate": 1.0
+  },
+  "claims": [
+    {
+      "claim": "The review covers all 51 Lens best practices",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Script-extracted distinct IDs from review.md = 51, exactly equal to the 51 rows in assets/best-practices.csv. The 'Full assessment' table has one row per practice."
+    },
+    {
+      "claim": "Pillar roll-up counts (Met 4 / Partial 7 / Not met 33 / N/A 7 = 51) are internally consistent with the per-practice table",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Totals sum to 51 and match the practice count. Per-pillar row counts (10/10/10/8/9/4) also match the Lens's per-pillar practice counts in best-practices.csv."
+    },
+    {
+      "claim": "customer_id is documented in handler.py but never used",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Confirmed in the fixture: handler.py:3 docstring declares customer_id in the POST body; the token appears nowhere else in the file — handler() reads only body[\"question\"] at line 44."
+    },
+    {
+      "claim": "GENSEC05-BP01, GENREL03-BP02, GENREL05-BP03 and GENCOST05-BP01 are genuinely N/A because the workload has no agentic behaviour",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Justified correctly — handler.py performs exactly one retrieve() and one invoke_model() call with no tool use or action groups. The review also flags that adding agentic capability re-opens all four."
+    },
+    {
+      "claim": "The Lambda timeout of 300s exceeds the API Gateway HTTP API 30s integration cap",
+      "type": "factual",
+      "verified": true,
+      "evidence": "main.tf:55 sets timeout = 300; the 30s HTTP API integration cap is accurate AWS behaviour. Finding 7 draws the correct cost consequence (Bedrock keeps generating after the caller has a 504)."
+    }
+  ],
+  "timing": {
+    "executor_duration_seconds": 533.5,
+    "total_duration_seconds": 533.5,
+    "total_tokens": 159505
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Cites at least 8 distinct real Generative AI Lens best-practice IDs",
+        "reason": "This run cites all 51 IDs — i.e. it enumerates the entire Lens. A count threshold of 8 is trivially cleared by any output that pastes the practice table, and it cannot distinguish 'used the right practices' from 'listed every practice'. Consider asserting that the top-priority findings map to the correct practice, or capping breadth (e.g. 'the top 5 findings are the highest-risk ones for this workload')."
+      },
+      {
+        "assertion": "Includes a per-practice status table using Met / Partially met / Not met / Not applicable",
+        "reason": "The wording invites a string-match dispute: this run uses 'Partial' and 'N/A'. If the four-state vocabulary matters, say 'or recognisable abbreviations'; if it doesn't, drop the enumeration and assert that every practice has a status and that N/A verdicts carry justification."
+      },
+      {
+        "reason": "No assertion checks that cited file/line evidence is actually correct. I verified handler.py:16/21/33/54, main.tf:110-113/140-143 and README:23-28 by hand and they were accurate — but a run that invents plausible line numbers would pass every current assertion. A 'cited line numbers resolve to the claimed content' assertion would be highly discriminating."
+      }
+    ],
+    "overall": "Strong eval set with good coverage of the fixture's planted defects. The main weakness is that ID-count assertions reward breadth over correct targeting."
+  }
+}

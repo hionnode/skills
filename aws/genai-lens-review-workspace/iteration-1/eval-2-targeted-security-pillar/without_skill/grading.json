@@ -1,0 +1,92 @@
+{
+  "expectations": [
+    {
+      "text": "Assesses all ten GENSEC best practices by ID (GENSEC01-BP01..BP04, GENSEC02-BP01, GENSEC03-BP01, GENSEC04-BP01, GENSEC04-BP02, GENSEC05-BP01, GENSEC06-BP01)",
+      "passed": true,
+      "evidence": "§3 'Scorecard — all ten GENSEC best practices' is a ten-row table listing each ID with its correct official title, the Lens risk rating, a status and a contextual severity — e.g. 'GENSEC01-BP03 | Implement least privilege access permissions for foundation models accessing data stores | High | **Fail** | **Critical**'. Script-verified: the set of GENSEC IDs cited equals the ten in assets/best-practices.csv. Each is then developed in §4 or §5 (DL-1, DL-3, PI-1/PI-2, PI-3, MON-1, MON-2, EP-1, EP-2, PC-1, AG-1, DP-1)."
+    },
+    {
+      "text": "Every GEN*-BP* ID cited actually exists in the Lens — no fabricated IDs",
+      "passed": true,
+      "evidence": "Verified with a script against assets/best-practices.csv: 30 ID mentions, 10 distinct IDs, all ten matching the authoritative GENSEC list exactly, fabricated set empty. The practice titles are also accurate, and §9 lists the corresponding docs.aws.amazon.com URLs per practice."
+    },
+    {
+      "text": "Addresses prompt injection through GENSEC04-BP02 and data leakage through GENSEC01-BP03",
+      "passed": true,
+      "evidence": "§4.1 'Data leakage — the primary finding / Finding DL-1 — Confluence ACLs are not enforced at retrieval time / **GENSEC01-BP03** · Lens risk: High · Our severity: CRITICAL'. §4.2 'Prompt injection / Finding PI-1 — No input sanitization or validation layer / **GENSEC04-BP02**' and 'PI-2 — Indirect (second-order) injection via Confluence page content / **GENSEC04-BP02** · Our severity: HIGH — this is the real prompt injection risk'. It also correctly ranks them: 'Prompt injection is not what breaks your confidentiality model; the missing ACLs are.'"
+    },
+    {
+      "text": "Adjusts at least one practice's risk rating away from the Lens's inherent rating because the workload is internal and SSO-gated, and justifies the adjustment",
+      "passed": true,
+      "evidence": "§2 establishes the mechanism explicitly: 'The lens assigns its own \"level of risk exposed if this best practice is not established\" ... I've reported that verbatim, then assigned a **contextual severity** based on the actual blast radius of *your* workload. They differ in several places.' The scorecard shows six of ten adjusted. The clearest justified-by-internal/SSO adjustment is GENSEC01-BP03 raised from Lens High to Critical, reasoned entirely from the workload being internal and SSO-gated: '§0 The SSO boundary you have is an **authentication** boundary, not an **authorization** boundary ... it does not prove that the specific employee asking is allowed to read the specific Confluence page', and '§4.1 Why \"only employees can hit it\" is not a mitigation. Your own Confluence deployment already rejects that argument.' Note the adjustment is upward — the assertion's 'away from' is directionless, so this satisfies it as written."
+    },
+    {
+      "text": "Flags at least one practice as needing evidence the user hasn't supplied instead of guessing a verdict",
+      "passed": false,
+      "evidence": "Every one of the ten practices receives a definite verdict in the §3 scorecard (Partial / Fail / Pass (N/A) / N/A-as-written) plus a contextual severity; no practice is left pending evidence. The verdicts are explicitly guesses derived from the run's own assumptions — §1: 'You gave me a one-paragraph description, so I inferred the rest. **Every finding below is conditional on these assumptions**' — with A6 ('Bedrock Guardrails is **not currently attached**') and A7 ('model invocation logging is **off**') directly generating the GENSEC02-BP01 and GENSEC01-BP04 'Fail' verdicts. §8 'What I need confirmed' lists ten evidence requests and says 'Each of these can move a rating', which is good practice — but it sits after the verdicts rather than in place of any of them. The assertion's 'instead of guessing a verdict' is therefore not satisfied: the guesses are disclosed and well-reasoned, but they are still guesses on all ten."
+    },
+    {
+      "text": "Notes that GENSEC05-BP01 (excessive agency) is not applicable or low relevance for a read-only search bot, with justification",
+      "passed": true,
+      "evidence": "'AG-1 — Excessive agency: currently a pass, with a tripwire / **GENSEC05-BP01 · Lens risk: High · Our severity: Low, conditional** ... Under A4 this is a pass — a retrieval-only bot has no agency to be excessive with.' Justification is given, plus the conditionality: 'The moment someone adds \"and it can file the Jira ticket for you\" ... this becomes Critical, because prompt injection then converts from an information problem into an action problem. Make \"adding any tool, action group, or write capability requires a new security review\" an explicit condition of this approval.' The scorecard row reads 'Pass (N/A) | **Low** (conditional)'."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.83
+  },
+  "claims": [
+    {
+      "claim": "Quoted passages are verbatim from the Generative AI Lens security pages",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Unverifiable in detail without fetching the live docs, but the quotes are consistent with the practice titles and descriptions in assets/best-practices.csv and are individually attributed with matching URLs in §9 (e.g. gensec01-bp03.html for the metadata-filtering quote, gensec04-bp02.html for the abstraction-layer quote). No quote contradicts the authoritative practice list."
+    },
+    {
+      "claim": "'As of the June 2026 Amazon Bedrock Managed Knowledge Base release, the Confluence connector supports document-level access control ... with real-time ACL checks at query time'",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Cannot be verified from the available materials, and it is the single most consequential recommendation in the document (fix option 1 for the Critical finding). To its credit the run self-flags it: 'this capability is roughly seven weeks old at time of writing — validate it against your own tenant with a red-team test set before relying on it'. The with_skill run recommends the Amazon Kendra GenAI Index connector for the same purpose instead. No assertion checks whether product-capability claims of this weight are grounded."
+    },
+    {
+      "claim": "'Headline: 5 clear fails, 3 partials, 1 pass, 1 not-applicable-as-written. One Critical, three Highs.'",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Reconciles with the §3 scorecard: Fail = BP03, BP04, GENSEC02-BP01, GENSEC04-BP01, GENSEC04-BP02 (5); Partial = GENSEC01-BP01, GENSEC01-BP02, GENSEC03-BP01 (3); Pass(N/A) = GENSEC05-BP01 (1); N/A-as-written = GENSEC06-BP01 (1). Severities: one Critical, three High. Internally consistent."
+    },
+    {
+      "claim": "The bot functions as a 'permission-laundering and audit-evasion device' because Confluence never sees the access",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Sound and well-argued: access that Confluence would have logged and denied now occurs through a channel Confluence has no visibility into, so a departing employee's systematic querying trips no Atlassian anomaly detection. This framing is sharper than the with_skill run's equivalent passage."
+    },
+    {
+      "claim": "Embeddings are not a security control because the plaintext chunk is stored alongside the vector",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Correct for OpenSearch Serverless / Bedrock Knowledge Bases vector stores, and the supporting point about embedding-inversion research is accurate. DL-2 (treat the vector store as classified at corpus-max sensitivity) is a finding the with_skill run does not make."
+    }
+  ],
+  "timing": {
+    "executor_duration_seconds": 311.7,
+    "total_duration_seconds": 311.7,
+    "total_tokens": 77411
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "This baseline reached the same ten correctly-named GENSEC practices with accurate titles, risk ratings and doc URLs by web-searching the Lens (see §9 Sources). That means assertions 1-3 do not discriminate on this eval at all — the value the skill adds here is elsewhere (withholding verdicts pending evidence, scope discipline, not asserting unverified product capabilities). Consider retargeting the assertions at those behaviours, or the eval will keep scoring the baseline at 5/6."
+      },
+      {
+        "assertion": "Flags at least one practice as needing evidence the user hasn't supplied instead of guessing a verdict",
+        "reason": "This is the sharpest assertion in the suite and the only one that separated the runs here — but the 'instead of' does heavy lifting. This run discloses ten assumptions up front and lists ten confirmations needed, yet still assigns a verdict to all ten practices; the other run uses 'Insufficient evidence' as a status. Make the criterion explicit ('at least one practice's status is withheld pending evidence rather than assigned') so the verdict does not depend on reading the 'instead of'."
+      },
+      {
+        "reason": "No assertion tests whether AWS product capabilities cited in remediation are real. This run's top remediation rests on a 'June 2026 Bedrock Managed Knowledge Base Confluence connector with real-time ACL checks' that I could not verify; the other run recommends Kendra GenAI Index for the same job. A wrong product recommendation is the highest-cost failure mode in a security sign-off doc and nothing currently catches it."
+      }
+    ],
+    "overall": "The baseline is genuinely strong on this eval, and the assertion set mostly cannot tell the two runs apart. The 'needs evidence' assertion is the one that works; the others need retargeting."
+  }
+}

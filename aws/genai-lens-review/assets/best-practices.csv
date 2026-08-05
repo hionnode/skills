@@ -1,0 +1,52 @@
+id,pillar,question_id,question,best_practice,risk_if_absent,lifecycle_stages
+GENOPS01-BP01,Operational excellence,GENOPS01,Model performance evaluation,Periodically evaluate functional performance,High,Continuous improvement
+GENOPS01-BP02,Operational excellence,GENOPS01,Model performance evaluation,Collect and monitor user feedback,High,Continuous improvement
+GENOPS02-BP01,Operational excellence,GENOPS02,Monitor and manage operational health,Monitor all application layers,High,Deployment
+GENOPS02-BP02,Operational excellence,GENOPS02,Monitor and manage operational health,Monitor foundation model metrics,High,Deployment
+GENOPS02-BP03,Operational excellence,GENOPS02,Monitor and manage operational health,Implement solutions to mitigate the risk of system overload,High,Scoping
+GENOPS03-BP01,Operational excellence,GENOPS03,Observability in workloads,Implement prompt template management,High,Model customization
+GENOPS03-BP02,Operational excellence,GENOPS03,Observability in workloads,Enable tracing for agents and RAG workflows,High,Development and integration
+GENOPS04-BP01,Operational excellence,GENOPS04,Automate lifecycle management,Automate generative AI application lifecycle with infrastructure as code (IaC),High,Continuous improvement
+GENOPS04-BP02,Operational excellence,GENOPS04,Automate lifecycle management,Implement GenAIOps to optimize the application lifecycle,High,Continuous improvement
+GENOPS05-BP01,Operational excellence,GENOPS05,Model customization,Learn when to customize models,High,Model customization
+GENSEC01-BP01,Security,GENSEC01,Endpoint security,Grant least privilege access to foundation model endpoints,High,Deployment
+GENSEC01-BP02,Security,GENSEC01,Endpoint security,Implement private network communication between foundation models and applications,High,Deployment
+GENSEC01-BP03,Security,GENSEC01,Endpoint security,Implement least privilege access permissions for foundation models accessing data stores,High,Deployment
+GENSEC01-BP04,Security,GENSEC01,Endpoint security,Implement access monitoring to generative AI services and foundation models,High,Deployment
+GENSEC02-BP01,Security,GENSEC02,Response validation,Implement guardrails to mitigate harmful or incorrect model responses,High,Development and integration
+GENSEC03-BP01,Security,GENSEC03,Event monitoring,Implement control plane and data access monitoring to generative AI services and foundation models,High,Deployment
+GENSEC04-BP01,Security,GENSEC04,Prompt security,Implement a secure prompt catalog,Medium,Continuous improvement
+GENSEC04-BP02,Security,GENSEC04,Prompt security,Sanitize and validate user inputs to foundation models,High,Deployment
+GENSEC05-BP01,Security,GENSEC05,Excessive agency,Implement least privilege access and permissions boundaries for agentic workflows,High,Model customization
+GENSEC06-BP01,Security,GENSEC06,Data poisoning,Implement data purification filters for model training workflows,High,Development and integration; Deployment
+GENREL01-BP01,Reliability,GENREL01,Manage throughput quotas,Scale and balance foundation model throughput as a function of utilization,Medium,Model selection
+GENREL02-BP01,Reliability,GENREL02,Network reliability,Implement redundant network connections among model endpoints and supporting infrastructure,Medium,Development and integration
+GENREL03-BP01,Reliability,GENREL03,Prompt remediation and recovery actions,Use logic to manage prompt flows and gracefully recover from failure,Medium,Development and integration; Deployment
+GENREL03-BP02,Reliability,GENREL03,Prompt remediation and recovery actions,Implement timeout mechanisms on agentic workflows,High,Development and integration
+GENREL04-BP01,Reliability,GENREL04,Prompt management,Implement a prompt catalog,Medium,
+GENREL04-BP02,Reliability,GENREL04,Prompt management,Implement a model catalog,Low,Development and integration; Continuous improvement
+GENREL05-BP01,Reliability,GENREL05,Distributed availability,Load-balance inference requests across all regions of availability,Medium,Model selection
+GENREL05-BP02,Reliability,GENREL05,Distributed availability,Replicate embedding data across all regions of availability,Medium,Deployment
+GENREL05-BP03,Reliability,GENREL05,Distributed availability,Verify that agent capabilities are available across all regions of availability,Medium,Deployment
+GENREL06-BP01,Reliability,GENREL06,Distributed compute tasks,Design for fault-tolerance for high-performance distributed computation tasks,High,Model customization; Deployment
+GENPERF01-BP01,Performance efficiency,GENPERF01,Establish performance evaluation processes,Define a ground truth data set of prompts and responses,Medium,Model customization
+GENPERF01-BP02,Performance efficiency,GENPERF01,Establish performance evaluation processes,Collect performance metrics from generative AI workloads,Medium,Scoping
+GENPERF02-BP01,Performance efficiency,GENPERF02,Maintaining model performance,Load test model endpoints,Medium,Development and integration
+GENPERF02-BP02,Performance efficiency,GENPERF02,Maintaining model performance,Optimize inference parameters to improve response quality,Low,Development and integration
+GENPERF02-BP03,Performance efficiency,GENPERF02,Maintaining model performance,Select and customize the appropriate model for your use case,Medium,Model selection
+GENPERF03-BP01,Performance efficiency,GENPERF03,Optimize consumption of high-performance compute,"Use managed solutions for model hosting, customization, and data access where appropriate",Medium,Model customization
+GENPERF04-BP01,Performance efficiency,GENPERF04,Vector store optimization,Test vector embeddings for latency and relevant performance,Medium,Development and integration; Continuous improvement
+GENPERF04-BP02,Performance efficiency,GENPERF04,Vector store optimization,Optimize vector sizes for your use case,Low,
+GENCOST01-BP01,Cost optimization,GENCOST01,Model selection and cost optimization,Right-size model selection to optimize inference costs,Medium,Model selection
+GENCOST02-BP01,Cost optimization,GENCOST02,Generative AI pricing model,Balance cost and performance when selecting inference paradigms,Medium,Scoping
+GENCOST02-BP02,Cost optimization,GENCOST02,Generative AI pricing model,Optimize resource consumption to minimize hosting costs,Medium,Development and integration
+GENCOST03-BP01,Cost optimization,GENCOST03,Cost-aware prompting,Optimize prompt token length,Medium,Continuous improvement
+GENCOST03-BP02,Cost optimization,GENCOST03,Cost-aware prompting,Control model response length,Medium,Development and integration
+GENCOST03-BP03,Cost optimization,GENCOST03,Cost-aware prompting,Implement prompt caching to reduce token costs,Medium,Deployment
+GENCOST03-BP04,Cost optimization,GENCOST03,Cost-aware prompting,Annotate user input to enable cost-aware content filtering,Medium,Continuous improvement
+GENCOST04-BP01,Cost optimization,GENCOST04,Cost-informed vector stores,Reduce vector length on embedded tokens,Medium,Deployment
+GENCOST05-BP01,Cost optimization,GENCOST05,Cost-informed agents,Create stopping conditions to control long-running workflows,High,Deployment
+GENSUS01-BP01,Sustainability,GENSUS01,Energy-efficient infrastructure and services,Implement auto scaling and serverless architectures to optimize resource utilization,Medium,Scoping
+GENSUS01-BP02,Sustainability,GENSUS01,Energy-efficient infrastructure and services,Use efficient model customization services,Medium,Scoping
+GENSUS02-BP01,Sustainability,GENSUS02,Consume sustainable data processing and storage services,Optimize data processing and storage to minimize energy consumption,Medium,Model customization
+GENSUS03-BP01,Sustainability,GENSUS03,Consume energy efficient models,Leverage smaller models and optimized inference techniques to reduce carbon footprint,Medium,Development and integration

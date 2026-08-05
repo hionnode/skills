@@ -1,0 +1,19 @@
+{
+ "eval_id": 0,
+ "eval_name": "full-review-rag-app",
+ "prompt": "Can you do a Well-Architected review of our customer support assistant? The code is at FIXTURE_PATH \u2014 Terraform in infra/, the Lambda in src/, and there's a README with context on how it's running in production. We've got a platform review coming up and I want to know what we're going to get hammered on. Write the findings to review.md.",
+ "assertions": [
+  "Cites at least 8 distinct real Generative AI Lens best-practice IDs (GENOPS/GENSEC/GENREL/GENPERF/GENCOST/GENSUS nn-BPnn)",
+  "Every GEN*-BP* ID cited actually exists in the Lens \u2014 no fabricated IDs",
+  "Flags the wildcard IAM policy (bedrock:* and Resource=\"*\" in infra/main.tf) as a least-privilege gap tied to GENSEC01-BP01 or GENSEC01-BP03",
+  "Identifies that no Bedrock Guardrail is configured and maps it to GENSEC02-BP01",
+  "Identifies the hardcoded API key literal in src/handler.py",
+  "Connects the README's 'confidently wrong 1 in 20' complaint to the absence of a ground-truth evaluation set (GENPERF01-BP01 or GENOPS01-BP01)",
+  "Addresses the cross-customer data exposure incident \u2014 one knowledge base holding all customers' account records with no per-customer access filtering",
+  "Attributes the 429s and latency spikes to throughput management, citing GENREL01-BP01 or GENOPS02-BP03",
+  "Attributes the tripled Bedrock bill to specific cost practices (20-result retrieval, max_tokens 4096, no prompt caching) with a GENCOST ID",
+  "Includes a per-practice status table using Met / Partially met / Not met / Not applicable",
+  "Every priority finding cites concrete evidence \u2014 a file, Terraform resource, or README statement \u2014 rather than generic advice",
+  "States the review scope (which pillars were assessed) explicitly"
+ ]
+}

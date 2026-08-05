@@ -1,0 +1,424 @@
+{
+ "metadata": {
+  "skill_name": "genai-lens-review",
+  "skill_path": "<path/to/skill>",
+  "executor_model": "<model-name>",
+  "analyzer_model": "<model-name>",
+  "timestamp": "2026-08-05T07:38:53Z",
+  "evals_run": [
+   0,
+   1,
+   2
+  ],
+  "runs_per_configuration": 3
+ },
+ "runs": [
+  {
+   "eval_id": 0,
+   "configuration": "with_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 12,
+    "failed": 0,
+    "total": 12,
+    "time_seconds": 533.5,
+    "tokens": 159505,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "Cites at least 8 distinct real Generative AI Lens best-practice IDs (GENOPS/GENSEC/GENREL/GENPERF/GENCOST/GENSUS nn-BPnn)",
+     "passed": true,
+     "evidence": "Programmatic extraction from outputs/review.md found 96 ID mentions covering 51 distinct IDs (GENOPS01-BP01 ... GENSUS03-BP01) \u2014 every practice in the Lens. Far exceeds the threshold of 8."
+    },
+    {
+     "text": "Every GEN*-BP* ID cited actually exists in the Lens \u2014 no fabricated IDs",
+     "passed": true,
+     "evidence": "Verified with a script against assets/best-practices.csv (51 authoritative IDs). All 51 distinct IDs cited in review.md matched the CSV exactly; the fabricated set is empty. The cited set is precisely equal to the Lens set."
+    },
+    {
+     "text": "Flags the wildcard IAM policy (bedrock:* and Resource=\"*\" in infra/main.tf) as a least-privilege gap tied to GENSEC01-BP01 or GENSEC01-BP03",
+     "passed": true,
+     "evidence": "Finding 3 is headed 'GENSEC01-BP01 \u2014 Least privilege access to foundation model endpoints' and states: '`infra/main.tf:110-113`: the Lambda execution role holds `Action = [\"bedrock:*\"], Resource = \"*\"`'. Verified against the fixture: main.tf lines 110-112 are exactly Effect/Action=[\"bedrock:*\"]/Resource=\"*\". The summary table row for GENSEC01-BP01 repeats '`bedrock:*` on `*` (`main.tf:111`)'."
+    },
+    {
+     "text": "Identifies that no Bedrock Guardrail is configured and maps it to GENSEC02-BP01",
+     "passed": true,
+     "evidence": "Finding 2 'GENSEC02-BP01 \u2014 Implement guardrails to mitigate harmful or incorrect model responses ... Status: Not met. Evidence: `src/handler.py:48-59` calls `bedrock.invoke_model` with no `guardrailIdentifier` / `guardrailVersion` ... No `aws_bedrock_guardrail` resource exists in `infra/main.tf`.' Confirmed against the fixture \u2014 handler.py:48-59 has no guardrail parameters."
+    },
+    {
+     "text": "Identifies the hardcoded API key literal in src/handler.py",
+     "passed": true,
+     "evidence": "Finding 3: '`src/handler.py:16`: `API_KEY = \"sk-acme-support-2f8a91\"` \u2014 a static shared secret committed to source, compared against a client-supplied header at `src/handler.py:40`.' Exact literal and line number match the fixture (handler.py:16)."
+    },
+    {
+     "text": "Connects the README's 'confidently wrong 1 in 20' complaint to the absence of a ground-truth evaluation set (GENPERF01-BP01 or GENOPS01-BP01)",
+     "passed": true,
+     "evidence": "Finding 8 is headed 'GENOPS01-BP01 / GENOPS01-BP02 / GENPERF01-BP01 \u2014 No evaluation, no ground truth, no feedback' and quotes README:26-27 verbatim: \"Support leads say answers are 'confidently wrong' maybe 1 in 20 times, but we don't have a way to measure this.\" Remediation step 1 prescribes curating 150-300 stratified ground-truth questions. Both required IDs are present and the connection is explicit."
+    },
+    {
+     "text": "Addresses the cross-customer data exposure incident \u2014 one knowledge base holding all customers' account records with no per-customer access filtering",
+     "passed": true,
+     "evidence": "Finding 1 (GENSEC01-BP03, rated Critical): 'retrieve() issues a bedrock-agent-runtime:Retrieve call with retrievalConfiguration.vectorSearchConfiguration containing only numberOfResults: 20 \u2014 no filter clause ... customer_id is never read from body ... README.md:18-19 confirms every customer's account records are exported into the same S3 bucket that backs the same knowledge base ... This is the incident in README.md:28.' Explicitly names it as designed behaviour, not a one-off."
+    },
+    {
+     "text": "Attributes the 429s and latency spikes to throughput management, citing GENREL01-BP01 or GENOPS02-BP03",
+     "passed": true,
+     "evidence": "Finding 6 'GENOPS02-BP03 / GENREL01-BP01 \u2014 No overload protection, no throughput strategy' cites README.md:23 ('latency spikes to 20s+ under load, occasional 429s from Bedrock') and attributes it to the on-demand single-region quota: 'MODEL_ID (infra/main.tf:61) is the plain on-demand foundation model ID ... not a cross-region inference profile ... so every request is capped by the single-region on-demand quota.' Both eligible IDs are cited."
+    },
+    {
+     "text": "Attributes the tripled Bedrock bill to specific cost practices (20-result retrieval, max_tokens 4096, no prompt caching) with a GENCOST ID",
+     "passed": true,
+     "evidence": "Finding 9 'GENCOST03-BP01 / GENCOST03-BP02 / GENCOST01-BP01 \u2014 Uncontrolled token spend' cites all three levers: 'src/handler.py:33 sets numberOfResults: 20 ... src/handler.py:53 sets max_tokens: 4096 ... No prompt caching is used', and ties them to 'README.md:24-25 \u2014 spend has roughly tripled since March'. Table rows GENCOST03-BP01/BP02/BP03 repeat each."
+    },
+    {
+     "text": "Includes a per-practice status table using Met / Partially met / Not met / Not applicable",
+     "passed": true,
+     "evidence": "The 'Full assessment' table lists all 51 practice IDs with a Status column drawing on the four-state scheme \u2014 e.g. 'GENOPS05-BP01 | Learn when to customize models | Met', 'GENOPS04-BP01 | Automate lifecycle with IaC | Partial', 'GENSEC01-BP03 | ... | Not met', 'GENSEC05-BP01 | ... | N/A'. The roll-up table uses the same four columns (Met / Partial / Not met / N/A). Note: uses the abbreviations 'Partial' and 'N/A' rather than the assertion's 'Partially met' / 'Not applicable' \u2014 judged equivalent states, not a different scheme."
+    },
+    {
+     "text": "Every priority finding cites concrete evidence \u2014 a file, Terraform resource, or README statement \u2014 rather than generic advice",
+     "passed": true,
+     "evidence": "All 13 priority findings carry an explicit **Evidence:** block naming files, line numbers or Terraform resources (e.g. finding 10: '`src/handler.py:54`: \"temperature\": 0.9'; finding 12: 'aws_lambda_function.chat (infra/main.tf:49-64) has no vpc_config block'; finding 13: 'filename = \"../build/chat.zip\" (infra/main.tf:54)'). Spot-checked handler.py:16/21/33/54, main.tf:110-113/140-143 and README:23-28 against the fixture \u2014 all accurate."
+    },
+    {
+     "text": "States the review scope (which pillars were assessed) explicitly",
+     "passed": true,
+     "evidence": "Header line 3: '**Scope:** All six pillars, all 51 best practices', followed by 'Evidence base: support-rag/README.md, support-rag/infra/main.tf, support-rag/src/handler.py. Anything not visible in those three files is called out as insufficient evidence rather than assumed absent.' The 'Assessment at a glance' table enumerates all six pillars by name."
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 1,
+   "configuration": "with_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "time_seconds": 341.0,
+    "tokens": 151847,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "Names the agentic-specific practices GENSEC05-BP01, GENREL03-BP02 and GENCOST05-BP01",
+     "passed": true,
+     "evidence": "All three appear as top-priority findings, not just table rows. Finding 1: 'GENSEC05-BP01 \u2014 Least privilege and permissions boundaries for agentic workflows ... Risk: Critical (Lens: High)'. Finding 3: 'GENREL03-BP02 + GENCOST05-BP01 \u2014 Timeouts and stopping conditions on the agentic workflow'. Each is developed with workload-specific design guidance (decide/act split, idempotency key, session/iteration caps)."
+    },
+    {
+     "text": "Every GEN*-BP* ID cited actually exists in the Lens \u2014 no fabricated IDs",
+     "passed": true,
+     "evidence": "Verified with a script against assets/best-practices.csv (51 authoritative IDs). outputs/response.md contains 109 ID mentions across 51 distinct IDs; all 51 matched the CSV exactly, fabricated set empty. The cited set equals the full Lens set."
+    },
+    {
+     "text": "Recommends establishing a ground-truth evaluation dataset (GENPERF01-BP01) before or during model selection",
+     "passed": true,
+     "evidence": "Finding 5 is headed 'GENPERF01-BP01 + GENOPS01-BP01 \u2014 Ground truth dataset and periodic functional evaluation' and states: 'Build a golden dataset **before** model selection, from historical human-adjudicated refunds.' The sequencing is reinforced in Phase 1 of the delivery plan: '5. Build the golden dataset ... 7. Only now select the model, on measured results (GENPERF02-BP03, GENCOST01-BP01).'"
+    },
+    {
+     "text": "Organises advice by generative AI lifecycle stage (scoping / model selection) rather than as an undifferentiated checklist",
+     "passed": true,
+     "evidence": "Header declares '**Lifecycle stage:** Scoping, entering model selection'. Individual practices are tagged with their binding stage \u2014 finding 8: 'both are Scoping-stage practices, which is exactly where you are'; GENPERF01-BP02 'Scoping-stage: define the latency budget ... before model selection'; GENREL01-BP01 'Model-selection-stage: check per-model quotas'; GENSUS01-BP01 'Scoping-stage and already the natural shape'. Every practice table carries a 'When' column with Decide now / Leave room / Later, summarised in the 'Design constraints at a glance' roll-up (33 decide-now / 9 leave-room / 1 later / 8 N/A), and delivery is staged Phase 0-5. This is stage-differentiated, not a flat checklist."
+    },
+    {
+     "text": "Ties the permissions boundary and human-escalation requirement specifically to the Stripe refund action, not to agents in general",
+     "passed": true,
+     "evidence": "Finding 1 is entirely Stripe-specific: 'The Bedrock Agent gets **two** action groups: get_order (OMS, read-only) and escalate_to_human. It does **not** get issue_refund'; 'The Stripe API key lives in Secrets Manager, readable **only** by the gate's execution role. The agent's execution role has no path to it'; 'Separate IAM execution roles for: the agent, the OMS action group, the escalation action group, the gate. Apply a permissions boundary to each'. Human escalation is tied to the money movement by a dollar threshold: '**Auto-approve ceiling.** Pick a dollar figure. Above it, the verdict is advisory and a human approves.' Finding 10 adds Stripe-specific egress and key scoping ('refund-create only if Stripe's restricted keys support it')."
+    },
+    {
+     "text": "Distinguishes decisions that are expensive to retrofit later from ones that can wait",
+     "passed": true,
+     "evidence": "Explicit throughout. 'The single design decision that will determine whether you painted yourself into a corner: where you draw the boundary between deciding and acting ... If you build it the other way and ship, retrofitting the gate means rebuilding the action groups, the IAM model, the idempotency story, and the audit trail \u2014 that's the corner.' The 'When' column separates Decide now from Leave room from Later (e.g. GENREL04-BP02 model catalog: 'Later ... a full catalog is org-level and can wait'). Sequence section: 'Items 1\u20133 are the ones that are cheap now and expensive later'. Finding 5: 'this is the classic expensive-to-retrofit item'."
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 2,
+   "configuration": "with_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 1.0,
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "time_seconds": 268.8,
+    "tokens": 89255,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "Assesses all ten GENSEC best practices by ID (GENSEC01-BP01..BP04, GENSEC02-BP01, GENSEC03-BP01, GENSEC04-BP01, GENSEC04-BP02, GENSEC05-BP01, GENSEC06-BP01)",
+     "passed": true,
+     "evidence": "The 'Full assessment' table has exactly ten rows, one per GENSEC practice, each with Status / Lens risk / Adjusted risk / Evidence. Script-verified: the set of GENSEC IDs in the output equals the set of ten GENSEC IDs in assets/best-practices.csv. Seven of the ten also get a developed priority finding; the remaining three (GENSEC01-BP01, GENSEC05-BP01, GENSEC06-BP01) are assessed in the table plus the exclusions section."
+    },
+    {
+     "text": "Every GEN*-BP* ID cited actually exists in the Lens \u2014 no fabricated IDs",
+     "passed": true,
+     "evidence": "Verified with a script against assets/best-practices.csv. outputs/response.md cites 13 distinct IDs (the ten GENSEC plus GENOPS01-BP02, GENOPS03-BP01, GENOPS03-BP02 flagged as security-adjacent out-of-scope items); all 13 matched the authoritative list. Fabricated set empty."
+    },
+    {
+     "text": "Addresses prompt injection through GENSEC04-BP02 and data leakage through GENSEC01-BP03",
+     "passed": true,
+     "evidence": "Finding 1 is 'GENSEC01-BP03 \u2014 Implement least privilege access permissions for foundation models accessing data stores ... This is your data leakage finding'. Finding 2 is 'GENSEC04-BP02 \u2014 Sanitize and validate user inputs to foundation models', which separates direct injection ('Impact is genuinely limited in this workload: no tools means no actions') from indirect injection via retrieved Confluence content ('this is the real finding ... A single line of white text or an HTML comment on an obscure page ... becomes a company-wide misinformation and phishing channel') and names the markdown-image exfiltration variant."
+    },
+    {
+     "text": "Adjusts at least one practice's risk rating away from the Lens's inherent rating because the workload is internal and SSO-gated, and justifies the adjustment",
+     "passed": true,
+     "evidence": "Finding 5, GENSEC01-BP02: '**Risk:** Medium (Lens: High)' with the justification 'It's TLS-encrypted, so this is a defence-in-depth gap rather than an active exposure \u2014 which is why I've lowered it from the Lens's inherent High. The workload is internal, SSO-gated, and has no external caller to attract attention.' The full-assessment table records the same in a dedicated 'Adjusted' column ('Lowered: TLS in transit, internal workload, no external caller'), and GENSEC01-BP01 is likewise lowered High\u2192Medium with 'Internal-only use lowers this.' Adjustments run both ways: GENSEC01-BP03 is raised High\u2192Critical with a stated rationale."
+    },
+    {
+     "text": "Flags at least one practice as needing evidence the user hasn't supplied instead of guessing a verdict",
+     "passed": true,
+     "evidence": "'Insufficient evidence' is used as a first-class status, not a caveat. GENSEC01-BP02: 'Status: Insufficient evidence ... Evidence: Network path not described.' GENSEC01-BP04: 'Status: Insufficient evidence \u2014 assume not met' with the reasoning stated ('Bedrock model invocation logging is off by default, so absent evidence to the contrary the safe assumption for a sign-off document is that it isn't on'). The 'Assessment at a glance' table carries a dedicated 'Insufficient evidence' column (count 2), and the closing note says these 'need a configuration check rather than new engineering, and several may already be met.'"
+    },
+    {
+     "text": "Notes that GENSEC05-BP01 (excessive agency) is not applicable or low relevance for a read-only search bot, with justification",
+     "passed": true,
+     "evidence": "Table row: 'GENSEC05-BP01 | Least privilege for agentic workflows | N/A | High | \u2014 | No agent, no tool use, no actions. Re-open the moment anything is added.' Expanded in exclusions: '**GENSEC05-BP01 (excessive agency) \u2014 not applicable today, and fragile.** The bot answers; it does not act. But this is the practice that flips the severity of finding #2 from \"misinformation\" to \"remote code execution by Confluence page\" ... Recommend a written gate: no tool or action capability ships until GENSEC04-BP02 and GENSEC05-BP01 are both assessed as met.' Justification is present and the conditionality is made a sign-off condition."
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 0,
+   "configuration": "without_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 0.42,
+    "passed": 5,
+    "failed": 7,
+    "total": 12,
+    "time_seconds": 383.9,
+    "tokens": 48742,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "Cites at least 8 distinct real Generative AI Lens best-practice IDs (GENOPS/GENSEC/GENREL/GENPERF/GENCOST/GENSUS nn-BPnn)",
+     "passed": false,
+     "evidence": "Programmatic scan of outputs/review.md for the pattern GEN[A-Z]+nn-BPnn returned zero matches. The review uses its own invented identifier scheme instead \u2014 SEC-1..SEC-18, REL-1..REL-11, PERF-1..PERF-9, COST-1..COST-9, OPS-1..OPS-10, SUS-1..SUS-4, RAI-1..RAI-8. Section 4.7 is even titled 'Responsible AI (GenAI Lens)' and the header claims 'Reviewed against: AWS Well-Architected Framework (six pillars) + Generative AI Lens', but no Lens best-practice ID appears anywhere."
+    },
+    {
+     "text": "Every GEN*-BP* ID cited actually exists in the Lens \u2014 no fabricated IDs",
+     "passed": true,
+     "evidence": "Zero GEN*-BP* IDs were cited (verified by script against assets/best-practices.csv), so nothing was fabricated. Passing vacuously: the run invented no Lens IDs, though it also cited none. Note the locally-invented SEC-/REL-/OPS- identifiers are clearly presented as the document's own numbering, not as Lens IDs, so they are not fabrications."
+    },
+    {
+     "text": "Flags the wildcard IAM policy (bedrock:* and Resource=\"*\" in infra/main.tf) as a least-privilege gap tied to GENSEC01-BP01 or GENSEC01-BP03",
+     "passed": false,
+     "evidence": "The gap is found and located precisely \u2014 'SEC-5 | H | IAM: `bedrock:*` on `Resource = \"*\"` \u2014 permits DeleteKnowledgeBase, model customization, provisioned throughput purchases, not just inference | main.tf:110-113' and SEC-6 for the s3 wildcard \u2014 but it is not tied to GENSEC01-BP01 or GENSEC01-BP03, which appear nowhere in the document. The substantive finding is present; the required Lens mapping is absent."
+    },
+    {
+     "text": "Identifies that no Bedrock Guardrail is configured and maps it to GENSEC02-BP01",
+     "passed": false,
+     "evidence": "The absence is identified twice \u2014 'SEC-9 | H | No Bedrock Guardrail \u2014 no PII filtering, no denied topics, no jailbreak detection, no grounding check | absent' and 'RAI-3 | H | No guardrails of any kind' \u2014 but GENSEC02-BP01 is never named, so the required mapping is missing."
+    },
+    {
+     "text": "Identifies the hardcoded API key literal in src/handler.py",
+     "passed": true,
+     "evidence": "\u00a72.2: '`src/handler.py:16` hardcodes `API_KEY = \"sk-acme-support-2f8a91\"` \u2014 checked into git, baked into the deployment zip, shared across all callers, never rotated.' Also SEC-3 and remediation item 4 ('Rotate the API key'). Exact literal and line number verified against the fixture."
+    },
+    {
+     "text": "Connects the README's 'confidently wrong 1 in 20' complaint to the absence of a ground-truth evaluation set (GENPERF01-BP01 or GENOPS01-BP01)",
+     "passed": false,
+     "evidence": "The substantive connection is made well: 'OPS-2 | H | **No evaluation harness.** \"Confidently wrong 1 in 20 but we can't measure it\" is a tooling gap, not a mystery. Needs a golden question set with expected answers, offline scoring on faithfulness/groundedness/context-precision run in CI...'. However, neither GENPERF01-BP01 nor GENOPS01-BP01 is cited. Graded against the same standard applied throughout this eval \u2014 an assertion that names specific Lens IDs requires those IDs to appear \u2014 so this fails on the mapping only, not on the analysis."
+    },
+    {
+     "text": "Addresses the cross-customer data exposure incident \u2014 one knowledge base holding all customers' account records with no per-customer access filtering",
+     "passed": true,
+     "evidence": "\u00a72.1 'There is no tenant isolation in retrieval \u2014 CRITICAL': 'retrieve() (src/handler.py:28-36) issues a pure semantic search across the entire index with numberOfResults: 20 and no filter clause ... the billing team's ETL writes account records ... into the same S3 bucket as the public help-centre articles. Public marketing content and confidential per-customer PII share one bucket, one knowledge base, one vector index, and one retrieval path.' It also correctly reframes the README incident: 'was not an anomaly \u2014 it is the designed behaviour of this system, and it will recur', and routes it to privacy/legal for breach assessment."
+    },
+    {
+     "text": "Attributes the 429s and latency spikes to throughput management, citing GENREL01-BP01 or GENOPS02-BP03",
+     "passed": false,
+     "evidence": "The attribution is correct and detailed \u2014 root-cause table row: 'Occasional 429s from Bedrock | No retry config with adaptive/jittered backoff; no cross-region inference profile; no provisioned throughput; single region (us-east-1 is the most contended) | REL-1, REL-2' \u2014 but neither GENREL01-BP01 nor GENOPS02-BP03 is cited anywhere in the document."
+    },
+    {
+     "text": "Attributes the tripled Bedrock bill to specific cost practices (20-result retrieval, max_tokens 4096, no prompt caching) with a GENCOST ID",
+     "passed": false,
+     "evidence": "All three specific drivers are named in the \u00a72.4 driver table \u2014 'Over-retrieval | numberOfResults: 20 (handler.py:33)', 'Oversized generations | max_tokens: 4096 ... (handler.py:19,53,54)', 'No caching | No cache layer anywhere' (plus PERF-4 'No Bedrock prompt caching for the static system-prompt prefix') \u2014 but no GENCOST ID accompanies them. The assertion explicitly requires 'with a GENCOST ID'."
+    },
+    {
+     "text": "Includes a per-practice status table using Met / Partially met / Not met / Not applicable",
+     "passed": false,
+     "evidence": "No per-practice status table exists. The document's tables are severity-graded finding lists (columns: ID | Sev | Finding | Location, with values Critical/High/Medium/Low) and a pillar-level 'readiness at a glance' table using free-text ratings ('Critical risk', 'High risk', 'Medium risk'). Nothing enumerates Lens practices, and no Met / Partially met / Not met / Not applicable vocabulary appears anywhere."
+    },
+    {
+     "text": "Every priority finding cites concrete evidence \u2014 a file, Terraform resource, or README statement \u2014 rather than generic advice",
+     "passed": true,
+     "evidence": "All five items in \u00a72 'The five things you will get hammered on' anchor to specific code: \u00a72.1 'src/handler.py:39-46 ... src/handler.py:28-36'; \u00a72.2 'src/handler.py:16 ... infra/main.tf:75 ... the widget is embedded on the public support site'; \u00a72.3 'src/handler.py:21 ... src/handler.py:54 \"temperature\": 0.9'; \u00a72.4 'numberOfResults: 20 (handler.py:33)'; \u00a72.5 'infra/main.tf:55 sets timeout = 300'. Verified against the fixture \u2014 handler.py:16/21/33/54 and main.tf:55/75/110-113/140-143 all resolve to the claimed content."
+    },
+    {
+     "text": "States the review scope (which pillars were assessed) explicitly",
+     "passed": true,
+     "evidence": "Header: '**Scope reviewed:** infra/main.tf, src/handler.py, README.md' and '**Reviewed against:** AWS Well-Architected Framework (six pillars) + Generative AI Lens'. The 'Pillar readiness at a glance' table then names each pillar assessed \u2014 Security, Reliability, Performance Efficiency, Cost Optimization, Operational Excellence, Sustainability, Responsible AI (GenAI Lens) \u2014 and \u00a74 is organised into one subsection per pillar."
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 1,
+   "configuration": "without_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 0.5,
+    "passed": 3,
+    "failed": 3,
+    "total": 6,
+    "time_seconds": 143.1,
+    "tokens": 32183,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "Names the agentic-specific practices GENSEC05-BP01, GENREL03-BP02 and GENCOST05-BP01",
+     "passed": false,
+     "evidence": "Programmatic scan of outputs/response.md for GEN[A-Z]+nn-BPnn returned zero matches. None of the three IDs appears. The Generative AI Lens is not referenced at all \u2014 the document's framework references are to GDPR Art. 22 and the EU AI Act. The underlying concerns are covered substantively (\u00a78 'Least-privilege on the Stripe credential', \u00a73 idempotency, \u00a74 caps and kill switch) but not as named Lens practices."
+    },
+    {
+     "text": "Every GEN*-BP* ID cited actually exists in the Lens \u2014 no fabricated IDs",
+     "passed": true,
+     "evidence": "Zero GEN*-BP* IDs cited (verified by script against assets/best-practices.csv), therefore zero fabricated. Passing vacuously \u2014 the run invented no Lens IDs, but also grounded nothing in the Lens."
+    },
+    {
+     "text": "Recommends establishing a ground-truth evaluation dataset (GENPERF01-BP01) before or during model selection",
+     "passed": false,
+     "evidence": "The substantive recommendation is strong and correctly sequenced \u2014 \u00a73 'The asset you should start building *this week*: Before any code: **a golden set of 200\u2013500 historical refund cases with known-correct outcomes** ... Without it you cannot answer \"is it safe to ship,\" you cannot compare two prompts, and you cannot tell whether a model upgrade broke you.' It also defines the release metrics (false approve/deny rate, policy citation accuracy). What is missing is the GENPERF01-BP01 citation. Graded against the standard applied consistently across this eval \u2014 an assertion that names a specific Lens ID requires that ID to appear \u2014 so this fails on citation only; the analysis itself is at least as good as the with_skill run's."
+    },
+    {
+     "text": "Organises advice by generative AI lifecycle stage (scoping / model selection) rather than as an undifferentiated checklist",
+     "passed": false,
+     "evidence": "The document is organised by theme and reversibility, not by generative AI lifecycle stage: 'Part 1 \u2014 Decisions that are expensive to reverse', 'Part 2 \u2014 Bedrock Agents specifically', 'Part 3 \u2014 The asset you should start building this week', 'Part 4 \u2014 Rollout staging', 'Part 5 \u2014 Business logic that will surprise you', then a flat closing checklist. The terms 'scoping' and 'model selection' do not appear as organising stages anywhere; Part 4's staging is a production rollout ladder (shadow \u2192 human-approves \u2192 auto-approve narrow band \u2192 widen), which is post-build, not a genAI lifecycle stage. It is not an undifferentiated checklist, but it is not stage-organised either."
+    },
+    {
+     "text": "Ties the permissions boundary and human-escalation requirement specifically to the Stripe refund action, not to agents in general",
+     "passed": true,
+     "evidence": "\u00a78 is Stripe-specific: 'The Lambda that touches Stripe should hold a **restricted API key** scoped to refunds-write on charges only \u2014 no payouts, no customer object writes, no key rotation ability. Separate execution role per action group ... Separate keys per environment with a hard guarantee that non-prod cannot reach live mode.' The escalation requirement is likewise bound to the money movement: 'the LLM should never be the entity whose output directly authorizes a Stripe `refunds.create`'; \u00a74 'Per-refund maximum (start low \u2014 e.g. auto-approve only under $50)', 'fail *closed* to a holding response, never fail open to auto-approve'; \u00a77 adds a 10\u201330 minute cancellation window before execution."
+    },
+    {
+     "text": "Distinguishes decisions that are expensive to retrofit later from ones that can wait",
+     "passed": true,
+     "evidence": "This is the document's primary organising axis. 'Part 1 \u2014 Decisions that are expensive to reverse. These are the ones to nail in the design doc. The rest you can iterate on.' Each of the eight items closes with an explicit '**Corner you avoid:**' line (e.g. '#3 Idempotency, from the first line of code \u2014 Corner you avoid: the class of bug that is invisible in testing and expensive in production'). \u00a74 marks the deferrable side too: 'Make the thresholds *configuration*, not code, because you will tune them weekly'. \u00a74 of Part 4: 'Cheap to build now, painful to retrofit.'"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "eval_id": 2,
+   "configuration": "without_skill",
+   "run_number": 1,
+   "result": {
+    "pass_rate": 0.83,
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "time_seconds": 311.7,
+    "tokens": 77411,
+    "tool_calls": 0,
+    "errors": 0
+   },
+   "expectations": [
+    {
+     "text": "Assesses all ten GENSEC best practices by ID (GENSEC01-BP01..BP04, GENSEC02-BP01, GENSEC03-BP01, GENSEC04-BP01, GENSEC04-BP02, GENSEC05-BP01, GENSEC06-BP01)",
+     "passed": true,
+     "evidence": "\u00a73 'Scorecard \u2014 all ten GENSEC best practices' is a ten-row table listing each ID with its correct official title, the Lens risk rating, a status and a contextual severity \u2014 e.g. 'GENSEC01-BP03 | Implement least privilege access permissions for foundation models accessing data stores | High | **Fail** | **Critical**'. Script-verified: the set of GENSEC IDs cited equals the ten in assets/best-practices.csv. Each is then developed in \u00a74 or \u00a75 (DL-1, DL-3, PI-1/PI-2, PI-3, MON-1, MON-2, EP-1, EP-2, PC-1, AG-1, DP-1)."
+    },
+    {
+     "text": "Every GEN*-BP* ID cited actually exists in the Lens \u2014 no fabricated IDs",
+     "passed": true,
+     "evidence": "Verified with a script against assets/best-practices.csv: 30 ID mentions, 10 distinct IDs, all ten matching the authoritative GENSEC list exactly, fabricated set empty. The practice titles are also accurate, and \u00a79 lists the corresponding docs.aws.amazon.com URLs per practice."
+    },
+    {
+     "text": "Addresses prompt injection through GENSEC04-BP02 and data leakage through GENSEC01-BP03",
+     "passed": true,
+     "evidence": "\u00a74.1 'Data leakage \u2014 the primary finding / Finding DL-1 \u2014 Confluence ACLs are not enforced at retrieval time / **GENSEC01-BP03** \u00b7 Lens risk: High \u00b7 Our severity: CRITICAL'. \u00a74.2 'Prompt injection / Finding PI-1 \u2014 No input sanitization or validation layer / **GENSEC04-BP02**' and 'PI-2 \u2014 Indirect (second-order) injection via Confluence page content / **GENSEC04-BP02** \u00b7 Our severity: HIGH \u2014 this is the real prompt injection risk'. It also correctly ranks them: 'Prompt injection is not what breaks your confidentiality model; the missing ACLs are.'"
+    },
+    {
+     "text": "Adjusts at least one practice's risk rating away from the Lens's inherent rating because the workload is internal and SSO-gated, and justifies the adjustment",
+     "passed": true,
+     "evidence": "\u00a72 establishes the mechanism explicitly: 'The lens assigns its own \"level of risk exposed if this best practice is not established\" ... I've reported that verbatim, then assigned a **contextual severity** based on the actual blast radius of *your* workload. They differ in several places.' The scorecard shows six of ten adjusted. The clearest justified-by-internal/SSO adjustment is GENSEC01-BP03 raised from Lens High to Critical, reasoned entirely from the workload being internal and SSO-gated: '\u00a70 The SSO boundary you have is an **authentication** boundary, not an **authorization** boundary ... it does not prove that the specific employee asking is allowed to read the specific Confluence page', and '\u00a74.1 Why \"only employees can hit it\" is not a mitigation. Your own Confluence deployment already rejects that argument.' Note the adjustment is upward \u2014 the assertion's 'away from' is directionless, so this satisfies it as written."
+    },
+    {
+     "text": "Flags at least one practice as needing evidence the user hasn't supplied instead of guessing a verdict",
+     "passed": false,
+     "evidence": "Every one of the ten practices receives a definite verdict in the \u00a73 scorecard (Partial / Fail / Pass (N/A) / N/A-as-written) plus a contextual severity; no practice is left pending evidence. The verdicts are explicitly guesses derived from the run's own assumptions \u2014 \u00a71: 'You gave me a one-paragraph description, so I inferred the rest. **Every finding below is conditional on these assumptions**' \u2014 with A6 ('Bedrock Guardrails is **not currently attached**') and A7 ('model invocation logging is **off**') directly generating the GENSEC02-BP01 and GENSEC01-BP04 'Fail' verdicts. \u00a78 'What I need confirmed' lists ten evidence requests and says 'Each of these can move a rating', which is good practice \u2014 but it sits after the verdicts rather than in place of any of them. The assertion's 'instead of guessing a verdict' is therefore not satisfied: the guesses are disclosed and well-reasoned, but they are still guesses on all ten."
+    },
+    {
+     "text": "Notes that GENSEC05-BP01 (excessive agency) is not applicable or low relevance for a read-only search bot, with justification",
+     "passed": true,
+     "evidence": "'AG-1 \u2014 Excessive agency: currently a pass, with a tripwire / **GENSEC05-BP01 \u00b7 Lens risk: High \u00b7 Our severity: Low, conditional** ... Under A4 this is a pass \u2014 a retrieval-only bot has no agency to be excessive with.' Justification is given, plus the conditionality: 'The moment someone adds \"and it can file the Jira ticket for you\" ... this becomes Critical, because prompt injection then converts from an information problem into an action problem. Make \"adding any tool, action group, or write capability requires a new security review\" an explicit condition of this approval.' The scorecard row reads 'Pass (N/A) | **Low** (conditional)'."
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "run_summary": {
+  "with_skill": {
+   "pass_rate": {
+    "mean": 1.0,
+    "stddev": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "time_seconds": {
+    "mean": 381.1,
+    "stddev": 136.8303,
+    "min": 268.8,
+    "max": 533.5
+   },
+   "tokens": {
+    "mean": 133535.6667,
+    "stddev": 38538.8677,
+    "min": 89255,
+    "max": 159505
+   }
+  },
+  "without_skill": {
+   "pass_rate": {
+    "mean": 0.5833,
+    "stddev": 0.2173,
+    "min": 0.42,
+    "max": 0.83
+   },
+   "time_seconds": {
+    "mean": 279.5667,
+    "stddev": 123.5742,
+    "min": 143.1,
+    "max": 383.9
+   },
+   "tokens": {
+    "mean": 52778.6667,
+    "stddev": 22882.6136,
+    "min": 32183,
+    "max": 77411
+   }
+  },
+  "delta": {
+   "pass_rate": "+0.42",
+   "time_seconds": "+101.5",
+   "tokens": "+80757"
+  }
+ },
+ "notes": [],
+ "analysis": {
+  "observations": [
+   "PASS RATE +42pts (100% vs 58%), but read it carefully: 5 of the baseline's 7 eval-0 failures and 2 of its 3 eval-1 failures are citation-only \u2014 the baseline found the substance and simply did not name a Lens ID. The skill's real, demonstrated wins are (a) traceability to numbered practices, (b) completeness across all 51 rather than whatever the reviewer happened to notice, and (c) the Met/Partial/Not met/N-A status table. Do not read +42 as '42% better findings'.",
+   "NON-DISCRIMINATING ASSERTIONS: eval-0 #1 ('at least 8 distinct IDs') and eval-1 #1 ('names GENSEC05-BP01, GENREL03-BP02, GENCOST05-BP01') are passed automatically by any output that pastes the full 51-row practice table \u2014 which both with_skill runs did. These assertions measure table-pasting, not analysis. Replace with something that requires the ID to appear in a priority finding with evidence attached.",
+   "EVAL-2 BARELY DISCRIMINATES (6/6 vs 5/6). The baseline web-searched the Lens and recovered all ten GENSEC practices with correct IDs and risk ratings. Where the skill has no offline advantage, its edge collapses to process discipline. The single differentiating assertion was 'flags a practice as needing evidence instead of guessing' \u2014 the sharpest item in the whole suite, and the one worth building more assertions like.",
+   "COST: +101s wall clock (+36%) and +81k tokens (+153%) per run. The token cost is the pillar reference files. Justified for an audit; questionable for a quick question. The skill's guidance to read only in-scope pillars is doing some work but eval-0 and eval-1 both read all six.",
+   "UNCHECKED FAILURE MODE \u2014 fabricated AWS capabilities. Zero fabricated GEN* IDs across all six runs (verified programmatically), but eval-2's baseline built its top remediation on a 'June 2026 Bedrock Managed KB Confluence connector with real-time ACL checks' that the grader could not verify. No assertion tests whether cited AWS product capabilities are real. In a security sign-off document that is the highest-cost error available, and the skill currently says nothing about it.",
+   "UNCHECKED FAILURE MODE \u2014 internal consistency. eval-0's baseline headline tally (6 Critical/11 High/14 Medium/8 Low, '39 findings') does not reconcile with its own tables (21 High, 69 findings). Hand-verification showed both eval-0 runs' file:line citations were accurate, but nothing in the suite would catch a run inventing plausible line numbers.",
+   "FIXTURE FLAW: the support-rag Terraform could not have deployed the system its README describes (no aws_lambda_permission, no aws_bedrockagent_data_source, no OpenSearch Serverless policies). Both eval-0 runs noticed. It made the eval harder rather than easier, but it should be fixed before iteration 2 so 'IaC drift' stops being free signal."
+  ]
+ }
+}

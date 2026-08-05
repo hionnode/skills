@@ -1,0 +1,78 @@
+{
+ "expectations": [
+  {
+   "text": "Names the agentic-specific practices GENSEC05-BP01, GENREL03-BP02 and GENCOST05-BP01",
+   "passed": true,
+   "evidence": "All three appear as top-priority findings, not just table rows. Finding 1: 'GENSEC05-BP01 \u2014 Least privilege and permissions boundaries for agentic workflows ... Risk: Critical (Lens: High)'. Finding 3: 'GENREL03-BP02 + GENCOST05-BP01 \u2014 Timeouts and stopping conditions on the agentic workflow'. Each is developed with workload-specific design guidance (decide/act split, idempotency key, session/iteration caps)."
+  },
+  {
+   "text": "Every GEN*-BP* ID cited actually exists in the Lens \u2014 no fabricated IDs",
+   "passed": true,
+   "evidence": "Verified with a script against assets/best-practices.csv (51 authoritative IDs). outputs/response.md contains 109 ID mentions across 51 distinct IDs; all 51 matched the CSV exactly, fabricated set empty. The cited set equals the full Lens set."
+  },
+  {
+   "text": "Recommends establishing a ground-truth evaluation dataset (GENPERF01-BP01) before or during model selection",
+   "passed": true,
+   "evidence": "Finding 5 is headed 'GENPERF01-BP01 + GENOPS01-BP01 \u2014 Ground truth dataset and periodic functional evaluation' and states: 'Build a golden dataset **before** model selection, from historical human-adjudicated refunds.' The sequencing is reinforced in Phase 1 of the delivery plan: '5. Build the golden dataset ... 7. Only now select the model, on measured results (GENPERF02-BP03, GENCOST01-BP01).'"
+  },
+  {
+   "text": "Organises advice by generative AI lifecycle stage (scoping / model selection) rather than as an undifferentiated checklist",
+   "passed": true,
+   "evidence": "Header declares '**Lifecycle stage:** Scoping, entering model selection'. Individual practices are tagged with their binding stage \u2014 finding 8: 'both are Scoping-stage practices, which is exactly where you are'; GENPERF01-BP02 'Scoping-stage: define the latency budget ... before model selection'; GENREL01-BP01 'Model-selection-stage: check per-model quotas'; GENSUS01-BP01 'Scoping-stage and already the natural shape'. Every practice table carries a 'When' column with Decide now / Leave room / Later, summarised in the 'Design constraints at a glance' roll-up (33 decide-now / 9 leave-room / 1 later / 8 N/A), and delivery is staged Phase 0-5. This is stage-differentiated, not a flat checklist."
+  },
+  {
+   "text": "Ties the permissions boundary and human-escalation requirement specifically to the Stripe refund action, not to agents in general",
+   "passed": true,
+   "evidence": "Finding 1 is entirely Stripe-specific: 'The Bedrock Agent gets **two** action groups: get_order (OMS, read-only) and escalate_to_human. It does **not** get issue_refund'; 'The Stripe API key lives in Secrets Manager, readable **only** by the gate's execution role. The agent's execution role has no path to it'; 'Separate IAM execution roles for: the agent, the OMS action group, the escalation action group, the gate. Apply a permissions boundary to each'. Human escalation is tied to the money movement by a dollar threshold: '**Auto-approve ceiling.** Pick a dollar figure. Above it, the verdict is advisory and a human approves.' Finding 10 adds Stripe-specific egress and key scoping ('refund-create only if Stripe's restricted keys support it')."
+  },
+  {
+   "text": "Distinguishes decisions that are expensive to retrofit later from ones that can wait",
+   "passed": true,
+   "evidence": "Explicit throughout. 'The single design decision that will determine whether you painted yourself into a corner: where you draw the boundary between deciding and acting ... If you build it the other way and ship, retrofitting the gate means rebuilding the action groups, the IAM model, the idempotency story, and the audit trail \u2014 that's the corner.' The 'When' column separates Decide now from Leave room from Later (e.g. GENREL04-BP02 model catalog: 'Later ... a full catalog is org-level and can wait'). Sequence section: 'Items 1\u20133 are the ones that are cheap now and expensive later'. Finding 5: 'this is the classic expensive-to-retrofit item'."
+  }
+ ],
+ "summary": {
+  "passed": 6,
+  "failed": 0,
+  "total": 6,
+  "pass_rate": 1.0
+ },
+ "claims": [
+  {
+   "claim": "The Lens's guidance is that ground truth for agentic workloads must capture the ideal tool-call trace, not just prompt/response pairs",
+   "type": "factual",
+   "verified": true,
+   "evidence": "Consistent with GENPERF01-BP01 ('Define a ground truth data set', lifecycle stage per best-practices.csv). The run attributes it explicitly \u2014 'The Lens is explicit: ground truth must capture the ideal tool-call trace' \u2014 and applies it correctly to the refund workload (which OMS lookup, which policy clause, which verdict)."
+  },
+  {
+   "claim": "8 of 51 practices are N/A for this workload",
+   "type": "factual",
+   "verified": true,
+   "evidence": "Roll-up table says N/A = 8. Enumerated in the exclusions: GENSEC06-BP01, GENREL06-BP01, GENSUS01-BP02, GENCOST02-BP02, GENPERF04-BP01, GENPERF04-BP02, GENCOST04-BP01, GENREL05-BP02 = 8. Consistent, and four are correctly marked conditionally N/A pending design fork F2 (knowledge base or not)."
+  },
+  {
+   "claim": "Bedrock Agents' built-in user confirmation feature is not an adequate control for excessive agency in an end-to-end automated flow",
+   "type": "quality",
+   "verified": true,
+   "evidence": "Sound reasoning: 'It presumes a human sits in the loop to confirm; your premise is end-to-end automation.' This is a non-obvious, correct caveat that a design doc author would plausibly get wrong."
+  },
+  {
+   "claim": "Timeout plus retry on the Stripe call equals double refund unless the idempotency key is derived deterministically from the request",
+   "type": "factual",
+   "verified": true,
+   "evidence": "Correct \u2014 matches Stripe's documented idempotency-key semantics. Both runs independently identify this; the with_skill run ties it to GENREL03-BP02/GENCOST05-BP01 and makes it a testable design invariant."
+  }
+ ],
+ "eval_feedback": {
+  "suggestions": [
+   {
+    "assertion": "Names the agentic-specific practices GENSEC05-BP01, GENREL03-BP02 and GENCOST05-BP01",
+    "reason": "This run enumerates all 51 Lens IDs, so any output that pastes the full practice table satisfies this assertion mechanically. It happens to also develop the three as priority findings, but the assertion cannot tell those two behaviours apart. Strengthen it to something like 'the three agentic practices appear among the top-priority findings with workload-specific guidance, not merely in a reference table'."
+   },
+   {
+    "reason": "For a design-mode prompt, an important outcome no assertion covers is whether the response stays proportionate to 'we're still writing the design doc'. This run is ~39k characters and marks 33 of 51 practices 'decide now', which is arguably more than a design doc can absorb. An assertion about prioritisation (e.g. 'identifies a small number of decisions as gating, rather than treating most practices as immediate') would test judgement, not just coverage."
+   }
+  ],
+  "overall": "Assertions are well chosen for design mode (lifecycle staging, retrofit cost, Stripe-specific scoping). The main gap is that ID-naming assertions are satisfiable by exhaustive enumeration."
+ }
+}
